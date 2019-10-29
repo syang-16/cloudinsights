@@ -48,7 +48,6 @@ Here are some of the key features available in Basic and Standard Edition:
 |Customizable Dashboards|&check;|&check;
 |===
 
-
 [cols=".<,.^,.^"]
 |===
 |Service & Support|Basic Edition |Standard Edition
@@ -78,8 +77,11 @@ If your free trial has expired and you have not yet subscribed to Cloud Insights
 ////
 To subscribe, go to *Admin > Subscription*. On this page you can view your subscription options, view or modify your managed units, and calculate your estimated pricing. Subscription options include the following:
 
-* *Basic Edition* is free and gives you 7 days of data retention and access to Cloud Insights basic features
-* *Standard Edition* gives you everything included in Basic Edition, plus an increase to 90 days of data retention as well as access to NetApp Technical Support.
+* *Basic Edition* is free and gives you 7 days of data retention and access to Cloud Insights basic features. Basic Edition supports NetApp-only data collectors; if you choose to subscribe to Basic Edition, any non-NetApp data collectors you have configured will be removed. You must have at least one NetApp data collector acquiring data for at least 7 days before you can subscribe to Basic Edition.
+
+NOTE: If you do not log in to your Cloud Insights Basic Edition environment for 90 days, your environment will be deleted. You must log in at least once every 90 days to continue using Cloud Insights Basic Edition. Standard and higher Editions do not have this restriction.
+
+* *Standard Edition* gives you everything included in Basic Edition, plus an increase to 90 days of data retention as well as access to NetApp Technical Support. Standard Edition includes acquisition of all data collectors supported by Cloud Insights.
 ////
 
 To subscribe, go to *Admin > Subscription*. In addition to the *Subscribe* buttons, you will be able to see your installed data collectors and calculate your estimated pricing. For a typical environment, you can click the self-serve AWS Marketplace *Subscribe Now* button. If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for Volume Pricing. 
@@ -136,8 +138,8 @@ image:Subscription_Summary.png[Subscription Status ]
 
 The Subscription status page displays the following:
 
-* Current subscription (Trial or Standard Edition) 
-* Contract term (12 or 36 months) and expiration date
+* Current subscription (Trial, Basic, Standard, etc.) 
+* Contract term and expiration date
 * Managed Unit current usage, including breakdown counts for hosts and capacity
 * Link to modify your subscription 
 
