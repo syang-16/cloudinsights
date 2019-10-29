@@ -59,6 +59,10 @@ Here are some of the key features available in Basic and Standard Edition:
 
 While using Cloud Insights, if you see a padlock icon image:padlock.png[Padlock], it means the feature is not available in your current Edition, or is available in a limited form. Upgrade for full access to the feature.
 
+NOTE: You must log in at least once every 90 days to continue using Cloud Insights Basic Edition, or your environment is considered inactive. Environments inactive for 90 dyas will be deleted and their resources reclaimed. 
++
+Standard and higher Editions do not have this restriction.
+
 == Trial Version
 When you sign up for Cloud Insights and your environment is active, you enter into a free, 14-day trial of Cloud Insights. During this trial you can explore all the features that Cloud Insights Standard Edition has to offer, in your own environment.   
 
@@ -78,8 +82,6 @@ If your free trial has expired and you have not yet subscribed to Cloud Insights
 To subscribe, go to *Admin > Subscription*. On this page you can view your subscription options, view or modify your managed units, and calculate your estimated pricing. Subscription options include the following:
 
 * *Basic Edition* is free and gives you 7 days of data retention and access to Cloud Insights basic features. Basic Edition supports NetApp-only data collectors; if you choose to subscribe to Basic Edition, any non-NetApp data collectors you have configured will be removed. You must have at least one NetApp data collector acquiring data for at least 7 days before you can subscribe to Basic Edition.
-
-NOTE: If you do not log in to your Cloud Insights Basic Edition environment for 90 days, your environment will be deleted. You must log in at least once every 90 days to continue using Cloud Insights Basic Edition. Standard and higher Editions do not have this restriction.
 
 * *Standard Edition* gives you everything included in Basic Edition, plus an increase to 90 days of data retention as well as access to NetApp Technical Support. Standard Edition includes acquisition of all data collectors supported by Cloud Insights.
 ////
