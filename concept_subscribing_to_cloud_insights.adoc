@@ -28,6 +28,8 @@ The features and functionality available to you in Cloud Insights depend on the 
 
 * *Basic Edition* is free and available to existing NetApp customers with an active NetApp support account.
 +
+WARNING: Inactive Cloud Insights Basic Edition environments are deleted and their resources are reclaimed. An environment is considered inactive if there is no user activity for 90 consecutive days. Standard and higher Editions do not have this restriction.
++
 NOTE: The features, data retention times, and objects or metrics collected in Cloud Insights Basic Edition are subject to change with or without notice. 
 
 * *Standard Edition* is available via subscription and offers all the features of Basic Edition plus more.
@@ -60,8 +62,6 @@ Here are some of the key features available in Basic and Standard Edition:
 While using Cloud Insights, if you see a padlock icon image:padlock.png[Padlock], it means the feature is not available in your current Edition, or is available in a limited form. Upgrade for full access to the feature.
 
 //NOTE: You must log in at least once every 90 days to continue using Cloud Insights Basic Edition, or your environment is considered inactive. Environments inactive for 90 days will be deleted and their resources reclaimed. Standard and higher Editions do not have this restriction.
-
-WARNING: Inactive Cloud Insights Basic Edition environments are deleted and their resources are reclaimed. An environment is considered inactive if there is no user activity for 90 consecutive days. Standard and higher Editions do not have this restriction.
 
 == Trial Version
 When you sign up for Cloud Insights and your environment is active, you enter into a free, 14-day trial of Cloud Insights. During this trial you can explore all the features that Cloud Insights Standard Edition has to offer, in your own environment.   
