@@ -136,7 +136,7 @@ image:Subscription_Summary.png[Subscription Status ]
 
 The Subscription status page displays the following:
 
-* Current subscription (Trial, Standard Edition, Premium Edition)
+* Current subscription Edition
 * Contract term and expiration date
 * Managed Unit current usage, including breakdown counts for hosts and capacity
 * Link to modify your subscription 
