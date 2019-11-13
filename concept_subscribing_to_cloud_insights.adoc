@@ -136,8 +136,8 @@ image:Subscription_Summary.png[Subscription Status ]
 
 The Subscription status page displays the following:
 
-* Current subscription (Trial or Standard Edition) 
-* Contract term (12 or 36 months) and expiration date
+* Current subscription (Trial, Standard Edition, Premium Edition)
+* Contract term and expiration date
 * Managed Unit current usage, including breakdown counts for hosts and capacity
 * Link to modify your subscription 
 
