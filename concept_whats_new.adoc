@@ -18,6 +18,16 @@ keywords: features
 [lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available with Cloud Insights.
 
+=== November 2019
+
+==== Single-Value Drill-Down
+
+Clicking the value in a single-value or gauge widget drills down to a query page showing the assets that produced the value in the widget. Note that if the widget contains multiple queries, only the first query will be shown in the drill-down. 
+
+==== "All" Legend Drill-Down
+
+When you display a legend for a widget, if the data displayed is rolled up by "all", clicking the legend drills down to a query page showing the assets that produced the value in the widget. Note that if the widget contains multiple queries, only the first query will be shown in the drill-down.
+
 === October 2019
 
 ==== Reporting
