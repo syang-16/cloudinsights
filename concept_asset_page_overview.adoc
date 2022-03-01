@@ -70,3 +70,8 @@ The Custom time range allows you to select up to 31 consecutive days. You can al
 == Add Custom Widgets
 
 You can add your own widgets to any asset page.  Widgets you add will appear on asset pages for all objects of that type. For example, adding a custom widget to a storage asset page will display that widget on asset pages for all storage assets.
+
+== Exporting table data
+
+Infrastructure objects only (storage, Volumne, VM, etc.
+
