@@ -1888,7 +1888,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-14 20:26:39 +0000">03/14/2022</time>
+    <time datetime="2022-03-14 23:20:28 +0000">03/14/2022</time>
     
   
 
@@ -1931,7 +1931,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">API Category</th>
+<th class="tableblock halign-left valign-top">API Type</th>
 <th class="tableblock halign-center valign-top">Basic</th>
 <th class="tableblock halign-center valign-top">Standard</th>
 <th class="tableblock halign-center valign-top">Premium</th>
@@ -1968,8 +1968,17 @@
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log Ingestion</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+</tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Additionally, your Cloud Insights <a href="https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels">feature set role</a> will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1994,10 +2003,10 @@
 <p>The latest API information is found by logging in to Cloud Insights and navigating to <strong>Admin &gt; API Acccess</strong>. Click the <strong>API Documentation</strong> link.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/API_Documentation.png" alt="API Documentation"></span></p>
+<p><span class="image"><img src="./media/API_Swagger_Types.png" alt="API types"></span></p>
 </div>
 <div class="paragraph">
-<p>The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your environment.</p>
+<p>The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your environment. Depending on your user role and/or Cloud Insights edition, the API types available to you may vary.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/API_Swagger_Example.png" alt="API Swagger Example"></span></p>
@@ -2008,7 +2017,7 @@
 <h2 id="api-access-tokens">API Access Tokens</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before using the Cloud Insights API, you must create one or more <strong>API Access Tokens</strong>. Access tokens are used for specified API categories, and can grant read and/or write permissions. You can also set the expiration for each access token. All APIs under the specified categories are valid for the access token. Each token is void of a username or password.</p>
+<p>Before using the Cloud Insights API, you must create one or more <strong>API Access Tokens</strong>. Access tokens are used for specified API types, and can grant read and/or write permissions. You can also set the expiration for each access token. All APIs under the specified types are valid for the access token. Each token is void of a username or password.</p>
 </div>
 <div class="paragraph">
 <p>To create an Access Token:</p>
@@ -2026,7 +2035,7 @@
 <p>Enter Token Name</p>
 </li>
 <li>
-<p>Select API Categories</p>
+<p>Select API Types</p>
 </li>
 <li>
 <p>Specify the permissions granted for this API access</p>
@@ -2077,15 +2086,15 @@ Your token will only be available for copying to the clipboard and saving during
 </div>
 </div>
 <div class="sect1">
-<h2 id="api-categories">API Categories</h2>
+<h2 id="api-type">API Type</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Cloud Insights API is category-based, and currently contains the following categories:</p>
+<p>The Cloud Insights API is category-based, and currently contains the following types:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>ASSETS category contains asset, query, and search APIs.</p>
+<p>ASSETS type contains asset, query, and search APIs.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2104,18 +2113,21 @@ Your token will only be available for copying to the clipboard and saving during
 </div>
 </li>
 <li>
-<p>DATA COLLECTION category is used to retrieve and manage data collectors.</p>
+<p>DATA COLLECTION type is used to retrieve and manage data collectors.</p>
 </li>
 <li>
-<p>DATA INGESTION category is used to retrieve and manage ingestion data and custom metrics, such as from Telegraf agents</p>
+<p>DATA INGESTION type is used to retrieve and manage ingestion data and custom metrics, such as from Telegraf agents</p>
+</li>
+<li>
+<p>LOG INGESTION is used to retrieve and manage log data</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Additional categories and/or APIs may become available over time. You can find the latest API information in the <a href="#api-documentation-swagger">API Swagger documentation</a>.</p>
+<p>Additional types and/or APIs may become available over time. You can find the latest API information in the <a href="#api-documentation-swagger">API Swagger documentation</a>.</p>
 </div>
 <div class="paragraph">
-<p>Note that the API categories to which a user has access depend also on the <a href="concept_user_roles.html">User Role</a> they have in each Cloud Insights feature set (Monitoring, Cloud Secure, Reporting).</p>
+<p>Note that the API types to which a user has access depend also on the <a href="concept_user_roles.html">User Role</a> they have in each Cloud Insights feature set (Monitoring, Cloud Secure, Reporting).</p>
 </div>
 </div>
 </div>
@@ -2135,7 +2147,7 @@ Your token will only be available for copying to the clipboard and saving during
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>https://&lt;tenant&gt;/rest/v1/&lt;category&gt;/&lt;object&gt;</pre>
+<pre>https://&lt;tenant&gt;/rest/v1/&lt;type&gt;/&lt;object&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2228,7 +2240,7 @@ Your token will only be available for copying to the clipboard and saving during
 </ul>
 </div>
 <div class="paragraph">
-<p>A Performance Metric has a description and category and contains a collection of performance summaries. For example, Latency, Traffic, and Rate.</p>
+<p>A Performance Metric has a description and type and contains a collection of performance summaries. For example, Latency, Traffic, and Rate.</p>
 </div>
 <div class="paragraph">
 <p>A Performance Summary has a description, unit, sample start time, sample end time, and a collection of summarized values (current, min, max, avg, etc.) calculated from a single performance counter over a time range (1 hour, 24 hours, 3 days, and so on).</p>
@@ -2253,7 +2265,7 @@ Your token will only be available for copying to the clipboard and saving during
 </ul>
 </div>
 <div class="paragraph">
-<p>Each performance data object type has a unique set of performance metrics. For example, the Virtual Machine performance object supports “diskThroughput” as a performance metric. Each supported performance metric is of a certain “performanceCategory” presented in the metric dictionary. Cloud Insights supports several performance metric categories listed later in this document. Each performance metric dictionary will also have the “description” field that is a human-readable description of this performance metric and a set of performance summary counter entries.</p>
+<p>Each performance data object type has a unique set of performance metrics. For example, the Virtual Machine performance object supports “diskThroughput” as a performance metric. Each supported performance metric is of a certain “performanceCategory” presented in the metric dictionary. Cloud Insights supports several performance metric type listed later in this document. Each performance metric dictionary will also have the “description” field that is a human-readable description of this performance metric and a set of performance summary counter entries.</p>
 </div>
 <div class="paragraph">
 <p>The Performance Summary counter is the summarization of performance counters. It presents typical aggregated values like min, max, and avg for a counter and also the latest observed value, time range for summarized data, unit type for counter and thresholds for data. Only thresholds are optional; the rest of attributes are mandatory.</p>
@@ -2365,13 +2377,27 @@ Timestamp is in UNIX time format.
 <h2 id="using-search-to-look-up-objects">Using Search to Look Up Objects</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The search API is a simple entry point to the system. The only input parameter to the API is a free-form string and the resulting JSON contains a categorized list of results. Categories are different asset types from the Inventory, such as storages, hosts, dataStores, and so on. Each category would contain a list of objects of the category type that match the search criteria.</p>
+<p>The search API is a simple entry point to the system. The only input parameter to the API is a free-form string and the resulting JSON contains a categorized list of results. Types are different asset types from the Inventory, such as storages, hosts, dataStores, and so on. Each type would contain a list of objects of the type that match the search criteria.</p>
 </div>
 <div class="paragraph">
 <p>Cloud Insights is an extensible (wide open) solution that allows integrations with third party orchestration, business management, change control and ticketing systems as well as custom CMDB integrations.</p>
 </div>
 <div class="paragraph">
 <p>Cloud Insight’s RESTful API is a primary point of integration that allows simple and effective movement of data as well as allows users to gain seamless access to their data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="disabling-or-revoking-an-api-token">Disabling or Revoking an API Token</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To temporarily disable an API token, on the API token list page, click the "three dots" menu for the API, and select <em>Disable</em>.  You can Re-enable the token at any time using the same menu and selecting <em>Enable</em>.</p>
+</div>
+<div class="paragraph">
+<p>To permanently remove an API token, from the menu, select "Revoke". You cannot re-enable a revoked token; you must create a new token.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/API_Disable_Token.png" alt="Disable or Revoke and API token"></span></p>
 </div>
 </div>
 </div>
