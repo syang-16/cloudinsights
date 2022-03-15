@@ -1888,7 +1888,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 13:34:25 +0000">03/15/2022</time>
+    <time datetime="2022-03-15 13:57:39 +0000">03/15/2022</time>
     
   
 
@@ -2734,6 +2734,9 @@ NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</
 <p>kube-state-metrics must be installed. See below for more information. kube-state-metrics is automatically installed with Operator-based installation.</p>
 </li>
 <li>
+<p>If you are running on OpenShift 4.6 - 4.8, you must follow the <strong>OpenShift Instructions</strong> below.</p>
+</li>
+<li>
 <p>If you are behind a proxy, follow the instructions in the <strong>Configuring Proxy Support for Kubernetes</strong> section.</p>
 </li>
 <li>
@@ -2743,7 +2746,7 @@ NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</
 <p>You must have permissions to create Kubernetes cluster roles and role bindings.</p>
 </li>
 <li>
-<p>NetApp Kubernetes Monitoring Operator installation has been tested and is expected to work with AWS EKS 1.18, OpenShift 3.11, and Rancher 2.6.</p>
+<p>NetApp Kubernetes Monitoring Operator installation has been tested and is expected to work with AWS EKS 1.18 - 1.21, OpenShift 4.6 - 4.8, and Rancher 2.4 - 2.6.</p>
 </li>
 </ul>
 </div>
@@ -2799,6 +2802,20 @@ NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</
 <p>The installation proceeds automatically. When it is complete, click the <em>Complete Setup</em> button.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="openshift-instructions">OpenShift Instructions</h4>
+<div class="paragraph">
+<p>If you are running on OpenShift 4.6 - 4.8, you must change the "privileged-mode" setting. Run the following command to open the agent for editing. If you are using a namespace other than "netapp-monitoring", specify that namespace in the command line:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl edit agent agent-monitoring-netapp -n netapp-monitoring</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the file, change <em>privileged-mode: false</em> to  <em>privileged-mode: true</em></p>
 </div>
 </div>
 <div class="sect3">
