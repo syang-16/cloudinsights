@@ -1888,7 +1888,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 13:24:47 +0000">03/15/2022</time>
+    <time datetime="2022-03-15 13:34:25 +0000">03/15/2022</time>
     
   
 
@@ -2125,10 +2125,13 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="advanced-text-filtering-with-type-ahead-suggestions">Advanced Text Filtering with Type-ahead Suggestions</h4>
+<h4 id="advanced-text-filtering-with-contextual-type-ahead-suggestions">Advanced Text Filtering with Contextual Type-Ahead Suggestions</h4>
 <div class="paragraph">
-<p>When you select a value or values for a field, the other filters for that query will show values relevant to that filter.<br>
+<p>Filtering in widget queries is <em>contextual</em>; when you select a filter value or values for a field, the other filters for that query will show values relevant to that filter.<br>
 For example, when setting a filter for a specific object <em>Name</em>, the field to filter for <em>Model</em> will only show values relevant to that object Name.</p>
+</div>
+<div class="paragraph">
+<p>Contextual filtering also applies to dashboard page variables (text-type attributes or annotations only). When you select a filer value for one variable, any other variables using related objects will only show possible filter values based on the context of those related variables.</p>
 </div>
 <div class="paragraph">
 <p>Note that  only Text filters will show contextual type-ahead suggestions. Date, Enum (list), etc. will not show type-ahead suggestions. That said, you <em>can</em> set a filter on an Enum (i.e. list) field and have other text fields be filtered in context. For example, selecting a value in an Enum field like Data Center, then other filters will show only the models/names in that data center), but not vice-versa.</p>
@@ -2780,6 +2783,10 @@ For example, when setting a filter for a specific object <em>Name</em>, the fiel
 </div>
 <div class="paragraph">
 <p>To set a variable in an individual widget, open the widget in edit mode and select the specific annotation or attribute in the <em>Filter By</em> field. With an Annotation variable, you can select one or more specific values, or select the Variable name (indicated by the leading "$") to allow typing in the variable at the dashboard level. The same applies to Attribute variables. Only those widgets for which you set the variable will show the filtered results.</p>
+</div>
+<div class="paragraph">
+<p>Filtering in variables is <em>contextual</em>; when you select a filter value or values for a variable, the other variables on your page will show only values relevant to that filter.<br>
+For example, when setting a variable filter to a specific storage <em>Model</em>, any variables set to filter for storage <em>Name</em> will only show values relevant to that Model.</p>
 </div>
 <div class="paragraph">
 <p>To use a variable in an expression, simply type the variable name as part of the expression, for example, <em>$var1 * 100</em>. Only Numeric variables can be used in expressions. You cannot use numeric Annotation or Attribute variables in expressions.</p>
