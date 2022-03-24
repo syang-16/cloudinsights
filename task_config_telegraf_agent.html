@@ -1888,7 +1888,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-24 13:23:04 +0000">03/24/2022</time>
+    <time datetime="2022-03-24 14:37:24 +0000">03/24/2022</time>
     
   
 
@@ -3657,6 +3657,18 @@ Oct 11 14:23:41 ip-172-31-39-47 telegraf[1827]: 2021-10-11T14:23:41Z I! Starting
 <br>
 • For script-based installations, edit the telegraf DS (<code>kubectl edit ds telegraf-ds</code>), and change "privileged: false" to "privileged: true"<br>
 • For operator-based installation, edit the agent (<code>kubectl edit agent agent-monitoring-netapp</code>), and change "privileged-mode: false" to "privileged-mode: true"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On Kubernetes, my Telegraf ReplicaSet pod is reporting the following error:<br>
+<br>
+ [inputs.prometheus] Error in plugin: could not load keypair /etc/kubernetes/pki/etcd/server.crt:/etc/kubernetes/pki/etcd/server.key: open /etc/kubernetes/pki/etcd/server.crt: no such file or directory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Telegraf ReplicaSet pod is intended to run on a node designated as a master or for etcd. If the ReplicaSet pod is not running on one of these nodes, you will get these errors. Check to see if your master/etcd nodes have taints on them. If they do, add the necessary tolerations to the Telegraf ReplicaSet, telegraf-rs.<br>
+<br>
+For example, edit the ReplicaSet&#8230;&#8203;<br>
+<br>
+ kubectl edit rs telegraf-rs<br>
+<br>
+&#8230;&#8203;and add the appropriate tolerations to the spec. Then, restart the ReplicaSet pod.</p></td>
 </tr>
 </tbody>
 </table>
