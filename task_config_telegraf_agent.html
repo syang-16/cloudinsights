@@ -1888,7 +1888,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 13:57:39 +0000">03/15/2022</time>
+    <time datetime="2022-03-24 13:23:04 +0000">03/24/2022</time>
     
   
 
@@ -2725,16 +2725,29 @@ NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</
 <div class="title">Pre-requisites:</div>
 <ul>
 <li>
-<p>The following commands must be available: curl, sudo, openssl, sha256sum, and kubectl</p>
-<div class="paragraph">
-<p>For best results, add these commands to the PATH.</p>
+<p>NetApp Kubernetes Monitoring Operator installation has been tested and is expected to work with the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>AWS EKS 1.18 - 1.21</p>
+</li>
+<li>
+<p>OpenShift 4.6 - 4.8</p>
+</li>
+<li>
+<p>Rancher 2.4 - 2.6.</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
-<p>kube-state-metrics must be installed. See below for more information. kube-state-metrics is automatically installed with Operator-based installation.</p>
+<p>If you are running on OpenShift 4.6 - 4.8, you must follow the <strong>OpenShift Instructions</strong> below in addition to ensuring these pre-requisites are met.</p>
 </li>
 <li>
-<p>If you are running on OpenShift 4.6 - 4.8, you must follow the <strong>OpenShift Instructions</strong> below.</p>
+<p>The following commands must be available: <em>curl</em>, <em>sudo</em>, <em>openssl</em>, <em>sha256sum</em>, and <em>kubectl</em>. For best results, add these commands to the PATH.</p>
+</li>
+<li>
+<p>kube-state-metrics must be installed. See below for more information. kube-state-metrics is automatically installed with Operator-based installation.</p>
 </li>
 <li>
 <p>If you are behind a proxy, follow the instructions in the <strong>Configuring Proxy Support for Kubernetes</strong> section.</p>
@@ -2744,9 +2757,6 @@ NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</
 </li>
 <li>
 <p>You must have permissions to create Kubernetes cluster roles and role bindings.</p>
-</li>
-<li>
-<p>NetApp Kubernetes Monitoring Operator installation has been tested and is expected to work with AWS EKS 1.18 - 1.21, OpenShift 4.6 - 4.8, and Rancher 2.4 - 2.6.</p>
 </li>
 </ul>
 </div>
