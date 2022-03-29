@@ -115,6 +115,8 @@ The Cloud Insights API is category-based, and currently contains the following t
 
 * LOG INGESTION is used to retrieve and manage log data
 
+* USER MANAGEMENT is used to invite and manage users. 
+
 //* DATA WAREHOUSE type is available for environments with Cloud Insights Reporting, and is used to manage data used with Reporting
 
 Additional types and/or APIs may become available over time. You can find the latest API information in the link:#api-documentation-swagger[API Swagger documentation]. 
