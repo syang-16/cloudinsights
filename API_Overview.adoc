@@ -30,13 +30,14 @@ Note that Cloud Insights APIs are available based on your current Edition:
 
 |Acquisition Unit|image:SmallCheckMark.png[]|image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
 |Data Collection|image:SmallCheckMark.png[]|image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
+|User Management|image:SmallCheckMark.png[]* |image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
 |Alerts| |image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
 |Assets| |image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
 |Data Ingestion| |image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
 |Log Ingestion| |image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
-|User Management| |image:SmallCheckMark.png[]|image:SmallCheckMark.png[]
 
 |===
+*Basic Edition User Management API is for the _Monitor and Optimize_ feature set only.
 
 Additionally, your Cloud Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels[feature set role] will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.
 
