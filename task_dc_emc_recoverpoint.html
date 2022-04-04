@@ -1888,7 +1888,7 @@
 <p class="page-details">
   
     
-    <time datetime="2019-03-06 15:46:22 +0000">03/06/2019</time>
+    <time datetime="2022-04-04 16:34:45 +0000">04/04/2022</time>
     
   
 
@@ -1909,7 +1909,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The EMC RecoverPoint data collector gathers inventory information from EMC recoverPoint storage. For configuration, the data collector requires the IP address of the storage processors and a read-only user name and password.</p>
+<p>The EMC RecoverPoint data collector&#8217;s primary use case is to discover volume-to-volume replication relationships that the RecoverPoint storage appliance facilitates. This collector will also discover the Recoverpoint appliance itself. Please note that Dell/EMC sells a VMware backup solution for VMs--"RecoverPoint for VMs"--which is not supported by this collector</p>
+</div>
+<div class="paragraph">
+<p>For configuration, the data collector requires the IP address of the storage processors and a read-only user name and password.</p>
 </div>
 <div class="paragraph">
 <p>The EMC RecoverPoint data collector gathers the volume-to-volume replication relationships that RecoverPoint coordinates across other storage arrays. Cloud Insights shows a storage array for each RecoverPoint cluster, and collects inventory data for nodes and storage ports on that cluster. No storage pool or volume data is collected.</p>
