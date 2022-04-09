@@ -1999,7 +1999,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-30 14:48:08 +0000">03/30/2022</time>
+    <time datetime="2022-04-08 19:42:32 +0000">04/08/2022</time>
     
   
 
@@ -2024,6 +2024,108 @@
 <div class="paragraph">
 <p>NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available with Cloud Insights.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="april-2022">April 2022</h3>
+<div class="sect3">
+<h4 id="share-your-feedback">Share your Feedback!</h4>
+<div class="paragraph">
+<p>We want your input to help shape Cloud Insights. Earn points and prizes by participating in NetApp&#8217;s <strong>Insights to Action</strong> program. <a href="https://netapp.co1.qualtrics.com/jfe/form/SV_2aVWcE58J7oIDs1"><strong>Sign up now</strong></a>!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updated-dashboard-editor">Updated Dashboard Editor</h4>
+<div class="paragraph">
+<p>We’ve overhauled our dashboard creation tools to make it easier for you to visualize your data even more quickly. Navigate to the “Dashboards” page of Cloud Insights to edit an existing dashboard, add one from our dashboard gallery, or create a new dashboard of your own to check it out.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/DashboardWidgetEditorScreen.png" alt="Widget Editor Improved Layout"></span></p>
+</div>
+<div class="paragraph">
+<p>A new Count aggregation method has also been introduced.  When grouping data in bar chart, column chart, and pie chart widgets, you can quickly and easily show the number of relevant objects for the selected metric.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/CountAggregationExample1.png" alt="aggregation drop-down showing Count"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="enhanced-monitoring-for-your-kubernetes-infrastructure">Enhanced Monitoring for Your Kubernetes Infrastructure</h4>
+<div class="paragraph">
+<p>Cloud Insights keeps you on top of changes in your Kubernetes environment by alerting you when pods, daemonsets, and replicasets are created or removed, as well as when new deployments are created. Kubernetes monitors default to <em>paused</em> state, so you should enable only the specific ones you need.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-apis-for-user-management">New APIs for User Management</h4>
+<div class="paragraph">
+<p>Managing and inviting users is a snap with APIs; you can invite users and assign roles based on the Cloud Insights feature sets you like: Monitor and Optimize, Cloud Secure, or Reporting.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="preview-features">Preview Features</h4>
+<div class="paragraph">
+<p>Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your <a href="https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx">NetApp Sales Team</a> for more information.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feature</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal Volume and Volume Capacity Time-to-Full forecasting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Insights is able to prognose the number of days until capacity runs out for each Internal Volume and Volume monitored. This value can help to significantly reduce the risk of an outage.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Secure – restrict user access on attack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater protection for your business-critical data with the ability to restrict user access when an attack is detected.<br>
+Access can be restricted automatically, using Automated Response Policies or manually from the alert or user details pages.<br>
+<a href="https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.html">Read More</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shared Resource Under Stress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Shared Resource Under Stress insight uses AI/ML to automatically identify where resource contention is causing performance degradation in your environment, highlights any workloads impacted by it, and provides recommended actions to remediate, letting you solve performance issues more quickly.<br>
+<a href="https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html">Read More</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="new-data-collector">New Data Collector</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cohesity Smart Files</strong> - This REST API-based collector will acquire a Cohesity cluster, discovering the “Views” (as CI Internal Volumes), the various nodes, as well as collecting performance metrics.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="other-data-collector-updates">Other Data Collector Updates</h4>
+<div class="paragraph">
+<p>Collection and display of performance data has been improved on the following data collectors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Brocade CLI</p>
+</li>
+<li>
+<p>Dell/EMC VPlex, PowerStore, Isilon/PowerScale, VNX Block/Clariion CLI, XtremIO, Unity/VNXe</p>
+</li>
+<li>
+<p>Pure FlashArray</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These performance enhancements are already available in all NetApp data collectors as well as VMware and Cisco, and will be rolled out to all other data collectors over the next few months.</p>
+</div>
+<hr>
 </div>
 </div>
 <div class="sect2">
@@ -2087,37 +2189,6 @@ Previous versions of the agent will continue to function with no user action req
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="preview-features">Preview Features</h4>
-<div class="paragraph">
-<p>Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your <a href="https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx">NetApp Sales Team</a> for more information.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feature</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Restrict User Access automatic response action</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When an attack is detected, Cloud Secure can stop the attack by restricting user access to the file system (full block, or set to read-only access).<br>
-Access can be restricted automatically, using Automated Response Policies or manually from the alert or user details pages.<br>
-<a href="https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.html">Read More</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shared Resource Under Stress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Shared Resource Under Stress insight allows you to identify:<br>
--	Shared Storage Resources which are under stress due to high demand from one or more individual workloads<br>
--	Demanding and impacted workloads on the shared resource<br>
-<a href="https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html">Read More</a></p></td>
-</tr>
-</tbody>
-</table>
 <hr>
 </div>
 </div>

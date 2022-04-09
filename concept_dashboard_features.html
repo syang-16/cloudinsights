@@ -1999,7 +1999,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 13:34:25 +0000">03/15/2022</time>
+    <time datetime="2022-04-08 13:44:47 +0000">04/08/2022</time>
     
   
 
@@ -2345,13 +2345,13 @@ For example, when setting a filter for a specific object <em>Name</em>, the fiel
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Avg</strong>: displays each line as the <em>average</em> of the underlying data.</p>
+<p><strong>Average</strong>: displays each line as the <em>average</em> of the underlying data.</p>
 </li>
 <li>
-<p><strong>Max</strong>: displays each line as the <em>maximum</em> of the underlying data.</p>
+<p><strong>Maximum</strong>: displays each line as the <em>maximum</em> of the underlying data.</p>
 </li>
 <li>
-<p><strong>Min</strong>: displays each line as the <em>minimum</em> of the underlying data.</p>
+<p><strong>Minimum</strong>: displays each line as the <em>minimum</em> of the underlying data.</p>
 </li>
 <li>
 <p><strong>Sum</strong>: displays each line as the <em>sum</em> of the underlying data.</p>
@@ -2371,7 +2371,7 @@ For example, when setting a filter for a specific object <em>Name</em>, the fiel
 <p>In your widget&#8217;s query, choose an asset type and metric (for example, <em>Storage</em>) and metric (such as <em>Performance IOPS Total</em>).</p>
 </li>
 <li>
-<p>For <strong>Group</strong>, choose a roll up method (such as <em>Avg</em>) and select the attributes or metrics by which to roll up the data (for example, <em>Data Center</em>).</p>
+<p>For <strong>Group</strong>, choose a roll up method (such as <em>Average</em>) and select the attributes or metrics by which to roll up the data (for example, <em>Data Center</em>).</p>
 <div class="paragraph">
 <p>The widget updates automatically and shows data for each of your data centers.</p>
 </div>
@@ -2394,7 +2394,7 @@ For example, when setting a filter for a specific object <em>Name</em>, the fiel
 <div class="sect2">
 <h3 id="aggregating-data">Aggregating data</h3>
 <div class="paragraph">
-<p>You can further align your time-series charts (line, area, etc.) by aggregating data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their <em>Avg, Max, Min, or Sum</em>, or by the <em>Last</em> data point collected during the chosen interval. To choose an aggregation method, click on <strong>More options</strong> in the widget&#8217;s query section.</p>
+<p>You can further align your time-series charts (line, area, etc.) by aggregating data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their <em>Average, Maximum, Minimum, Sum</em>, or <em>Count</em>.</p>
 </div>
 <div class="paragraph">
 <p>A small interval combined with a long time range may result in an "Aggregation interval resulted in too many data points." warning. You might see this if you have a small interval and increase the dashboard time frame to 7 days. In this case, Insight will temporarily increase the aggregation interval until you select a smaller time frame.</p>
@@ -2403,7 +2403,7 @@ For example, when setting a filter for a specific object <em>Name</em>, the fiel
 <p>You can also aggregate data in the bar chart widget and single-value widget.</p>
 </div>
 <div class="paragraph">
-<p>Most asset counters aggregate to <em>Avg</em> by default. Some counters aggregate to <em>Max, Min</em>, or <em>Sum</em> by default. For example, port errors aggregate to <em>Sum</em> by default, where storage IOPS aggregate to <em>Avg</em>.</p>
+<p>Most asset counters aggregate to <em>Average</em> by default. Some counters aggregate to <em>Max, Min</em>, or <em>Sum</em> by default. For example, port errors aggregate to <em>Sum</em> by default, where storage IOPS aggregate to <em>Average</em>.</p>
 </div>
 </div>
 </div>
@@ -2481,7 +2481,7 @@ For example, when setting a filter for a specific object <em>Name</em>, the fiel
 <p>You can group by any attribute or annotation shown. Choose <em>All</em> to display all VMs in a single group.</p>
 </div>
 <div class="paragraph">
-<p>Any column header for a performance metric displays a "three dot" menu containing a <strong>Roll up</strong> option. The default roll up method is <em>Avg</em>. This means that the number shown for the group is the average of all the Total IOPS reported for each VM inside the group. You can choose to roll this column up by <em>Avg, Sum, Min</em> or <em>Max</em>. Any column that you display that contains performance metrics can be rolled up individually.</p>
+<p>Any column header for a performance metric displays a "three dot" menu containing a <strong>Roll up</strong> option. The default roll up method is <em>Average</em>. This means that the number shown for the group is the average of all the Total IOPS reported for each VM inside the group. You can choose to roll this column up by <em>Average, Sum, Minimum</em> or <em>Maximum</em>. Any column that you display that contains performance metrics can be rolled up individually.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/TableRollUp.png" alt="Roll Up"></span></p>
@@ -2901,6 +2901,10 @@ For example, when setting a variable filter to a specific storage <em>Model</em>
 </div>
 <div class="paragraph">
 <p>To use a variable in an expression, simply type the variable name as part of the expression, for example, <em>$var1 * 100</em>. Only Numeric variables can be used in expressions. You cannot use numeric Annotation or Attribute variables in expressions.</p>
+</div>
+<div class="paragraph">
+<p>Filtering in variables is <em>contextual</em>; when you select a filter value or values for a variable, the other variables on your page will show only values relevant to that filter.<br>
+For example, when setting a variable filter to a specific storage <em>Model</em>, any variables set to filter for storage <em>Name</em> will only show values relevant to that Model.</p>
 </div>
 </div>
 <div class="sect3">
