@@ -435,6 +435,17 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/cloudinsights/pdfs/pages/task_config_telegraf_agent_k8s.pdf" >
+    <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
 
 
 
@@ -1516,7 +1527,9 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_configure_acquisition_unit.html">
         Configuring an Acquisition Unit
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_config_telegraf_agent.html">
-        Configuring an Agent
+        Configuring an Agent (Windows/Linux/Mac)
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_config_telegraf_agent_k8s.html">
+        Configuring an Agent (Kubernetes)
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_configure_data_collectors.html">
         Configuring Data Collectors
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/concept_determining_data_collector_acq_status.html">
@@ -1990,7 +2003,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-11 15:27:40 +0000">04/11/2022</time>
+    <time datetime="2022-04-13 17:23:33 +0000">04/13/2022</time>
     
   
 
@@ -2016,18 +2029,6 @@
 <div class="paragraph">
 <p>The current Telegraf version for Cloud Insights is <strong>1.19.3</strong>.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/important.svg" alt="Important">
-</td>
-<td class="content">
-This page is currently in progress.  For the most up-to-date instructions for installing an agent on Kubernetes, <a href="task_config_telegraf_agent.html"><strong>go here</strong></a>.
-</td>
-</tr>
-</table>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2047,7 +2048,7 @@ For accurate audit and data reporting, it is strongly recommended to synchronize
 <img src="/us-en/cloudinsights/images/note.svg" alt="Note">
 </td>
 <td class="content">
-If you want to verify the installation files before instaling the Agent, read about <a href="#verifying-checksums">Verifying Checksums</a>.
+If you want to verify the installation files before installing the Agent, read about <a href="#verifying-kubernetes-checksums">Verifying Kubernetes Checksums</a>.
 </td>
 </tr>
 </table>
@@ -2132,7 +2133,7 @@ If you are using a proxy, read the proxy instructions for your platform before i
 <p>NetApp Kubernetes Monitoring Operator configuration. This is the recommended installation method for Kubernetes.</p>
 </li>
 <li>
-<p>Traditional script-based Agent installation</p>
+<p>Traditional script-based Agent installation (not recommended)</p>
 </li>
 </ul>
 </div>
@@ -2142,24 +2143,16 @@ If you are using a proxy, read the proxy instructions for your platform before i
 <div class="paragraph">
 <p><span class="image"><img src="./media/Kubernetes_Operator_Tile_Choices.png" alt="Kubernetes Installation Choices"></span></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</em> feature and is therefore subject to change.
-</td>
-</tr>
-</table>
-</div>
 <div class="ulist">
 <div class="title">Pre-requisites:</div>
 <ul>
 <li>
 <p>NetApp Kubernetes Monitoring Operator installation is supported with Kubernetes 1.17 or greater. When used with the Docker container runtime, Cloud Insights can display pod-to-PV-to-storage mappings for NFS and iSCSI; other runtimes only show iSCSI.</p>
 </li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>If you are running on OpenShift 4.6 - 4.8, you must follow the <strong>OpenShift Instructions</strong> below in addition to ensuring these pre-requisites are met.</p>
 </li>
@@ -2811,7 +2804,7 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 </div>
 </div>
 <div class="sect1">
-<h2 id="verifying-checksums">Verifying Checksums</h2>
+<h2 id="verifying-kubernetes-checksums">Verifying Kubernetes Checksums</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Cloud Insights agent installer performs integrity checks, but some users may want to perform their own verifications before installing or applying downloaded artifacts. To perform a download-only operation (as opposed to the default download-and-install), these users can edit the agent installation command obtained from the UI and remove the trailing “install” option.</p>
@@ -2856,29 +2849,6 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 <div class="literalblock">
 <div class="content">
 <pre>installerName=cloudinsights-kubernetes.sh … &amp;&amp; sudo -E -H ./$installerName --download</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Windows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Download and install (default):</p>
-<div class="literalblock">
-<div class="content">
-<pre>!$($installerName=".\cloudinsights-windows.ps1") … -and $(&amp;$installerName -download -install)</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Download-only:</p>
-<div class="literalblock">
-<div class="content">
-<pre>!$($installerName=".\cloudinsights-windows.ps1") … -and $(&amp;$installerName -download)</pre>
 </div>
 </div>
 </li>
@@ -2985,7 +2955,7 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 </div>
 </div>
 <div class="sect1">
-<h2 id="troubleshooting-agent-installation">Troubleshooting Agent Installation</h2>
+<h2 id="troubleshooting-kubernetes-agent-installation">Troubleshooting Kubernetes Agent Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Some things to try if you encounter problems setting up an agent:</p>

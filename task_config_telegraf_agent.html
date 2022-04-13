@@ -453,6 +453,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -1525,7 +1527,9 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_configure_acquisition_unit.html">
         Configuring an Acquisition Unit
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_config_telegraf_agent.html">
-        Configuring an Agent
+        Configuring an Agent (Windows/Linux/Mac)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_config_telegraf_agent_k8s.html">
+        Configuring an Agent (Kubernetes)
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/task_configure_data_collectors.html">
         Configuring Data Collectors
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/concept_determining_data_collector_acq_status.html">
@@ -1999,7 +2003,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-08 19:27:17 +0000">04/08/2022</time>
+    <time datetime="2022-04-13 17:48:58 +0000">04/13/2022</time>
     
   
 
@@ -2801,6 +2805,18 @@ sudo /tmp/uninstall</pre>
 </div>
 <div class="sect2">
 <h3 id="kubernetes">Kubernetes</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The Kubernetes instructions on this page are moving to a new page. Please <a href="task_config_telegraf_agent_k8s.html"><strong>go here</strong></a> for up-to-date Kubernetes agent instructions.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Kubernetes offers two ways to collect data:</p>
 </div>
@@ -2819,18 +2835,6 @@ sudo /tmp/uninstall</pre>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/Kubernetes_Operator_Tile_Choices.png" alt="Kubernetes Installation Choices"></span></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-NetApp Kubernetes Monitoring Operator installation is considered a <em>Preview</em> feature and is therefore subject to change.
-</td>
-</tr>
-</table>
 </div>
 <div class="ulist">
 <div class="title">Pre-requisites:</div>
@@ -3691,86 +3695,6 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I already have an agent installed but not by using the Cloud Insights installer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Remove the previous agent and run the Cloud Insights Agent installation, to ensure proper default configuration file settings. When complete, click on <strong>Continue</strong> or <strong>Finish</strong>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I do not see a hyperlink/connection between my Kubernetes Persistent Volume and the corresponding back-end storage device. My Kubernetes Persistent Volume is configured using the hostname of the storage server.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Follow the steps to uninstall the existing Telegraf agent, then re-install the latest Telegraf agent. You must be using Telegraf version 2.0 or later.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I&#8217;m seeing messages in the logs resembling the following:<br>
-<br>
-E0901 15:21:39.962145 1 reflector.go:178] k8s.io/kube-state-metrics/internal/store/builder.go:352: Failed to list *v1.MutatingWebhookConfiguration: the server could not find the requested resource<br>
-E0901 15:21:43.168161 1 reflector.go:178] k8s.io/kube-state-metrics/internal/store/builder.go:352: Failed to list *v1.Lease: the server could not find the requested resource (get leases.coordination.k8s.io)<br>
-etc.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">These messages may occur if you are running kube-state-metrics version 2.0.0 or above with Kubernetes version 1.17 or below.<br>
-<br>
-<br>
-To get the Kubernetes version:<br>
-<br>
- <em>kubectl version</em><br>
-<br>
-To get the kube-state-metrics version:<br>
-<br>
- <em>kubectl get deploy/kube-state-metrics -o jsonpath='{..image}'</em><br>
-<br>
-To prevent these messages from happening, users can modify their kube-state-metrics deployment to disable the following Leases:<br>
-<br>
-<em>mutatingwebhookconfigurations</em><br>
-<em>validatingwebhookconfigurations</em><br>
-<em>volumeattachments resources</em><br>
-<br>
-More specifically, they can use the following CLI argument:<br>
-<br>
-resources=certificatesigningrequests,configmaps,cronjobs,daemonsets, deployments,endpoints,horizontalpodautoscalers,ingresses,jobs,limitranges, namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes, poddisruptionbudgets,pods,replicasets,replicationcontrollers,resourcequotas, secrets,services,statefulsets,storageclasses<br>
-<br>
-The default resource list is:<br>
-<br>
-"certificatesigningrequests,configmaps,cronjobs,daemonsets,deployments, endpoints,horizontalpodautoscalers,ingresses,jobs,leases,limitranges, mutatingwebhookconfigurations,namespaces,networkpolicies,nodes, persistentvolumeclaims,persistentvolumes,poddisruptionbudgets,pods,replicasets, replicationcontrollers,resourcequotas,secrets,services,statefulsets,storageclasses, validatingwebhookconfigurations,volumeattachments"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I installed or upgraded Telegraf on Kubernetes, but the Telegraf pods are not starting up.  The Telegraf ReplicaSet or DaemonSet is reporting a failure resembling the following:<br>
-<br>
- Error creating: pods "telegraf-rs-" is forbidden": unable to validate against any security context constraint: [spec.volumes[2]: Invalid value: "hostPath": hostPath volumes are not allowed to be used]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create a Security Context Constraint (refer to the Configuring the Agent to Collect Data from Kubernetes section above) if one does not already exist.<br>
-<br>
-Ensure the namespace and service account specified for the Security Context Constraint matches the namespace and service account for the Telegraf ReplicaSet and DaemonSet.<br>
-<br>
- kubectl describe scc telegraf-hostaccess |grep serviceaccount<br>
- kubectl -n ci-monitoring --describe rs telegraf-rs | grep -i "Namespace:"<br>
- kubectl -n ci-monitoring describe rs telegraf-rs | grep -i "Service Account:"<br>
- kubectl -n ci-monitoring --describe ds telegraf-ds | grep -i "Namespace:"<br>
- kubectl -n ci-monitoring describe ds telegraf-ds | grep -i "Service Account:"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I see error messages from Telegraf resembling the following, but Telegraf does start up and run:<br>
-<br>
-Oct 11 14:23:41 ip-172-31-39-47 systemd[1]: Started The plugin-driven server agent for reporting metrics into InfluxDB.<br>
-Oct 11 14:23:41 ip-172-31-39-47 telegraf[1827]: time="2021-10-11T14:23:41Z" level=error msg="failed to create cache directory. /etc/telegraf/.cache/snowflake, err: mkdir /etc/telegraf/.ca<br>
-che: permission denied. ignored\n" func="gosnowflake.(*defaultLogger).Errorf" file="log.go:120"<br>
-Oct 11 14:23:41 ip-172-31-39-47 telegraf[1827]: time="2021-10-11T14:23:41Z" level=error msg="failed to open. Ignored. open /etc/telegraf/.cache/snowflake/ocsp_response_cache.json: no such<br>
-file or directory\n" func="gosnowflake.(*defaultLogger).Errorf" file="log.go:120"<br>
-Oct 11 14:23:41 ip-172-31-39-47 telegraf[1827]: 2021-10-11T14:23:41Z I! Starting Telegraf 1.19.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a known issue.  Refer to <a href="https://github.com/influxdata/telegraf/issues/9407">This GitHub article</a> for more details. As long as Telegraf is up and running, users can ignore these error messages.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">On Kubernetes, my Telegraf pod(s) are reporting the following error:<br>
-"Error in processing mountstats info: failed to open mountstats file: /hostfs/proc/1/mountstats, error: open /hostfs/proc/1/mountstats: permission denied"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If SELinux is enabled and enforcing, it is likely preventing the Telegraf pod(s) from accessing the /proc/1/mountstats file on the Kubernetes nodes.  To relax this restriction, do ONE of the following:<br>
-<br>
-• For script-based installations, edit the telegraf DS (<code>kubectl edit ds telegraf-ds</code>), and change "privileged: false" to "privileged: true"<br>
-• For operator-based installation, edit the agent (<code>kubectl edit agent agent-monitoring-netapp</code>), and change "privileged-mode: false" to "privileged-mode: true"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">On Kubernetes, my Telegraf ReplicaSet pod is reporting the following error:<br>
-<br>
- [inputs.prometheus] Error in plugin: could not load keypair /etc/kubernetes/pki/etcd/server.crt:/etc/kubernetes/pki/etcd/server.key: open /etc/kubernetes/pki/etcd/server.crt: no such file or directory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Telegraf ReplicaSet pod is intended to run on a node designated as a master or for etcd. If the ReplicaSet pod is not running on one of these nodes, you will get these errors. Check to see if your master/etcd nodes have taints on them. If they do, add the necessary tolerations to the Telegraf ReplicaSet, telegraf-rs.<br>
-<br>
-For example, edit the ReplicaSet&#8230;&#8203;<br>
-<br>
- kubectl edit rs telegraf-rs<br>
-<br>
-&#8230;&#8203;and add the appropriate tolerations to the spec. Then, restart the ReplicaSet pod.</p></td>
 </tr>
 </tbody>
 </table>
