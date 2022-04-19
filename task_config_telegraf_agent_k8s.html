@@ -2003,7 +2003,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 13:31:26 +0000">04/19/2022</time>
+    <time datetime="2022-04-19 18:34:08 +0000">04/19/2022</time>
     
   
 
@@ -2971,7 +2971,7 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 <td class="tableblock halign-left valign-top"><p class="tableblock">For clusters where <em>etcd</em> is not the Kubernetes cluster datastore, You will see the following message in the telegraf RS pod:<br>
 <br>
  [inputs.prometheus] Error in plugin: could not load keypair /etc/kubernetes/pki/etcd/server.crt:/etc/kubernetes/pki/etcd/server.key: open /etc/kubernetes/pki/etcd/server.crt: no such file or directory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Insights only supports monitoring of <em>etcd</em> as the K8s datastore. You can try modifying the agent by running the following:<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Insights only supports monitoring of <em>etcd</em> as the K8s datastore. You can modify the agent to avoid collecting etcd data by changing the configuration with the following instructions:<br>
 <br>
  kubectl -n netapp-monitoring edit agent agent-monitoring-netapp<br>
 <br>
