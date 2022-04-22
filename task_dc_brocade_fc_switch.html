@@ -2003,7 +2003,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 17:49:15 +0000">03/10/2022</time>
+    <time datetime="2022-04-22 17:19:01 +0000">04/22/2022</time>
     
   
 
@@ -2243,6 +2243,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The inventory acquisition of the Brocade datasource fails with the error:<br>
+<br>
+&lt;date&gt; &lt;time&gt; ERROR [com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource]   Error 2 out of 2: &lt;datasource name&gt; [Internal error] - Unable to generate the model for device &lt;IP&gt;. Error detecting prompt ([Device name &lt;name&gt;]: Unable to generate the model for device &lt;IP&gt;. Error detecting prompt)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue may be caused when the Brocade switch takes too long to return with a prompt, exceeding the default timeout of 5 seconds.<br>
+In the data collector&#8217;s Advanced Configuration settings in Cloud Insights, try increasing the  <em>SSH Banner Wait Timeout (sec)</em> to a higher value.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Error: “Cloud Insights received Invalid Chassis Role”</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Check that the user configured in this data source has been granted the chassis role permission.</p></td>
