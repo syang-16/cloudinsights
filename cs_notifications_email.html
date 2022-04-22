@@ -2003,7 +2003,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 15:34:32 +0000">04/19/2022</time>
+    <time datetime="2022-04-22 17:05:54 +0000">04/22/2022</time>
     
   
 
@@ -2036,6 +2036,37 @@ Email notifications are sent to the alert recipient list for every action on the
 </div>
 <div class="paragraph">
 <p>To send <em>Warning</em> notifications, enter the recipients' email addresses in the <em>Send Warning Alerts</em> section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="agent-and-data-collector-health-monitoring">Agent and Data Collector Health monitoring</h3>
+<div class="paragraph">
+<p>You can monitor the health of Agents and Data Sources through notifications.</p>
+</div>
+<div class="paragraph">
+<p>In order to receive notifications in the event that an Agent or Data Source collector is not functioning, enter the email addresses of the recipients in the <em>Data Collection Health Alerts</em> section.</p>
+</div>
+<div class="paragraph">
+<p>Keep the following in mind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Health alerts will be sent only after the agent/collector stops reporting for at least one hour.</p>
+</li>
+<li>
+<p>Only one email notification is sent to the intended recipients in a given 24 hour period, even If the Agent or Data collector is disconnected for a longer duration.</p>
+</li>
+<li>
+<p>In case of an Agent failure, one alert will be sent (not one per collector). The email will include a list of all impacted SVMs.</p>
+</li>
+<li>
+<p>Active directory collection failure is reported as a warning; it does not impact Ransomware detection.</p>
+</li>
+<li>
+<p>The Getting Started setup list now includes a new <em>Configure email notifications</em> phase.</p>
+</li>
+</ul>
 </div>
 </div>
 
