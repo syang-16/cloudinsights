@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/cloudinsights/API_Overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloudinsights/API_Overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/cloudinsights/API_Overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloudinsights/API_Overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -2003,24 +2003,24 @@
 <p class="page-details">
   
     
-    <time datetime="2021-04-08 13:11:48 +0000">04/08/2021</time>
+    <time datetime="2022-04-21 15:12:23 +0000">04/21/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/lavoiea">
-    <img  class="avatar avatar-small"
-          alt="lavoiea"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/39093826?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-alavoie">
     <img  class="avatar avatar-small"
           alt="netapp-alavoie"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/39956590?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/lavoiea">
+    <img  class="avatar avatar-small"
+          alt="lavoiea"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/39093826?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2034,17 +2034,59 @@
 <div class="paragraph lead">
 <p>The Cloud Insights API enables NetApp customers and independent software vendors (ISVs) to integrate Cloud Insights with other applications, such as CMDB&#8217;s or other ticketing systems.</p>
 </div>
-<div class="admonitionblock note">
-<table>
+<div class="paragraph">
+<p>Note that Cloud Insights APIs are available based on your current Edition:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The Cloud Insights API is available in <strong>Cloud Insights Premium Edition</strong>.
-</td>
+<th class="tableblock halign-left valign-top">API Category</th>
+<th class="tableblock halign-center valign-top">Basic</th>
+<th class="tableblock halign-center valign-top">Standard</th>
+<th class="tableblock halign-center valign-top">Premium</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquisition Unit</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Collection</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alerts</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assets</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Ingestion</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><span class="image"><img src="./media/SmallCheckMark.png" alt="SmallCheckMark"></span></strong></p></td>
+</tr>
+</tbody>
 </table>
+<div class="paragraph">
+<p>Additionally, your Cloud Insights <a href="https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels">feature set role</a> will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.</p>
 </div>
 </div>
 </div>
@@ -2189,6 +2231,9 @@ Your token will only be available for copying to the clipboard and saving during
 </div>
 <div class="paragraph">
 <p>Additional categories and/or APIs may become available over time. You can find the latest API information in the <a href="#api-documentation-swagger">API Swagger documentation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Note that the API categories to which a user has access depend also on the <a href="concept_user_roles.html">User Role</a> they have in each Cloud Insights feature set (Monitoring, Cloud Secure, Reporting).</p>
 </div>
 </div>
 </div>
