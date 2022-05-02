@@ -330,7 +330,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/data_collector_list.html</loc>
       
-      <lastmod>2022-03-15T20:56:43+00:00</lastmod>
+      <lastmod>2022-05-02T14:30:56+00:00</lastmod>
       
     </url>
   
@@ -547,7 +547,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights//search.html</loc>
       
-      <lastmod>2022-05-02T13:13:52+00:00</lastmod>
+      <lastmod>2022-05-02T14:31:27+00:00</lastmod>
       
     </url>
   
@@ -1262,6 +1262,13 @@
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_na_astra_data_store.html</loc>
       
       <lastmod>2022-01-06T19:33:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_na_ca.html</loc>
+      
+      <lastmod>2022-05-02T14:30:08+00:00</lastmod>
       
     </url>
   
