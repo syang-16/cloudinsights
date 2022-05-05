@@ -2009,7 +2009,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 18:34:08 +0000">04/19/2022</time>
+    <time datetime="2022-05-05 16:10:19 +0000">05/05/2022</time>
     
   
 
@@ -2176,8 +2176,9 @@ If you are using a proxy, read the proxy instructions for your platform before i
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="monitoring-is-only-installed-on-linux-nodes">Monitoring is only installed on Linux nodes</h4>
+</div>
+<div class="sect2">
+<h3 id="monitoring-is-only-installed-on-linux-nodes">Monitoring is only installed on Linux nodes</h3>
 <div class="paragraph">
 <p>Cloud Insights supports monitoring of Kubernetes nodes that are running Linux, by specifying a Kubernetes node selector that looks for the following Kubernetes labels on these platforms:</p>
 </div>
@@ -2204,8 +2205,8 @@ If you are using a proxy, read the proxy instructions for your platform before i
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="netapp-kubernetes-monitoring-operator-installation">NetApp Kubernetes Monitoring Operator Installation</h4>
+<div class="sect2">
+<h3 id="netapp-kubernetes-monitoring-operator-installation">NetApp Kubernetes Monitoring Operator Installation</h3>
 <div class="paragraph">
 <p><span class="image"><img src="./media/Kubernetes_Operator_Agent_Instructions.png" alt="Operator-Based Install"></span></p>
 </div>
@@ -2230,8 +2231,8 @@ If you are using a proxy, read the proxy instructions for your platform before i
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="openshift-instructions">OpenShift Instructions</h4>
+<div class="sect2">
+<h3 id="openshift-instructions">OpenShift Instructions</h3>
 <div class="paragraph">
 <p>If you are running on OpenShift 4.6 - 4.8, you must change the "privileged-mode" setting. Run the following command to open the agent for editing. If you are using a namespace other than "netapp-monitoring", specify that namespace in the command line:</p>
 </div>
@@ -2244,8 +2245,8 @@ If you are using a proxy, read the proxy instructions for your platform before i
 <p>In the file, change <em>privileged-mode: false</em> to  <em>privileged-mode: true</em></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="configuring-proxy-support-for-netapp-kubernetes-monitoring-operator">Configuring Proxy Support for NetApp Kubernetes Monitoring Operator</h4>
+<div class="sect2">
+<h3 id="configuring-proxy-support-for-netapp-kubernetes-monitoring-operator">Configuring Proxy Support for NetApp Kubernetes Monitoring Operator</h3>
 <div class="paragraph">
 <p>To configure a proxy for the monitoring operator, perform the following steps.</p>
 </div>
@@ -2274,8 +2275,8 @@ If you are using a proxy, read the proxy instructions for your platform before i
     noProxy: &lt;comma separated list of IPs or resolvable hostnames that should bypass a proxy&gt;</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="using-a-customprivate-docker-repository">Using a custom/private docker repository</h5>
+<div class="sect3">
+<h4 id="using-a-customprivate-docker-repository">Using a custom/private docker repository</h4>
 <div class="paragraph">
 <p>If using a custom docker repository, do the following:</p>
 </div>
@@ -2393,8 +2394,8 @@ dockerRepoSecret: &lt;optional: name of the docker secret of enterprise/corp doc
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="script-based-installation">Script-Based Installation</h4>
+<div class="sect2">
+<h3 id="script-based-installation">Script-Based Installation</h3>
 <div class="paragraph">
 <p><span class="image"><img src="./media/Kubernetes_Install_Agent_screen.png" alt="Script-Based Install"></span></p>
 </div>
@@ -2455,8 +2456,8 @@ dockerRepoSecret: &lt;optional: name of the docker secret of enterprise/corp doc
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="configuring-proxy-support-for-kubernetes-script-based">Configuring Proxy Support for Kubernetes - Script-Based</h4>
+<div class="sect2">
+<h3 id="configuring-proxy-support-for-kubernetes-script-based">Configuring Proxy Support for Kubernetes - Script-Based</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2528,8 +2529,8 @@ kubectl delete pod telegraf-rs-*</pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="daemonset-replicaset-and-stoppingstarting-the-agent">DaemonSet, ReplicaSet, and Stopping/Starting the agent</h4>
+<div class="sect2">
+<h3 id="daemonset-replicaset-and-stoppingstarting-the-agent">DaemonSet, ReplicaSet, and Stopping/Starting the agent</h3>
 <div class="paragraph">
 <p>A DaemonSet and ReplicaSet will be created on the Kubernetes cluster to run the required Telegraf agents/pods. By default, these Telegraf agents/pods will be scheduled on both master and non-master nodes.</p>
 </div>
@@ -2561,8 +2562,8 @@ kubectl --namespace ci-monitoring apply -f /tmp/telegraf-rs.yaml</pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="configuring-the-agent-to-collect-data-from-kubernetes">Configuring the Agent to Collect Data from Kubernetes</h4>
+<div class="sect2">
+<h3 id="configuring-the-agent-to-collect-data-from-kubernetes">Configuring the Agent to Collect Data from Kubernetes</h3>
 <div class="paragraph">
 <p>Note: The default namespace for Script-based installation is <em>ci-monitoring</em>. For Operator-based installation, the default namespace is <em>netapp-monitoring</em>. In commands involving namespace, be sure to specify the correct namespace for your installation.</p>
 </div>
@@ -2626,8 +2627,8 @@ kubectl --namespace ci-monitoring apply -f /tmp/telegraf-rs.yaml</pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="installing-the-kube-state-metrics-server">Installing the kube-state-metrics server</h4>
+<div class="sect2">
+<h3 id="installing-the-kube-state-metrics-server">Installing the kube-state-metrics server</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2672,8 +2673,8 @@ It is strongly recommended to use kube-state-metrics version 2.0 or later in ord
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="kube-state-metrics-counters">kube-state-metrics Counters</h4>
+<div class="sect2">
+<h3 id="kube-state-metrics-counters">kube-state-metrics Counters</h3>
 <div class="paragraph">
 <p>Use the following links to access information for the kube state metrics counters:</p>
 </div>
@@ -2721,8 +2722,8 @@ It is strongly recommended to use kube-state-metrics version 2.0 or later in ord
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="uninstalling-the-agent">Uninstalling the Agent</h4>
+<div class="sect2">
+<h3 id="uninstalling-the-agent">Uninstalling the Agent</h3>
 <div class="paragraph">
 <p>Note that these commands are using the default namespace "ci-monitoring".  If you have set your own namespace, substitute that namespace in these and all subsequent commands and files.</p>
 </div>
@@ -2772,9 +2773,9 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="upgrading-the-agent">Upgrading the Agent</h4>
-<div id="upgrading-kubernetes-agent" class="paragraph">
+<div class="sect2">
+<h3 id="upgrading-the-agent">Upgrading the Agent</h3>
+<div class="paragraph">
 <p>Note that these commands are using the default namespace "ci-monitoring".  If you have set your own namespace, substitute that namespace in these and all subsequent commands and files.</p>
 </div>
 <div class="paragraph">
@@ -2801,7 +2802,6 @@ kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebind
 <p><a href="#kubernetes">Install the new agent</a>.</p>
 </li>
 </ol>
-</div>
 </div>
 </div>
 <div class="sect1">
