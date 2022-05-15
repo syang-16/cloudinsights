@@ -2009,7 +2009,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-10 18:08:44 +0000">05/10/2022</time>
+    <time datetime="2022-05-11 15:40:20 +0000">05/11/2022</time>
     
   
 
@@ -2030,10 +2030,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights uses <a href="https://docs.influxdata.com/telegraf/v1.19/">Telegraf</a> as its agent for collection of integration data. Telegraf is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metrics, events, and logs from the agent to Cloud Insights.</p>
-</div>
-<div class="paragraph">
-<p>The current Telegraf version for Cloud Insights is <strong>1.19.3</strong>.</p>
+<p>Cloud Insights uses <a href="https://docs.influxdata.com/telegraf/">Telegraf</a> as its agent for collection of integration data. Telegraf is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metrics, events, and logs from the agent to Cloud Insights.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2059,6 +2056,22 @@ If you want to verify the installation files before installing the Agent, read a
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="operator-based-install-or-script-based-install">Operator-based install or script-based install?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Insights has built a Kubernetes Operator for monitoring customers' Kubernetes clusters.  The NetApp Kubernetes Monitoring Operator (NKMO) is an improvement over script-installed monitoring methods because it allows more flexible configuration of monitoring controllable from Cloud Insights and fewer customer-driven configuration interventions, as well as enhances opportunities for monitoring other software running in the K8s cluster.</p>
+</div>
+<div class="paragraph">
+<p>NKMO continues to use underlying telegraf software for data collection, transformation, and delivery to Cloud Insights. This is enhanced with Custom Resource Definitions and Custom Resources to tailor monitoring for each K8s cluster.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-the-agent">Installing the agent</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If you are installing a Service data collector and have not yet configured an Agent, you are prompted to first install an Agent for the appropriate Operating System. This topic provides instructions for installing the Telegraf agent on the following Operating Systems:</p>
 </div>
@@ -2161,7 +2174,7 @@ If you are using a proxy, read the proxy instructions for your platform before i
 <p>If you are running on OpenShift 4.6 - 4.8, you must follow the <strong>OpenShift Instructions</strong> below in addition to ensuring these pre-requisites are met.</p>
 </li>
 <li>
-<p>The following commands must be available: <em>curl</em>, <em>sudo</em>, <em>openssl</em>, <em>sha256sum</em>, and <em>kubectl</em>. For best results, add these commands to the PATH.</p>
+<p>The following commands must be available: <em>curl</em>, <em>sudo</em> (not required for script-based installation), <em>openssl</em>, <em>sha256sum</em>, and <em>kubectl</em>. For best results, add these commands to the PATH.</p>
 </li>
 <li>
 <p>kube-state-metrics must be installed. See below for more information. kube-state-metrics is automatically installed with Operator-based installation.</p>
@@ -2348,9 +2361,9 @@ password: &lt;password from docker secret step above&gt;</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>docker.io/telegraf:1.19.3
-gcr.io/kubebuilder/kube-rbac-proxy:v0.5.0
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.1.0</pre>
+<pre>docker.io/telegraf:1.21.4
+gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
+k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.3.0</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2358,7 +2371,7 @@ k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.1.0</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>docker.io/fluent-bit:1.7.8
+<pre>docker.io/fluent-bit:1.8.12
 docker.io/kubernetes-event-exporter:0.10</pre>
 </div>
 </div>
@@ -2396,11 +2409,86 @@ dockerRepoSecret: &lt;optional: name of the docker secret of enterprise/corp doc
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="upgrading-from-script-based-k8s-monitoring-to-operator-based">Upgrading from Script-based K8s monitoring to Operator-based</h3>
+<div class="paragraph">
+<p>If you already have installed script-based Kubernetes monitoring, follow these steps to upgrade to operator-based monitoring:</p>
+</div>
+<div class="paragraph">
+<p>Steps to upgrade</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Preserve the ConfigMap from the script-based monitoring installation:</p>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace ci-monitoring get cm -o yaml &gt; /tmp/telegraf-configs.yaml</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the K8s cluster name for use during installation of the K8s operator-based monitoring solution to ensure data continuity.</p>
+<div class="paragraph">
+<p>If you do not remember the name of the K8s cluster in CI, it can be extracted from your saved configuration with the following command line:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cat /tmp/telegraf-configs.yaml | grep kubernetes_cluster | head -2</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove the script-based monitoring</p>
+<div class="paragraph">
+<p>To uninstall the script-based agent on Kubernetes, do the following:</p>
+</div>
+<div class="paragraph">
+<p>If the monitoring namespace is being used solely for Telegraf:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace ci-monitoring delete ds,rs,cm,sa,clusterrole,clusterrolebinding -l app=ci-telegraf</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl delete ns ci-monitoring</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the monitoring namespace is being used for other purposes in addition to Telegraf:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl --namespace ci-monitoring delete ds,rs,cm,sa,clusterrole,clusterrolebinding -l app=ci-telegraf</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Install the K8s operator-based monitoring following the instructions in the install tile.</div>
+<p><span class="image"><img src="./media/KubernetesOperatorTile.png" alt="Tile for Kubernetes Operator"></span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="script-based-installation">Script-Based Installation</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Script-based installation is deprecated. Please  use Kubernetes Operator-based collection for monitoring your Kubernetes cluster.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/Kubernetes_Install_Agent_screen.png" alt="Script-Based Install"></span></p>
 </div>

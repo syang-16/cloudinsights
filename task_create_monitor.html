@@ -2009,7 +2009,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-31 15:34:36 +0000">03/31/2022</time>
+    <time datetime="2022-05-04 15:41:12 +0000">05/04/2022</time>
     
   
 
@@ -2241,6 +2241,18 @@ The Log Monitor filter cannot be empty.
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/Webhook_Monitor_Notifications.png" alt="Webhook Alerting"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+ONTAP Data Collector notifications take precedence over any specific Monitor notifications that are relevant to the cluster/data collector. The recipient list you set for the Data Collector itself will receive the data collector alerts. If there are no active data collector alerts, then monitor-generated alerts will be sent to specific monitor recipients.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
