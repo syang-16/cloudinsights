@@ -2009,7 +2009,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-12 19:21:30 +0000">05/12/2022</time>
+    <time datetime="2022-05-16 18:17:58 +0000">05/16/2022</time>
     
   
 
@@ -2057,7 +2057,7 @@ Most System Monitors are in <em>Paused</em> state by default. Before resuming th
 <li><a href="#fsx-for-netapp-ontap-monitors">FSx for NetApp ONTAP Monitors</a></li>
 <li><a href="#k8s-monitors">K8s Monitors</a></li>
 <li><a href="#change-log-monitors">Change Log Monitors</a></li>
-<li><a href="#collector-monitors">Collector Monitors</a></li>
+<li><a href="#data-collection-monitors">Data Collection Monitors</a></li>
 </ul>
 </li>
 <li><a href="#more-information">More Information</a></li>
@@ -3010,7 +3010,7 @@ Critical @ &lt; 5 %</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="collector-monitors">Collector Monitors</h3>
+<h3 id="data-collection-monitors">Data Collection Monitors</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -3038,7 +3038,7 @@ Critical @ &lt; 5 %</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This Alert typically can arise because of an erroneous configuration of the data collector or of the target system. Revisit the configurations to prevent future Alerts. It can also be due to a retrieval of less-than-complete data where the data collector gathered all the data that it could. This can happen when situations change during data collection (e.g., a virtual machine present at the beginning of data collection is deleted during data collection and before its data is captured).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Check the configuration of the data collector or target system.<br>
 <br>
-Note that this monitor can sometimes send more alerts than other monitors, so it is recommended to set no alert recipients on this monitor unless you are troubleshooting.</p></td>
+Note that the monitor for Collector Warning can send more alerts than other monitor types, so it is recommended to set no alert recipients unless you are troubleshooting.</p></td>
 </tr>
 </tbody>
 </table>
