@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloudinsights/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloudinsights/concept_whats_new.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloudinsights/concept_whats_new.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloudinsights/concept_whats_new.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloudinsights/concept_whats_new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloudinsights/concept_whats_new.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloudinsights/concept_whats_new.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloudinsights/concept_whats_new.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloudinsights/concept_whats_new.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloudinsights/concept_whats_new.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloudinsights/concept_whats_new.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -1502,7 +1494,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/index.html">
         Cloud Insights documentation
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloudinsights/concept_whats_new.html">
@@ -2009,7 +2001,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-18 13:10:28 +0000">05/18/2022</time>
+    <time datetime="2022-06-08 13:52:24 +0000">06/08/2022</time>
     
   
 
@@ -2036,10 +2028,11 @@
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="may-2022">May 2022</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="may-2022">May 2022</h3>
-<div class="sect3">
-<h4 id="chat-live-with-netapp-support">Chat live with NetApp Support</h4>
+<h3 id="chat-live-with-netapp-support">Chat live with NetApp Support</h3>
 <div class="paragraph">
 <p>You can now chat live with NetApp Support personnel!  On the Help &gt; Support page, simply click the Chat icon or click <em>Chat</em> in the "Contact Us" section to start a chat session. Chat support is available US weekdays for Standard and Premium Edition users.</p>
 </div>
@@ -2047,8 +2040,8 @@
 <p><span class="image"><img src="./media/ChatIcon.png" alt="Chat Icon showing the blue NetApp &quot;N&quot; above a smile"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="kubernetes-operator">Kubernetes Operator</h4>
+<div class="sect2">
+<h3 id="kubernetes-operator">Kubernetes Operator</h3>
 <div class="paragraph">
 <p>We’ve made it easier to get you up and running with Cloud Insights’ advanced Kubernetes monitoring and cluster explorer.</p>
 </div>
@@ -2059,14 +2052,14 @@
 <p>Click the link above for more information and pre-requisites</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="manage-users-and-invites-with-api">Manage Users and Invites with API</h4>
+<div class="sect2">
+<h3 id="manage-users-and-invites-with-api">Manage Users and Invites with API</h3>
 <div class="paragraph">
 <p>You can now manage users and invites using Cloud Insights' powerful API. Read more in the <a href="https://docs.netapp.com/us-en/cloudinsights/API_Overview.html">API Swagger Documentation</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collection-alerts">Data Collection Alerts</h4>
+<div class="sect2">
+<h3 id="data-collection-alerts">Data Collection Alerts</h3>
 <div class="paragraph">
 <p>Don’t miss out on critical metrics due to a failed collector!</p>
 </div>
@@ -2075,8 +2068,8 @@
 Note that these Monitors are <em>Paused</em> by default. To enable, navigate to your monitors page and locate and resume “Acquisition Unit Shutdown” and “Collector Failed”</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="alert-on-ontap-storage-changes">Alert on ONTAP storage changes</h4>
+<div class="sect2">
+<h3 id="alert-on-ontap-storage-changes">Alert on ONTAP storage changes</h3>
 <div class="paragraph">
 <p>Don’t let unexpected storage changes lead to outages!</p>
 </div>
@@ -2084,8 +2077,8 @@ Note that these Monitors are <em>Paused</em> by default. To enable, navigate to 
 <p>You can now configure Cloud Insights to alert when modification or removal of FlexVols, nodes and SVMs are detected on ONTAP systems.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="preview-features">Preview Features</h4>
+<div class="sect2">
+<h3 id="preview-features">Preview Features</h3>
 <div class="paragraph">
 <p>Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your <a href="https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx">NetApp Sales Team</a> for more information.</p>
 </div>
@@ -2124,16 +2117,18 @@ Access can be restricted automatically, using Automated Response Policies or man
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="april-2022">April 2022</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="april-2022">April 2022</h3>
-<div class="sect3">
-<h4 id="share-your-feedback">Share your Feedback!</h4>
+<h3 id="share-your-feedback">Share your Feedback!</h3>
 <div class="paragraph">
 <p>We want your input to help shape Cloud Insights. Earn points and prizes by participating in NetApp&#8217;s <strong>Insights to Action</strong> program. <a href="https://netapp.co1.qualtrics.com/jfe/form/SV_2aVWcE58J7oIDs1"><strong>Sign up now</strong></a>!</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="updated-dashboard-editor">Updated Dashboard Editor</h4>
+<div class="sect2">
+<h3 id="updated-dashboard-editor">Updated Dashboard Editor</h3>
 <div class="paragraph">
 <p>We’ve overhauled our dashboard creation tools to make it easier for you to visualize your data even more quickly. Navigate to the “Dashboards” page of Cloud Insights to edit an existing dashboard, add one from our dashboard gallery, or create a new dashboard of your own to check it out.</p>
 </div>
@@ -2163,14 +2158,14 @@ Access can be restricted automatically, using Automated Response Policies or man
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="enhanced-monitoring-for-your-kubernetes-infrastructure">Enhanced Monitoring for Your Kubernetes Infrastructure</h4>
+<div class="sect2">
+<h3 id="enhanced-monitoring-for-your-kubernetes-infrastructure">Enhanced Monitoring for Your Kubernetes Infrastructure</h3>
 <div class="paragraph">
 <p>Cloud Insights keeps you on top of changes in your Kubernetes environment by alerting you when pods, daemonsets, and replicasets are created or removed, as well as when new deployments are created. Kubernetes monitors default to <em>paused</em> state, so you should enable only the specific ones you need.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="preview-features-2">Preview Features</h4>
+<div class="sect2">
+<h3 id="preview-features-2">Preview Features</h3>
 <div class="paragraph">
 <p>Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your <a href="https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx">NetApp Sales Team</a> for more information.</p>
 </div>
@@ -2202,8 +2197,8 @@ Access can be restricted automatically, using Automated Response Policies or man
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="new-data-collector">New Data Collector</h4>
+<div class="sect2">
+<h3 id="new-data-collector">New Data Collector</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2212,8 +2207,8 @@ Access can be restricted automatically, using Automated Response Policies or man
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="other-data-collector-updates">Other Data Collector Updates</h4>
+<div class="sect2">
+<h3 id="other-data-collector-updates">Other Data Collector Updates</h3>
 <div class="paragraph">
 <p>Collection and display of performance data has been improved on the following data collectors:</p>
 </div>
@@ -2236,16 +2231,18 @@ Access can be restricted automatically, using Automated Response Policies or man
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="march-2022">March 2022</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="march-2022">March 2022</h3>
-<div class="sect3">
-<h4 id="cloud-connection-for-ontap-9-9">Cloud Connection for ONTAP 9.9+</h4>
+<h3 id="cloud-connection-for-ontap-9-9">Cloud Connection for ONTAP 9.9+</h3>
 <div class="paragraph">
 <p>The <a href="task_dc_na_cloud_connection.html">NetApp Cloud Connection for ONTAP 9.9+</a> data collector eliminates the need to install an external acquisition unit, thereby simplifying troubleshooting, maintenance, and initial deployment.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="new-fsx-for-netapp-ontap-monitors">New FSx for NetApp ONTAP Monitors</h4>
+<div class="sect2">
+<h3 id="new-fsx-for-netapp-ontap-monitors">New FSx for NetApp ONTAP Monitors</h3>
 <div class="paragraph">
 <p>Monitoring your FSx for NetApp ONTAP environment is easy with new <a href="task_system_monitors.html">system-defined monitors</a> for both infrastructure (metrics) and workloads (logs).</p>
 </div>
@@ -2254,8 +2251,8 @@ Access can be restricted automatically, using Automated Response Policies or man
 <span class="image"><img src="./media/FSx_System_Monitors_Workloads.png" alt="FSx monitors for workloads"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="new-cloud-secure-features-available-to-all">New Cloud Secure features available to all</h4>
+<div class="sect2">
+<h3 id="new-cloud-secure-features-available-to-all">New Cloud Secure features available to all</h3>
 <div class="paragraph">
 <p>Your environment is more secure than ever with the following Cloud Secure features now generally available:</p>
 </div>
@@ -2280,16 +2277,16 @@ Access can be restricted automatically, using Automated Response Policies or man
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="updated-telegraf-agent">Updated Telegraf Agent</h4>
+<div class="sect2">
+<h3 id="updated-telegraf-agent">Updated Telegraf Agent</h3>
 <div class="paragraph">
 <p>The agent for ingestion of telegraf integration data has been updated to version <strong>1.21.2</strong>, with performance and security improvements.<br>
 Users wishing to update can refer to the appropriate upgrade section of the <a href="task_config_telegraf_agent.html">Agent Installation</a> documentation.<br>
 Previous versions of the agent will continue to function with no user action required.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-updates">Data Collector Updates</h4>
+<div class="sect2">
+<h3 id="data-collector-updates">Data Collector Updates</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2300,10 +2297,12 @@ Previous versions of the agent will continue to function with no user action req
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="february-2022">February 2022</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="february-2022">February 2022</h3>
-<div class="sect3">
-<h4 id="cloud-insights-addresses-apache-log4j-vulnerabilities">Cloud Insights addresses Apache Log4j vulnerabilities</h4>
+<h3 id="cloud-insights-addresses-apache-log4j-vulnerabilities">Cloud Insights addresses Apache Log4j vulnerabilities</h3>
 <div class="paragraph">
 <p>Customer security is a top priority at NetApp. Cloud Insights includes updates to its software libraries to address the recent Apache Log4j vulnerabilities.</p>
 </div>
@@ -2319,8 +2318,8 @@ Previous versions of the agent will continue to function with no user action req
 <p>You can read more about these vulnerabilities and NetApp&#8217;s response at the <a href="https://www.netapp.com/newsroom/netapp-apache-log4j-response/">NetApp Newsroom</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="kubernetes-namespace-detail-page">Kubernetes Namespace Detail Page</h4>
+<div class="sect2">
+<h3 id="kubernetes-namespace-detail-page">Kubernetes Namespace Detail Page</h3>
 <div class="paragraph">
 <p>Exploring your Kubernetes environment is now better than ever, with informative detail pages for your cluster’s namespaces. The namespace detail page provides a summary of all the assets used by a namespace, including all the backend storage resources and their capacity utilizations.</p>
 </div>
@@ -2330,17 +2329,19 @@ Previous versions of the agent will continue to function with no user action req
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="december-2021">December 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="december-2021">December 2021</h3>
-<div class="sect3">
-<h4 id="deeper-integration-for-ontap-systems">Deeper integration for ONTAP systems</h4>
+<h3 id="deeper-integration-for-ontap-systems">Deeper integration for ONTAP systems</h3>
 <div class="paragraph">
 <p>Simplify alerting for ONTAP hardware failures and more with new integration with NetApp Event Management System (EMS).<br>
 <a href="task_system_monitors.html">Explore and alert</a> on low-level ONTAP messages in Cloud Insights to inform and improve troubleshooting workflows and further reduce reliance on ONTAP element management tooling.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="querying-logs">Querying Logs</h4>
+<div class="sect2">
+<h3 id="querying-logs">Querying Logs</h3>
 <div class="paragraph">
 <p>For ONTAP systems, Cloud Insights Queries include a powerful <a href="concept_log_explorer.html">Log Explorer</a>, allowing you to easily investigate and troubleshoot EMS log entries.</p>
 </div>
@@ -2348,14 +2349,14 @@ Previous versions of the agent will continue to function with no user action req
 <p><span class="image"><img src="./media/LogQueryExplorer.png" alt="Log Queries"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-level-notifications">Data Collector-level notifications.</h4>
+<div class="sect2">
+<h3 id="data-collector-level-notifications">Data Collector-level notifications.</h3>
 <div class="paragraph">
 <p>In addition to system-defined and custom-created Monitors for alerting, you can also set alert notifications for ONTAP data collectors, allowing you to specify recipients for collector-level alerts, independent of other monitor alerts.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="greater-flexibility-of-cloud-secure-roles">Greater flexibility of Cloud Secure roles</h4>
+<div class="sect2">
+<h3 id="greater-flexibility-of-cloud-secure-roles">Greater flexibility of Cloud Secure roles</h3>
 <div class="paragraph">
 <p>Users can be granted access to Cloud Secure features based on <a href="concept_user_roles.html#permission-levels">roles</a> set by an administrator:</p>
 </div>
@@ -2385,14 +2386,14 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="operating-system-support">Operating System support</h4>
+<div class="sect2">
+<h3 id="operating-system-support">Operating System support</h3>
 <div class="paragraph">
 <p>CentOS 8.x support is being replaced with <strong>CentOS 8 Stream</strong> support. CentOS 8.x will reach End-of-Life on December 31, 2021.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-updates-2">Data Collector Updates</h4>
+<div class="sect2">
+<h3 id="data-collector-updates-2">Data Collector Updates</h3>
 <div class="paragraph">
 <p>A number of Cloud Insights data collector names have been added to reflect vendor changes:</p>
 </div>
@@ -2423,10 +2424,12 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="november-2021">November 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="november-2021">November 2021</h3>
-<div class="sect3">
-<h4 id="adaptive-dashboards">Adaptive Dashboards</h4>
+<h3 id="adaptive-dashboards">Adaptive Dashboards</h3>
 <div class="paragraph">
 <p><em>New variables for attributes and the ability to use variables in widgets</em>.</p>
 </div>
@@ -2438,14 +2441,14 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <span class="image"><img src="./media/Variables_Attribute_Filtering.png" alt="Variables Attribute Filtering"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="access-the-reporting-database-via-api">Access the Reporting Database via API</h4>
+<div class="sect2">
+<h3 id="access-the-reporting-database-via-api">Access the Reporting Database via API</h3>
 <div class="paragraph">
 <p>Enhanced capabilities for integration with third party reporting, ITSM, and automation tools: Cloud Insights' powerful <a href="API_Overview.html">API</a> allows users to query the Cloud Insights Reporting database directly, without going through the Cognos Reporting environment.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="pod-tables-on-vm-landing-page">Pod tables on VM Landing Page</h4>
+<div class="sect2">
+<h3 id="pod-tables-on-vm-landing-page">Pod tables on VM Landing Page</h3>
 <div class="paragraph">
 <p>Seamless navigation between VMs and the Kubernetes Pods using them: for improved troubleshooting and performance headroom management, a table of associated Kubernetes Pods will now appear on VM landing pages.</p>
 </div>
@@ -2453,8 +2456,8 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <p><span class="image"><img src="./media/Kubernetes_Pod_Table_on_VM_Page.png" alt="Kubernetes Pod table on a VM landing page"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-updates-3">Data Collector Updates</h4>
+<div class="sect2">
+<h3 id="data-collector-updates-3">Data Collector Updates</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2475,8 +2478,8 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="additional-operating-systems-supported">Additional Operating Systems supported</h4>
+<div class="sect2">
+<h3 id="additional-operating-systems-supported">Additional Operating Systems supported</h3>
 <div class="paragraph">
 <p>The Cloud Insights Acquisition Unit supports the following operating systems, in addition to those already supported:</p>
 </div>
@@ -2496,10 +2499,12 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="october-2021">October 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="october-2021">October 2021</h3>
-<div class="sect3">
-<h4 id="filters-on-k8s-explorer-pages">Filters on K8S Explorer pages</h4>
+<h3 id="filters-on-k8s-explorer-pages">Filters on K8S Explorer pages</h3>
 <div class="paragraph">
 <p><a href="kubernetes_landing_page.html">Kubernetes Explorer</a> page filters give you focused control of the data displayed for your Kubernetes cluster, node, and pod exploration.</p>
 </div>
@@ -2507,8 +2512,8 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <p><span class="image"><img src="./media/Filter_Kubernetes_Explorer.png" alt="Kubernetes Explorer filtering example"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="k8s-data-for-reporting">K8s Data for Reporting</h4>
+<div class="sect2">
+<h3 id="k8s-data-for-reporting">K8s Data for Reporting</h3>
 <div class="paragraph">
 <p>Kubernetes data is now available for use in Reporting, allowing you to create chargeback or other reports. In order for Kubernetes chargeback data to be passed to Reporting, you must have an active connection to, and Cloud Insights must be receiving data from, your Kubernetes cluster as well as its back-end storage. If there is no data received from the back-end storage, Cloud Insights can not send Kubernetes object data to Reporting.</p>
 </div>
@@ -2516,16 +2521,16 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <p><span class="image"><img src="./media/Kubernetes_ETL_Example.png" alt="Kubernetes data showin in a chargeback report"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="dark-theme-has-arrived">Dark Theme has arrived</h4>
+<div class="sect2">
+<h3 id="dark-theme-has-arrived">Dark Theme has arrived</h3>
 <div class="paragraph">
 <p>Many of you asked for a dark theme, and Cloud Insights has answered. To switch between light and dark theme, click the drop-down next to your user name.<br>
 <span class="image"><img src="./media/DarkModeSwitch.png" alt="Switch to Dark Theme is available in the User drop-down"></span><br>
 <span class="image"><img src="./media/DarkModeDashboard.png" alt="An image of a typical dashboard shown in dark theme"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-support">Data Collector Support</h4>
+<div class="sect2">
+<h3 id="data-collector-support">Data Collector Support</h3>
 <div class="paragraph">
 <p>We’ve made some improvements in Cloud Insights Data Collectors. Here are some highlights:</p>
 </div>
@@ -2539,16 +2544,18 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="september-2021">September 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="september-2021">September 2021</h3>
-<div class="sect3">
-<h4 id="performance-policies-are-now-monitors">Performance Policies are now Monitors</h4>
+<h3 id="performance-policies-are-now-monitors">Performance Policies are now Monitors</h3>
 <div class="paragraph">
 <p>Monitors and Alerts have supplanted Performance Policies and Violations throughout Cloud Insights. <a href="task_create_monitor.html">Alerting with Monitors</a> provides greater flexibility and insight into potential problems or trends in your environment.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="autocomplete-suggestions-wildcards-and-expressions-in-monitors">Autocomplete Suggestions, Wildcards, and Expressions in Monitors</h4>
+<div class="sect2">
+<h3 id="autocomplete-suggestions-wildcards-and-expressions-in-monitors">Autocomplete Suggestions, Wildcards, and Expressions in Monitors</h3>
 <div class="paragraph">
 <p>When creating a monitor for alerting, typing in a filter is now predictive, allowing you to easily search for and find the metrics or attributes for your monitor. Additionally, you are given the option to create a wildcard filter based on the text you type.</p>
 </div>
@@ -2556,16 +2563,16 @@ An Administrator can also invite other users but can only assign Cloud Secure ro
 <p><span class="image"><img src="./media/Type-Ahead_Monitor_1.png" alt="Type-ahead filters in Monitors"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="updated-telegraf-agent-2">Updated Telegraf Agent</h4>
+<div class="sect2">
+<h3 id="updated-telegraf-agent-2">Updated Telegraf Agent</h3>
 <div class="paragraph">
 <p>The agent for ingestion of telegraf integration data has been updated to version <strong>1.19.3</strong>, with performance and security improvements.<br>
 Users wishing to update can refer to the appropriate upgrade section of the <a href="task_config_telegraf_agent.html">Agent Installation</a> documentation.<br>
 Previous versions of the agent will continue to function with no user action required.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-support-2">Data Collector Support</h4>
+<div class="sect2">
+<h3 id="data-collector-support-2">Data Collector Support</h3>
 <div class="paragraph">
 <p>We’ve made some improvements in Cloud Insights Data Collectors. Here are some highlights:</p>
 </div>
@@ -2619,16 +2626,18 @@ Previous versions of the agent will continue to function with no user action req
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="august-2021">August 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="august-2021">August 2021</h3>
-<div class="sect3">
-<h4 id="new-audit-page-user-interface">New Audit Page User Interface</h4>
+<h3 id="new-audit-page-user-interface">New Audit Page User Interface</h3>
 <div class="paragraph">
 <p>The <a href="concept_audit.html">Audit page</a> provides a cleaner interface and now allows the export of audit events to .CSV file.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="enhanced-user-role-management">Enhanced User Role Management</h4>
+<div class="sect2">
+<h3 id="enhanced-user-role-management">Enhanced User Role Management</h3>
 <div class="paragraph">
 <p>Cloud Insights now allows even greater freedom for assigning user roles and access controls. Users can now be assigned granular permissions for monitoring, reporting, and Cloud Secure separately.</p>
 </div>
@@ -2641,10 +2650,12 @@ Previous versions of the agent will continue to function with no user action req
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="june-2021">June 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="june-2021">June 2021</h3>
-<div class="sect3">
-<h4 id="autocomplete-suggestions-wildcards-and-expressions-in-filters">Autocomplete Suggestions, Wildcards, and Expressions in Filters</h4>
+<h3 id="autocomplete-suggestions-wildcards-and-expressions-in-filters">Autocomplete Suggestions, Wildcards, and Expressions in Filters</h3>
 <div class="paragraph">
 <p>With this release of Cloud Insights, you no longer need to know all the possible names and values on which to filter in a query or widget. When filtering, you can simply start typing and Cloud insights will suggest values based on your text. No more looking up Application names or Kubernetes attributes ahead of time just to find the ones you want to show in your widget.</p>
 </div>
@@ -2661,8 +2672,8 @@ Previous versions of the agent will continue to function with no user action req
 <p>Read more about <a href="task_create_query.html#more-on-filtering">filtering options</a> in queries and widgets.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="apis-available-by-edition">APIs available by Edition</h4>
+<div class="sect2">
+<h3 id="apis-available-by-edition">APIs available by Edition</h3>
 <div class="paragraph">
 <p>Cloud Insights' powerful APIs are more accessible than ever, with Alerts APIs now available in Standard and Premium Editions.<br>
 The following APIs are available for each Edition:</p>
@@ -2716,8 +2727,8 @@ The following APIs are available for each Edition:</p>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="kubernetes-pv-and-pod-visibility">Kubernetes PV and Pod Visibility</h4>
+<div class="sect2">
+<h3 id="kubernetes-pv-and-pod-visibility">Kubernetes PV and Pod Visibility</h3>
 <div class="paragraph">
 <p>Cloud Insights provides visibility into the back-end storage for your Kubernetes environments, giving you insight to your Kubernetes Pods and Persistent Volumes (PVs). You can now track PV counters such as IOPS, latency, and throughput from a single Pod’s usage through a PV counter to a PV and all the way to the back-end storage device.</p>
 </div>
@@ -2732,8 +2743,8 @@ The following APIs are available for each Edition:</p>
 <p>Note that to take advantage of these new tables, it is recommended to uninstall your current Kubernetes agent, and install it fresh. You must also install Kube-State-Metrics version 2.1.0 or later.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="kubernetes-node-to-vm-links">Kubernetes Node to VM links</h4>
+<div class="sect2">
+<h3 id="kubernetes-node-to-vm-links">Kubernetes Node to VM links</h3>
 <div class="paragraph">
 <p>On a Kubernetes Node page, you can now click to open the Node&#8217;s VM page. The VM page also includes a link back to the Node itself.</p>
 </div>
@@ -2742,21 +2753,21 @@ The following APIs are available for each Edition:</p>
 <span class="image"><img src="./media/Kubernetes_VM_Page_with_Node_Link.png" alt="Kubernetes VM Page showing Node link"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="alert-monitors-replacing-performance-policies">Alert Monitors replacing Performance Policies</h4>
+<div class="sect2">
+<h3 id="alert-monitors-replacing-performance-policies">Alert Monitors replacing Performance Policies</h3>
 <div class="paragraph">
 <p>To enable the added benefits of multiple thresholds, webhook and email alert delivery, alerting on all metrics using a single interface, and more, Cloud Insights will be converting Standard and Premium Edition customers from <strong>Performance Policies</strong> to <strong>Monitors</strong> during the months of July and August, 2021. Learn more about <a href="https://docs.netapp.com/us-en/cloudinsights/task_create_monitor.html">Alerts and Monitors</a>, and stay tuned for this exciting change.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-supports-nfs">Cloud Secure supports NFS</h4>
+<div class="sect2">
+<h3 id="cloud-secure-supports-nfs">Cloud Secure supports NFS</h3>
 <div class="paragraph">
 <p>Cloud Secure now supports NFS for ONTAP data collection. Monitor SMB and NFS user access to protect your data from ransomware attacks.<br>
 Additionally, Cloud Secure supports Active-Directory and LDAP user directories for collection of NFS user attributes.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-snapshot-purge">Cloud Secure snapshot purge</h4>
+<div class="sect2">
+<h3 id="cloud-secure-snapshot-purge">Cloud Secure snapshot purge</h3>
 <div class="paragraph">
 <p>Cloud Secure automatically deletes snapshots based on the Snapshot Purge Settings, to save storage space and reduce the need for manual snapshot deletion.</p>
 </div>
@@ -2764,29 +2775,31 @@ Additionally, Cloud Secure supports Active-Directory and LDAP user directories f
 <p><span class="image"><img src="./media/CloudSecure_SnapshotPurgeSettings.png" alt="Purge Settings"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-data-collection-speed">Cloud Secure data collection speed</h4>
+<div class="sect2">
+<h3 id="cloud-secure-data-collection-speed">Cloud Secure data collection speed</h3>
 <div class="paragraph">
 <p>A single data collector agent system can now post up to 20,000 events per second to Cloud Secure.</p>
 </div>
 <hr>
 </div>
 </div>
-<div class="sect2">
-<h3 id="may-2021">May 2021</h3>
+</div>
+<div class="sect1">
+<h2 id="may-2021">May 2021</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Here are some of the changes we&#8217;ve made in April:</p>
 </div>
-<div class="sect3">
-<h4 id="updated-telegraf-agent-3">Updated Telegraf Agent</h4>
+<div class="sect2">
+<h3 id="updated-telegraf-agent-3">Updated Telegraf Agent</h3>
 <div class="paragraph">
 <p>The agent for ingestion of telegraf integration data has been updated to version 1.17.3, with performance and security improvements.<br>
 Users wishing to update can refer to the appropriate upgrade section of the <a href="https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent.html">Agent Installation</a> documentation.<br>
 Previous versions of the agent will continue to function with no user action required.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="add-corrective-actions-to-an-alert">Add Corrective Actions to an Alert</h4>
+<div class="sect2">
+<h3 id="add-corrective-actions-to-an-alert">Add Corrective Actions to an Alert</h3>
 <div class="paragraph">
 <p>You can now add an optional description as well as additional insights and/or corrective actions when creating or modifying a Monitor by filling in the <strong>Add an Alert Description</strong> section. The description will be sent with the alert. The <em>insights and corrective actions</em> field can provide detailed steps and guidance for dealing with alerts and will be displayed in the summary section of the alert landing page.</p>
 </div>
@@ -2794,8 +2807,8 @@ Previous versions of the agent will continue to function with no user action req
 <p><span class="image"><img src="./media/Monitors_Alert_Description.png" alt="Alert Corrective Actions and Description"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-insights-apis-for-all-editions">Cloud Insights APIs for All Editions</h4>
+<div class="sect2">
+<h3 id="cloud-insights-apis-for-all-editions">Cloud Insights APIs for All Editions</h3>
 <div class="paragraph">
 <p>API access is now available in all editions of Cloud Insights.<br>
 Users of Basic edition can now automate actions for Acquisition Units and Data Collectors, and Standard Edition users can query metrics and ingest custom metrics.<br>
@@ -2855,10 +2868,12 @@ Premium edition continues to allow full use of all API categories.</p>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="april-2021">April 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="april-2021">April 2021</h3>
-<div class="sect3">
-<h4 id="easier-management-of-monitors">Easier Management of Monitors</h4>
+<h3 id="easier-management-of-monitors">Easier Management of Monitors</h3>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/cloudinsights/task_create_monitor.html#monitor-grouping">Monitor Grouping</a> simplifies the management of monitors in your environment. Multiple monitors can now be grouped together and paused as one. For example, if you have an update occurring on a stack of infrastructure, you can pause alerts from all those devices via one click.</p>
 </div>
@@ -2869,8 +2884,8 @@ Premium edition continues to allow full use of all API categories.</p>
 <p><span class="image"><img src="./media/Monitors_GroupList.png" alt="Monitor Grouping"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="enhanced-alerting-options-using-webhooks">Enhanced Alerting Options Using Webhooks</h4>
+<div class="sect2">
+<h3 id="enhanced-alerting-options-using-webhooks">Enhanced Alerting Options Using Webhooks</h3>
 <div class="paragraph">
 <p>Many commercial applications support <a href="task_create_webhook.html">Webhooks</a> as a standard input interface. Cloud Insights now supports many of these delivery channels, providing default templates for Slack, PagerDuty, Teams, and Discord, in addition to providing customizable generic webhooks to support many other applications.</p>
 </div>
@@ -2878,14 +2893,14 @@ Premium edition continues to allow full use of all API categories.</p>
 <p><span class="image"><img src="./media/Webhooks_Notifications_sm.png" alt="Webhooks Notifications"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="improved-device-identification">Improved Device Identification</h4>
+<div class="sect2">
+<h3 id="improved-device-identification">Improved Device Identification</h3>
 <div class="paragraph">
 <p>To improve monitoring and troubleshooting as well as deliver accurate reporting, it is helpful to understand the names of devices rather than their IP addresses or other identifiers. Cloud Insights now incorporates an automatic way to identify the names of storage and physical host devices in the environment, using a rule-based approach called <a href="concept_device_resolution_overview.html"><strong>Device Resolution</strong></a>, available in the <strong>Manage</strong> menu.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="you-asked-for-more">You asked for more!</h4>
+<div class="sect2">
+<h3 id="you-asked-for-more">You asked for more!</h3>
 <div class="paragraph">
 <p>A popular ask by customers has been for more default options for visualizing the range of data, so we have added the following five new choices that are now available throughout the service via the time range picker:</p>
 </div>
@@ -2909,20 +2924,20 @@ Premium edition continues to allow full use of all API categories.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="multiple-subscriptions-in-one-cloud-insights-environment">Multiple Subscriptions in one Cloud Insights Environment</h4>
+<div class="sect2">
+<h3 id="multiple-subscriptions-in-one-cloud-insights-environment">Multiple Subscriptions in one Cloud Insights Environment</h3>
 <div class="paragraph">
 <p>Starting April 2, Cloud Insights supports multiple subscriptions of the same edition type for a customer in a single Cloud Insights instance. This enables customers to co-term parts of their Cloud Insights subscription with infrastructure purchases. Contact NetApp Sales for assistance with multiple subscriptions.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="choose-your-path">Choose Your Path</h4>
+<div class="sect2">
+<h3 id="choose-your-path">Choose Your Path</h3>
 <div class="paragraph">
 <p>While setting up Cloud Insights, you can now choose whether to start with Monitoring and Alerting or Ransomware and Insider Threat Detection. Cloud Insights will configure your starting environment based on the path you choose. You can configure the other path at any time afterward.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="easier-cloud-secure-onboarding">Easier Cloud Secure Onboarding</h4>
+<div class="sect2">
+<h3 id="easier-cloud-secure-onboarding">Easier Cloud Secure Onboarding</h3>
 <div class="paragraph">
 <p>And it is easier than ever to start using Cloud Secure, with a new step-by-step setup checklist.</p>
 </div>
@@ -2935,16 +2950,18 @@ Premium edition continues to allow full use of all API categories.</p>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="february-2021">February 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="february-2021">February 2021</h3>
-<div class="sect3">
-<h4 id="updated-telegraf-agent-4">Updated Telegraf Agent</h4>
+<h3 id="updated-telegraf-agent-4">Updated Telegraf Agent</h3>
 <div class="paragraph">
 <p>The agent for ingestion of telegraf integration data has been updated to version 1.17.0, which includes vulnerability and bug fixes.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-cost-analyzer">Cloud Cost Analyzer</h4>
+<div class="sect2">
+<h3 id="cloud-cost-analyzer">Cloud Cost Analyzer</h3>
 <div class="paragraph">
 <p>Experience the power of Spot by NetApp with Cloud Cost, which provides a detailed <a href="http://docs.netapp.com/us-en/cloudinsights/task_getting_started_with_cloud_cost.html">cost analysis</a> of past, present, and estimated spending, providing visibility into cloud usage in your environment. The Cloud Cost dashboard delivers a clear view of cloud expenses and a drill down into individual workloads, accounts, and services.</p>
 </div>
@@ -2968,8 +2985,8 @@ Premium edition continues to allow full use of all API categories.</p>
 <p>Cloud Cost is focused on monitoring. Upgrade to the full Spot by NetApp account to enable automatic cost saving and environment optimization.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="querying-for-objects-having-null-values-using-filters">Querying for objects having null values using filters</h4>
+<div class="sect2">
+<h3 id="querying-for-objects-having-null-values-using-filters">Querying for objects having null values using filters</h3>
 <div class="paragraph">
 <p>Cloud Insights now allows searching for attributes and metrics having null/none values through the use of filters. You can perform this filtering on any attributes/metrics in the following places:</p>
 </div>
@@ -2996,8 +3013,8 @@ Premium edition continues to allow full use of all API categories.</p>
 <p><span class="image"><img src="./media/Filter_Null_Example.png" alt="Null filter in dropdown"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="multi-region-support">Multi-Region Support</h4>
+<div class="sect2">
+<h3 id="multi-region-support">Multi-Region Support</h3>
 <div class="paragraph">
 <p>Starting today we offer the Cloud Insights service in different regions across the globe, which facilitates performance and increases security for customers based outside the United States. Cloud Insights/Cloud Secure stores information according to the region in which your environment is created.</p>
 </div>
@@ -3007,10 +3024,12 @@ Premium edition continues to allow full use of all API categories.</p>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="january-2021">January 2021</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="january-2021">January 2021</h3>
-<div class="sect3">
-<h4 id="additional-ontap-metrics-renamed">Additional ONTAP Metrics Renamed</h4>
+<h3 id="additional-ontap-metrics-renamed">Additional ONTAP Metrics Renamed</h3>
 <div class="paragraph">
 <p>As part of our continuing effort to improve efficiency of data-gathering from ONTAP systems, the following ONTAP metrics have been renamed.</p>
 </div>
@@ -3204,8 +3223,8 @@ Premium edition continues to allow full use of all API categories.</p>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="new-kubernetes-explorer">New Kubernetes Explorer</h4>
+<div class="sect2">
+<h3 id="new-kubernetes-explorer">New Kubernetes Explorer</h3>
 <div class="paragraph">
 <p>The <a href="kubernetes_landing_page.html">Kubernetes Explorer</a> provides a simple topology view of Kubernetes Clusters, allowing even non-experts to quickly identify issues &amp; dependencies, from the cluster level down to the container and storage.</p>
 </div>
@@ -3218,20 +3237,24 @@ Premium edition continues to allow full use of all API categories.</p>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="december-2020">December 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="december-2020">December 2020</h3>
-<div class="sect3">
-<h4 id="simpler-kubernetes-installation">Simpler Kubernetes Installation</h4>
+<h3 id="simpler-kubernetes-installation">Simpler Kubernetes Installation</h3>
 <div class="paragraph">
 <p>Kubernetes Agent installation has been streamlined to require fewer user interactions. <a href="task_config_telegraf_agent.html#kubernetes">Installing the Kubernetes Agent</a> now includes Kubernetes data collection.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="november-2020">November 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="november-2020">November 2020</h3>
-<div class="sect3">
-<h4 id="additional-dashboards">Additional Dashboards</h4>
+<h3 id="additional-dashboards">Additional Dashboards</h3>
 <div class="paragraph">
 <p>The following new ONTAP-focused dashboards have been added to the gallery and are available for import:</p>
 </div>
@@ -3279,8 +3302,8 @@ Premium edition continues to allow full use of all API categories.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="column-rename-in-table-widgets">Column Rename in Table Widgets</h4>
+<div class="sect2">
+<h3 id="column-rename-in-table-widgets">Column Rename in Table Widgets</h3>
 <div class="paragraph">
 <p>You can rename columns in the <em>Metrics and Attributes</em> section of a table widget by opening the widget in Edit mode and clicking the menu at the top of the column. Enter the new name and click <em>Save</em>, or click <em>Reset</em> to set the column back to the original name.</p>
 </div>
@@ -3293,32 +3316,36 @@ Premium edition continues to allow full use of all API categories.</p>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="october-2020">October 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="october-2020">October 2020</h3>
-<div class="sect3">
-<h4 id="default-expansion-of-integration-data">Default Expansion of Integration Data</h4>
+<h3 id="default-expansion-of-integration-data">Default Expansion of Integration Data</h3>
 <div class="paragraph">
 <p>Table widget grouping now allows for default expansions of Kubernetes, ONTAP Advanced Data, and Agent Node metrics. For example, if you group Kubernetes <em>Nodes</em> by <em>Cluster</em>, you will see a row in the table for each cluster. You could then expand each cluster row to see a list of the Node objects.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="basic-edition-technical-support">Basic Edition Technical Support</h4>
+<div class="sect2">
+<h3 id="basic-edition-technical-support">Basic Edition Technical Support</h3>
 <div class="paragraph">
 <p>Technical Support is now available for subscribers to Cloud Insights Basic Edition in addition to Standard and Premium Editions. Additionally, Cloud Insights has simplified the workflow for creating a NetApp support ticket.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-public-api">Cloud Secure Public API</h4>
+<div class="sect2">
+<h3 id="cloud-secure-public-api">Cloud Secure Public API</h3>
 <div class="paragraph">
 <p>Cloud Secure supports <a href="concept_cs_api.html">REST APIs</a> for accessing Activity and Alert information. This is accomplished through the use of API Access Tokens, created through the Cloud Secure Admin UI, which are then used to access the REST APIs. Swagger documentation for these REST APIs is integrated with Cloud Secure.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="september-2020">September 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="september-2020">September 2020</h3>
-<div class="sect3">
-<h4 id="query-page-with-integration-data">Query Page with Integration Data</h4>
+<h3 id="query-page-with-integration-data">Query Page with Integration Data</h3>
 <div class="paragraph">
 <p>The Cloud Insights Query page supports integration data (i.e. from Kubernetes, ONTAP Advanced Metrics, etc.). When working with integration data, the query results table displays a "Split-Screen" view, with object/grouping on the left side, and object data (attributes/metrics) on the right. You can also choose multiple attributes for grouping integration data.</p>
 </div>
@@ -3326,8 +3353,8 @@ Premium edition continues to allow full use of all API categories.</p>
 <p><span class="image"><img src="./media/QueryPageIntegrationData.png" alt="Query showing integration data"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="unit-display-formatting-in-table-widget">Unit Display Formatting in Table Widget</h4>
+<div class="sect2">
+<h3 id="unit-display-formatting-in-table-widget">Unit Display Formatting in Table Widget</h3>
 <div class="paragraph">
 <p>Unit display formatting is now available in Table widgets for columns that display metric/counter data (for example, gigabytes, MB/second, etc.). To change a metric&#8217;s display unit, click the "three dots" menu in the column header and select "Unit Display". You can choose from any of the available units. Available units will vary according to the type of metric data in the display column.</p>
 </div>
@@ -3335,20 +3362,20 @@ Premium edition continues to allow full use of all API categories.</p>
 <p><span class="image"><img src="./media/TableWidgetUnitManagement1.png" alt="Table Widget Unit Management"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="acquisition-unit-detail-page">Acquisition Unit Detail Page</h4>
+<div class="sect2">
+<h3 id="acquisition-unit-detail-page">Acquisition Unit Detail Page</h3>
 <div class="paragraph">
 <p>Acquisition Units now have their own landing page, providing useful detail for each AU as well as information to help with troubleshooting. The <a href="task_configure_acquisition_unit.html#viewing-au-details">AU detail page</a> provides links to the AU&#8217;s data collectors as well as helpful status information.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-docker-dependency-removed">Cloud Secure Docker Dependency Removed</h4>
+<div class="sect2">
+<h3 id="cloud-secure-docker-dependency-removed">Cloud Secure Docker Dependency Removed</h3>
 <div class="paragraph">
 <p>Cloud Secure&#8217;s dependency on Docker has been removed. Docker is no longer required for Cloud Secure agent installation.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="reporting-user-roles">Reporting User Roles</h4>
+<div class="sect2">
+<h3 id="reporting-user-roles">Reporting User Roles</h3>
 <div class="paragraph">
 <p>If you have Cloud Insights Premium Edition with Reporting, every Cloud Insights user in your environment also has a Single Sign-On (SSO) login to the Reporting application (i.e. Cognos); by clicking the <strong>Reports</strong> link in the menu, they will automatically be logged in to Reporting.</p>
 </div>
@@ -3409,18 +3436,20 @@ If you are a current Premium Edition customer and wish to retain your reports, r
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="new-api-category-for-data-ingestion">New API Category for Data Ingestion</h4>
+<div class="sect2">
+<h3 id="new-api-category-for-data-ingestion">New API Category for Data Ingestion</h3>
 <div class="paragraph">
 <p>Cloud Insights has added a <strong>Data Ingestion</strong> API category, giving you greater control over custom data and agents. Detailed documentation for this and other API Categories can be found in Cloud Insights by navigating to <strong>Admin &gt; API Access</strong> and clicking the <em>API Documentation</em> link. You can also attach a comment to the AU in the Note field, which is  displayed on the AU detail page as well as the AU list page.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="august-2020">August 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="august-2020">August 2020</h3>
-<div class="sect3">
-<h4 id="monitoring-and-alerting">Monitoring and Alerting</h4>
+<h3 id="monitoring-and-alerting">Monitoring and Alerting</h3>
 <div class="paragraph">
 <p>In addition to the current ability to set performance policies for storage objects, VMs, EC2, and ports, Cloud Insights Standard Edition now includes the ability to <a href="task_create_monitor.html">configure monitors</a> for thresholds on Integration data for Kubernetes, ONTAP advanced metrics, and Telegraf plugins. You simply create a monitor for each object metric you want to trigger alerts, set the conditions for warning-level or critical-level thresholds, and specify the email recipient(s) desired for each level. You can then <a href="task_view_and_manage_alerts.html">view and manage alerts</a> to track trends or troubleshoot issues.</p>
 </div>
@@ -3430,10 +3459,12 @@ If you are a current Premium Edition customer and wish to retain your reports, r
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="july-2020">July 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="july-2020">July 2020</h3>
-<div class="sect3">
-<h4 id="cloud-secure-take-a-snapshot-action">Cloud Secure <em>Take a Snapshot</em> Action</h4>
+<h3 id="cloud-secure-take-a-snapshot-action">Cloud Secure <em>Take a Snapshot</em> Action</h3>
 <div class="paragraph">
 <p>Cloud Secure protects your data by automatically taking a snapshot when malicious activity is detected, ensuring that your data is safely backed up.</p>
 </div>
@@ -3450,8 +3481,8 @@ You can also take a snapshot manually from the alert page.</p>
 <span class="image"><img src="./media/AlertActionsExample.png" alt="Alert Action Screen" width="1000"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="metriccounter-updates">Metric/Counter updates</h4>
+<div class="sect2">
+<h3 id="metriccounter-updates">Metric/Counter updates</h3>
 <div class="paragraph">
 <p>The following capacity counters are available for use in Cloud Insights UI and REST API. Previously these counters were only available for the Data Warehouse / Reporting.</p>
 </div>
@@ -3492,8 +3523,8 @@ Clone Saved Capacity - Total</p></td>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-potential-attack-detection">Cloud Secure Potential Attack Detection</h4>
+<div class="sect2">
+<h3 id="cloud-secure-potential-attack-detection">Cloud Secure Potential Attack Detection</h3>
 <div class="paragraph">
 <p>Cloud Secure now detects potential attacks such as ransomware. Click on an alert in the Alerts list page to open a detail page showing the following:</p>
 </div>
@@ -3522,14 +3553,14 @@ Clone Saved Capacity - Total</p></td>
 <span class="image"><img src="./media/RansomwareDetailPageExample.png" alt="Ransomware Detail Page Example"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="subscribe-to-premium-edition-through-aws">Subscribe to Premium Edition through AWS</h4>
+<div class="sect2">
+<h3 id="subscribe-to-premium-edition-through-aws">Subscribe to Premium Edition through AWS</h3>
 <div class="paragraph">
 <p>During your trial of Cloud Insights, you can <a href="concept_subscribing_to_cloud_insights.html">self-subscribe</a> through AWS Marketplace to either Cloud Insights Standard Edition or Premium Edition. Previously, you could only self-subscribe through AWS Marketplace to Standard Edition only.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="enhanced-table-widget">Enhanced Table Widget</h4>
+<div class="sect2">
+<h3 id="enhanced-table-widget">Enhanced Table Widget</h3>
 <div class="paragraph">
 <p>The dashboard/asset page Table widget includes the following enhancements:</p>
 </div>
@@ -3558,8 +3589,8 @@ Clone Saved Capacity - Total</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="metrics-filtering">Metrics Filtering</h4>
+<div class="sect2">
+<h3 id="metrics-filtering">Metrics Filtering</h3>
 <div class="paragraph">
 <p>In addition to filtering on an object&#8217;s attributes in a widget, you can now filter on metrics as well.</p>
 </div>
@@ -3573,8 +3604,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/IntegrationMetricFilterExample.png" alt="Integration Metric Filtering"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="ontap-advanced-counter-data">ONTAP Advanced Counter Data</h4>
+<div class="sect2">
+<h3 id="ontap-advanced-counter-data">ONTAP Advanced Counter Data</h3>
 <div class="paragraph">
 <p>Cloud Insights takes advantage of NetApp&#8217;s ONTAP-specific <strong>Advanced Counter Data</strong>, which provides a host of counters and metrics collected from ONTAP devices.  ONTAP Advanced Counter Data is available to all NetApp ONTAP customers. These metrics enable customized and wide-ranging visualization in Cloud Insights widgets and dashboards.</p>
 </div>
@@ -3620,14 +3651,15 @@ Clone Saved Capacity - Total</p></td>
 </li>
 </ul>
 </div>
-<div class="sect4">
-<h5 id="advanced-counter-dashboards">Advanced Counter Dashboards</h5>
+</div>
+<div class="sect2">
+<h3 id="advanced-counter-dashboards">Advanced Counter Dashboards</h3>
 <div class="paragraph">
 <p>Cloud Insights comes with a variety of pre-designed dashboards to help get you started on visualizing ONTAP Advanced Counters for topics such as <em>Aggregate Performance</em>, <em>Volume Workload</em>, <em>Processor Activity</em>, and more. If you have at least one ONTAP data collector configured, these can be imported from the Dashboard Gallery on any dashboard list page.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="learn-more">Learn More</h5>
+<div class="sect2">
+<h3 id="learn-more">Learn More</h3>
 <div class="paragraph">
 <p>More information on ONTAP Advanced Data can be found at the following links:</p>
 </div>
@@ -3642,9 +3674,8 @@ Clone Saved Capacity - Total</p></td>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="policies-and-violations-menu">Policies and Violations Menu</h4>
+<div class="sect2">
+<h3 id="policies-and-violations-menu">Policies and Violations Menu</h3>
 <div class="paragraph">
 <p>Performance Policies and Violations are now found under the <strong>Alerts</strong> menu. Policy and Violation functionality are unchanged.</p>
 </div>
@@ -3652,8 +3683,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/PoliciesMenuChange.png" alt="Policies and Violations Menu"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="updated-telegraf-agent-5">Updated Telegraf Agent</h4>
+<div class="sect2">
+<h3 id="updated-telegraf-agent-5">Updated Telegraf Agent</h3>
 <div class="paragraph">
 <p>The agent for ingestion of telegraf integration data has been updated to <a href="https://docs.influxdata.com/telegraf/v1.14/">version 1.14</a>, which includes bugs fixes, security fixes, and new plugins.</p>
 </div>
@@ -3688,10 +3719,12 @@ Clone Saved Capacity - Total</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="june-2020">June 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="june-2020">June 2020</h3>
-<div class="sect3">
-<h4 id="simplified-data-collector-error-reporting">Simplified Data Collector Error Reporting</h4>
+<h3 id="simplified-data-collector-error-reporting">Simplified Data Collector Error Reporting</h3>
 <div class="paragraph">
 <p>Reporting a data collector error is easier with the <em>Send Error Report</em> button on the data collector page. Clicking the button sends basic information about the error to NetApp and prompts investigation into the problem. Once pressed, Cloud Insights acknowledges that NetApp has been notified, and the Error Report button is disabled to indicate that an error report for that data collector has been sent. The button remains disabled until the browser page is refreshed.</p>
 </div>
@@ -3699,8 +3732,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/DCErrorReportButton.png" alt="Error Report Button"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="widget-improvements">Widget Improvements</h4>
+<div class="sect2">
+<h3 id="widget-improvements">Widget Improvements</h3>
 <div class="paragraph">
 <p>The following improvements have been made in dashboard widgets. These improvements are considered Preview functionality and may not be available for all Cloud Insights environments.</p>
 </div>
@@ -3727,10 +3760,12 @@ Clone Saved Capacity - Total</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="may-2020">May 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="may-2020">May 2020</h3>
-<div class="sect3">
-<h4 id="reporting-user-roles-2">Reporting User Roles</h4>
+<h3 id="reporting-user-roles-2">Reporting User Roles</h3>
 <div class="paragraph">
 <p>The following roles have been added for Reporting:</p>
 </div>
@@ -3748,8 +3783,8 @@ Clone Saved Capacity - Total</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-updates">Cloud Secure Updates</h4>
+<div class="sect2">
+<h3 id="cloud-secure-updates">Cloud Secure Updates</h3>
 <div class="paragraph">
 <p>Cloud Insights includes the following recent Cloud Secure changes.</p>
 </div>
@@ -3773,8 +3808,8 @@ Clone Saved Capacity - Total</p></td>
 <p>Additionally, the Alert email notification now contains a direct link to the alert page.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="dashboard-grouping">Dashboard Grouping</h4>
+<div class="sect2">
+<h3 id="dashboard-grouping">Dashboard Grouping</h3>
 <div class="paragraph">
 <p>Dashboard grouping allows better <a href="concept_dashboard_features.html#dashboard-groups"> management of dashboards</a> that are relevant to you. You can add related dashboards to a group for "one-stop" management of, for example, your storage or virtual machines.</p>
 </div>
@@ -3785,8 +3820,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/DashboardGroupNoPin.png" alt="Dashboard Groups"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="dashboard-pinning">Dashboard Pinning</h4>
+<div class="sect2">
+<h3 id="dashboard-pinning">Dashboard Pinning</h3>
 <div class="paragraph">
 <p>You can pin dashboards so favorites always appear at the top of the list.</p>
 </div>
@@ -3794,8 +3829,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/DashboardPin.png" alt="Dashboard Pins"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="tv-mode-and-auto-refresh">TV Mode and Auto-Refresh</h4>
+<div class="sect2">
+<h3 id="tv-mode-and-auto-refresh">TV Mode and Auto-Refresh</h3>
 <div class="paragraph">
 <p><a href="concept_dashboard_features.html#tv-mode-and-auto-refresh">TV Mode and Auto-Refresh</a> allow for near-real-time display of data on a dashboard or asset page:</p>
 </div>
@@ -3815,16 +3850,18 @@ Clone Saved Capacity - Total</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="april-2020">April 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="april-2020">April 2020</h3>
-<div class="sect3">
-<h4 id="new-dashboard-time-range-choices">New Dashboard Time Range Choices</h4>
+<h3 id="new-dashboard-time-range-choices">New Dashboard Time Range Choices</h3>
 <div class="paragraph">
 <p>Time range choices for dashboards and other Cloud insights pages now include <em>Last 1 Hour</em> and <em>Last 15 Minutes</em>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-secure-updates-2">Cloud Secure Updates</h4>
+<div class="sect2">
+<h3 id="cloud-secure-updates-2">Cloud Secure Updates</h3>
 <div class="paragraph">
 <p>Cloud Insights includes the following recent Cloud Secure changes.</p>
 </div>
@@ -3842,14 +3879,14 @@ Clone Saved Capacity - Total</p></td>
 <p>Cloud Secure monitors and audits all user access operations on files and folders. Activity auditing allows you to comply with internal security policies, meet external compliance requirements such as PCI, GDPR, and HIPAA, and conduct data breach and security incident investigations.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="default-dashboard-time">Default Dashboard Time</h4>
+<div class="sect2">
+<h3 id="default-dashboard-time">Default Dashboard Time</h3>
 <div class="paragraph">
 <p>The default time range for dashboards is now 3 Hours instead of 24 hours.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="optimized-aggregation-times">Optimized Aggregation Times</h4>
+<div class="sect2">
+<h3 id="optimized-aggregation-times">Optimized Aggregation Times</h3>
 <div class="paragraph">
 <p>Optimized <a href="concept_dashboard_features.html#aggregating-data">time aggregation</a> intervals in time-series widgets (Line, Spline, Area, and Stacked Area charts) are more frequent for 3-hour and 24-hour dashboard/widget time ranges, allowing for faster charting of data.</p>
 </div>
@@ -3867,8 +3904,8 @@ Clone Saved Capacity - Total</p></td>
 <p>You can still override the optimized aggregation by setting a custom interval.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="display-unit-auto-format">Display Unit Auto-Format</h4>
+<div class="sect2">
+<h3 id="display-unit-auto-format">Display Unit Auto-Format</h3>
 <div class="paragraph">
 <p>In most widgets, Cloud Insights knows the base unit in which to display values, for example <em>Megabytes</em>, <em>Thousands</em>, <em>Percentage</em>, <em>Milliseconds (ms)</em>, etc., and now <a href="concept_dashboard_features.html#choosing-the-unit-for-displaying-data">automatically formats</a> the widget to the most readable unit. For example a data value of 1,234,567,890 bytes would be auto formatted to 1.23 gibibytes. In many cases, Cloud Insights knows the best format for the data being acquired. In cases where the best format is not known, or in widgets where you want to override the automatic formatting, you can choose the format you want.</p>
 </div>
@@ -3876,8 +3913,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/used_memory_in_bytes_gb.png" alt="Auto Format in Widgets" width="480"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="import-annotations-using-api">Import Annotations Using API</h4>
+<div class="sect2">
+<h3 id="import-annotations-using-api">Import Annotations Using API</h3>
 <div class="paragraph">
 <p>With Cloud Insights Premium Edition&#8217;s powerful API, you can now <a href="task_annotation_import.html">import annotations</a> and assign them to objects using a .CSV file. You can also import applications and assign business entities in the same way.</p>
 </div>
@@ -3885,8 +3922,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/api_assets_import.png" alt="Importing Annotations"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="simpler-widget-selector">Simpler Widget Selector</h4>
+<div class="sect2">
+<h3 id="simpler-widget-selector">Simpler Widget Selector</h3>
 <div class="paragraph">
 <p>Adding widgets to dashboards and asset landing pages is easier with a new widget selector that shows all widget types in a single all-at-once view, so the user no longer needs to scroll through a list of widget types to find the one they want to add. Related widgets are color-coordinated and grouped by proximity in the new selector.</p>
 </div>
@@ -3896,10 +3933,12 @@ Clone Saved Capacity - Total</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="february-2020">February 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="february-2020">February 2020</h3>
-<div class="sect3">
-<h4 id="api-with-premium-edition">API with Premium Edition</h4>
+<h3 id="api-with-premium-edition">API with Premium Edition</h3>
 <div class="paragraph">
 <p>Cloud Insights Premium Edition comes with a <a href="API_Overview.html">powerful API</a> that can be used to integrate Cloud Insights with other applications, such as CMDB’s or other ticketing systems.</p>
 </div>
@@ -3913,8 +3952,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/API_Documentation.png" alt="API Documentation"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="initial-polling-after-adding-a-data-collector">Initial Polling After Adding A Data Collector</h4>
+<div class="sect2">
+<h3 id="initial-polling-after-adding-a-data-collector">Initial Polling After Adding A Data Collector</h3>
 <div class="paragraph">
 <p>Previously, after configuring a new data collector, Cloud Insights would poll the data collector immediately to gather <em>inventory</em> data, but would wait until the configured performance poll interval (typically 15 minutes) to gather initial <em>performance</em> data. It would then wait for another interval before initiating the second performance poll, which meant it would take up to <em>30 minutes</em> before meaningful data was acquired from a new data collector.</p>
 </div>
@@ -3925,8 +3964,8 @@ Clone Saved Capacity - Total</p></td>
 <p>This poll behavior also occurs after editing the configuration of an existing data collector.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="easier-widget-duplication">Easier Widget Duplication</h4>
+<div class="sect2">
+<h3 id="easier-widget-duplication">Easier Widget Duplication</h3>
 <div class="paragraph">
 <p>It is easier than ever to create a copy of a widget on a dashboard or landing page. In dashboard Edit mode, click the menu on the widget and select <strong>Duplicate</strong>. The widget editor is launched, pre-filled with the original widget&#8217;s configuration and with a “copy” suffix in the widget name. You can easily make any necessary changes and Save the new widget. The widget will be placed at the bottom of your dashboard, and you can position it as needed. Remember to Save your dashboard when all changes are complete.</p>
 </div>
@@ -3934,8 +3973,8 @@ Clone Saved Capacity - Total</p></td>
 <p><span class="image"><img src="./media/DuplicateWidget.png" alt="Duplicate a widget"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="single-sign-on-sso">Single Sign-On (SSO)</h4>
+<div class="sect2">
+<h3 id="single-sign-on-sso">Single Sign-On (SSO)</h3>
 <div class="paragraph">
 <p>With Cloud Insights Premium Edition, administrators can enable <strong><a href="concept_user_roles.html#single-sign-on-sso-accounts">Single Sign-On</a></strong> (SSO) access to Cloud Insights for all users in their corporate domain, without having to invite them individually. With SSO enabled, any user with the same domain email address can log into Cloud Insights using their corporate credentials.</p>
 </div>
@@ -3954,16 +3993,18 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="january-2020">January 2020</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="january-2020">January 2020</h3>
-<div class="sect3">
-<h4 id="swagger-documentation-for-rest-api">Swagger documentation for REST API</h4>
+<h3 id="swagger-documentation-for-rest-api">Swagger documentation for REST API</h3>
 <div class="paragraph">
 <p>Swagger explains each available REST API in Cloud Insights, as well as its usage and syntax. Information on Cloud Insights APIs is available in <a href="http://docs.netapp.com/us-en/cloudinsights/API_Overview.html">documentation</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="feature-tutorials-progress-bar">Feature Tutorials Progress Bar</h4>
+<div class="sect2">
+<h3 id="feature-tutorials-progress-bar">Feature Tutorials Progress Bar</h3>
 <div class="paragraph">
 <p>The feature tutorials checklist has been moved to the top banner and now features a progress indicator. Tutorials are available for each user until dismissed, and are always available in Cloud Insights <a href="concept_feature_tutorials.html">documentation</a>.</p>
 </div>
@@ -3971,20 +4012,20 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <p><span class="image"><img src="./media/TutorialProgress.png" alt="Tutorial Checklist Progress"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="acquisition-unit-changes">Acquisition Unit Changes</h4>
+<div class="sect2">
+<h3 id="acquisition-unit-changes">Acquisition Unit Changes</h3>
 <div class="paragraph">
 <p>When installing an Acquisition Unit (AU) on a host or VM that has the same name as an already-installed AU, Cloud Insights assures a unique name by appending the AU name with "_1", "_2", etc. This is also the case when uninstalling and reinstalling an AU from the same VM without first removing it from Cloud Insights. Want a different AU name altogether? No problem; AU&#8217;s can be renamed after installation.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="optimized-time-aggregation-in-widgets">Optimized Time Aggregation in Widgets</h4>
+<div class="sect2">
+<h3 id="optimized-time-aggregation-in-widgets">Optimized Time Aggregation in Widgets</h3>
 <div class="paragraph">
 <p>In widgets, you can choose between an <em>Optimized</em> time aggregation interval or a <em>Custom</em> interval that you set. Optimized aggregation automatically selects the right time interval based on the selected dashboard time range (or widget time range, if overriding the dashboard time). The interval dynamically changes as the dashboard or widget time range is changed.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="simplified-getting-started-with-cloud-insights-process">Simplified "Getting Started with Cloud Insights" process</h4>
+<div class="sect2">
+<h3 id="simplified-getting-started-with-cloud-insights-process">Simplified "Getting Started with Cloud Insights" process</h3>
 <div class="paragraph">
 <p>The process for getting started using Cloud Insights has been simplified to make your first-time setup smoother and easier. Simply select an initial data collector and follow the instructions. Cloud Insights will walk you through configuring the data collector and any agent or acquisition unit required. In most cases it will even import one or more initial dashboards so you can start gaining insight into your environment quickly (but please allow up to 30 minutes for Cloud Insights to collect meaningful data).</p>
 </div>
@@ -4016,28 +4057,30 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="december-2019">December 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="december-2019">December 2019</h3>
-<div class="sect3">
-<h4 id="business-entity-can-be-used-in-filters">Business Entity can be used in filters</h4>
+<h3 id="business-entity-can-be-used-in-filters">Business Entity can be used in filters</h3>
 <div class="paragraph">
 <p>Business Entity annotations can be used in filters for queries, widgets, performance policies, and landing pages.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="drill-down-available-for-single-value-and-gauge-widgets-and-any-widgets-rolled-to-by-all">Drill-down available for Single-Value and Gauge widgets, and any widgets rolled to by "All"</h4>
+<div class="sect2">
+<h3 id="drill-down-available-for-single-value-and-gauge-widgets-and-any-widgets-rolled-to-by-all">Drill-down available for Single-Value and Gauge widgets, and any widgets rolled to by "All"</h3>
 <div class="paragraph">
 <p>Clicking the value in a single-value or gauge widget opens a query page showing the results of the first query used in the widget. Additionally, clicking the legend for any widget whose data is rolled up by "All" will also open a query page showing the results of the first query used in the widget.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="trial-period-extended">Trial period extended</h4>
+<div class="sect2">
+<h3 id="trial-period-extended">Trial period extended</h3>
 <div class="paragraph">
 <p>New users who sign up for a free trial of Cloud Insights now have 30 days to evaluate the product. This is an increase from the previous 14-day trial period.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="managed-unit-calculation">Managed Unit calculation</h4>
+<div class="sect2">
+<h3 id="managed-unit-calculation">Managed Unit calculation</h3>
 <div class="paragraph">
 <p>The calculation of Managed Units (MUs) in Cloud Insights has been changed to the following:</p>
 </div>
@@ -4057,20 +4100,24 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="november-2019">November 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="november-2019">November 2019</h3>
-<div class="sect3">
-<h4 id="editions-feature-comparison-table">Editions Feature Comparison Table</h4>
+<h3 id="editions-feature-comparison-table">Editions Feature Comparison Table</h3>
 <div class="paragraph">
 <p>The <strong>Admin &gt; Subscription</strong> page <a href="concept_subscribing_to_cloud_insights.html#key-features">comparison table</a> has been updated to list the feature sets available in Basic, Standard, and Premium Editions of Cloud Insights. NetApp is constantly improving its Cloud Services, so check this page often to find the Edition that&#8217;s right for your evolving business needs.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="october-2019">October 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="october-2019">October 2019</h3>
-<div class="sect3">
-<h4 id="reporting">Reporting</h4>
+<h3 id="reporting">Reporting</h3>
 <div class="paragraph">
 <p><a href="reporting_overview.html"><strong>Cloud Insights Reporting</strong></a> is a business intelligence tool that enables you to view pre-defined reports or create custom reports. With Reporting you can perform the following tasks:</p>
 </div>
@@ -4128,8 +4175,8 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <p>Reporting is available with Cloud Insights <strong>Premium Edition</strong>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="active-iq-enhancements">Active IQ Enhancements</h4>
+<div class="sect2">
+<h3 id="active-iq-enhancements">Active IQ Enhancements</h3>
 <div class="paragraph">
 <p><a href="concept_activeiq.html">Active IQ Risks</a> are now available as objects that can be queried as well as used in dashboard table widgets. The following Risks object attributes are included:<br>
 * Category<br>
@@ -4145,10 +4192,12 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="september-2019">September 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="september-2019">September 2019</h3>
-<div class="sect3">
-<h4 id="new-gauge-widgets">New Gauge Widgets</h4>
+<h3 id="new-gauge-widgets">New Gauge Widgets</h3>
 <div class="paragraph">
 <p>Two new widgets are available for displaying single-value data on your dashboards in eye-catching colors based on thresholds you specify. You can display values using either a <strong>Solid Gauge</strong> or <strong>Bullet Gauge</strong>. Values that land inside the Warning range are displayed in orange. Values in the Critical range are displayed in red. Values below the Warning threshold are displayed in green.</p>
 </div>
@@ -4157,8 +4206,8 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <span class="image"><img src="./media/Gauge-Bullet.png" alt="Bullet Gauge"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="conditional-color-formatting-for-single-value-widget">Conditional Color Formatting for Single Value Widget</h4>
+<div class="sect2">
+<h3 id="conditional-color-formatting-for-single-value-widget">Conditional Color Formatting for Single Value Widget</h3>
 <div class="paragraph">
 <p>You can now display the Single-Value widget with a colored background based on thresholds you set.</p>
 </div>
@@ -4166,40 +4215,44 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <p><span class="image"><img src="./media/Single-Value%20Widgets%20-%20Formatted.png" alt="Single-Value widgets with formatting"></span></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="invite-users-during-onboarding">Invite Users During Onboarding</h4>
+<div class="sect2">
+<h3 id="invite-users-during-onboarding">Invite Users During Onboarding</h3>
 <div class="paragraph">
 <p>At any point during the onboarding process, you can click on Admin &gt; User Management &gt; +User to invite additional users to your Cloud Insights environment. Be aware that users with <em>Guest</em> or <em>User</em> roles will see greater benefit once onboarding is complete and data has been collected.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-detail-page-improvement">Data Collector Detail Page improvement</h4>
+<div class="sect2">
+<h3 id="data-collector-detail-page-improvement">Data Collector Detail Page improvement</h3>
 <div class="paragraph">
 <p>The data collector detail page has been improved to display errors in a more readable format. Errors are now displayed in a separate table on the page, with each error displayed on a separate line in the case of multiple errors for the data collector.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="august-2019">August 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="august-2019">August 2019</h3>
-<div class="sect3">
-<h4 id="all-vs-available-data-collectors">All vs. Available Data Collectors</h4>
+<h3 id="all-vs-available-data-collectors">All vs. Available Data Collectors</h3>
 <div class="paragraph">
 <p>When adding data collectors to your environment, you can set a filter to show only the data collectors available to you based on your subscription level, or all data collectors.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="activeiq-integration">ActiveIQ Integration</h4>
+<div class="sect2">
+<h3 id="activeiq-integration">ActiveIQ Integration</h3>
 <div class="paragraph">
 <p>Cloud Insights collects data from NetApp ActiveIQ, which provides a series of visualizations, analytics, and other support related services to NetApp customers and their hardware / software systems. Cloud Insights integrates with ONTAP Data Management systems. See <a href="concept_activeiq.html">Active IQ</a> for more information.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="july-2019">July 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="july-2019">July 2019</h3>
-<div class="sect3">
-<h4 id="dashboard-improvements">Dashboard Improvements</h4>
+<h3 id="dashboard-improvements">Dashboard Improvements</h3>
 <div class="paragraph">
 <p>Dashboards and Widgets have been improved with the following changes:</p>
 </div>
@@ -4220,30 +4273,32 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="downgrading-to-basic-edition">Downgrading to Basic Edition</h4>
+<div class="sect2">
+<h3 id="downgrading-to-basic-edition">Downgrading to Basic Edition</h3>
 <div class="paragraph">
 <p>Downgrade to Basic Edition fails with an error message if there is no available NetApp device configured that has successfully completed a poll in the last 7 days.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="collecting-kube-state-metrics">Collecting Kube-State-Metrics</h4>
+<div class="sect2">
+<h3 id="collecting-kube-state-metrics">Collecting Kube-State-Metrics</h3>
 <div class="paragraph">
 <p>The <a href="task_config_telegraf_kubernetes.html">Kubernetes Data Collector</a> now collects objects and counters from the kube-state-metrics plugin, greatly expanding the number and scope of metrics available for monitoring in Cloud Insights.</p>
 </div>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="june-2019">June 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="june-2019">June 2019</h3>
-<div class="sect3">
-<h4 id="cloud-insights-editions">Cloud Insights Editions</h4>
+<h3 id="cloud-insights-editions">Cloud Insights Editions</h3>
 <div class="paragraph">
 <p>Cloud Insights is available in different Editions to fit your budget and business needs. Existing NetApp customers with an active NetApp support account can enjoy 7 days of data retention and access to NetApp data collectors with the free <strong>Basic Edition</strong>, or get increased data retention, access to all supported data collectors, expert technical support and more with <strong>Standard Edition</strong>. For more information on available features, see NetApp&#8217;s <a href="https://cloud.netapp.com/cloud-insights">Cloud Insights</a> site.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="new-infrastructure-data-collector-netapp-hci">New Infrastructure Data Collector: NetApp HCI</h4>
+<div class="sect2">
+<h3 id="new-infrastructure-data-collector-netapp-hci">New Infrastructure Data Collector: NetApp HCI</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4257,10 +4312,12 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="may-2019">May 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="may-2019">May 2019</h3>
-<div class="sect3">
-<h4 id="new-service-data-collector-kapacitor">New Service Data Collector: Kapacitor</h4>
+<h3 id="new-service-data-collector-kapacitor">New Service Data Collector: Kapacitor</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4269,8 +4326,8 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="integration-with-services-via-telegraf">Integration with Services via Telegraf</h4>
+<div class="sect2">
+<h3 id="integration-with-services-via-telegraf">Integration with Services via Telegraf</h3>
 <div class="paragraph">
 <p>In addition to acquisition of data from infrastructure devices such as switches and storage, Cloud Insights now collects data from a variety of Operating Systems and Services, using <a href="task_config_telegraf_agent.html">Telegraf as its agent</a> for collection of integration data. Telegraf is a plugin-driven agent that can be used to collect and report metrics. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams.</p>
 </div>
@@ -4278,8 +4335,8 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 <p>Documentation for currently supported integrations can be found in the menu to the left under <strong>Reference and Support</strong>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="storage-virtual-machine-assets">Storage Virtual Machine Assets</h4>
+<div class="sect2">
+<h3 id="storage-virtual-machine-assets">Storage Virtual Machine Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4288,8 +4345,8 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="reduced-acquisition-unit-system-requirements">Reduced Acquisition Unit System Requirements</h4>
+<div class="sect2">
+<h3 id="reduced-acquisition-unit-system-requirements">Reduced Acquisition Unit System Requirements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4322,8 +4379,8 @@ SSO is only available in Cloud Insights Premium Edition, and must be configured 
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="additional-platforms-supported">Additional Platforms Supported</h4>
+<div class="sect2">
+<h3 id="additional-platforms-supported">Additional Platforms Supported</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4359,10 +4416,12 @@ Microsoft Windows Server 2019</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="april-2019">April 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="april-2019">April 2019</h3>
-<div class="sect3">
-<h4 id="filter-virtual-machines-by-tags">Filter Virtual Machines by Tags</h4>
+<h3 id="filter-virtual-machines-by-tags">Filter Virtual Machines by Tags</h3>
 <div class="paragraph">
 <p>When configuring the following data collectors, you can filter to include or exclude virtual machines from data collection according to their Tags or Labels.</p>
 </div>
@@ -4382,10 +4441,12 @@ Microsoft Windows Server 2019</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="march-2019">March 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="march-2019">March 2019</h3>
-<div class="sect3">
-<h4 id="email-notifications-for-subscription-related-events">Email Notifications for Subscription-related Events</h4>
+<h3 id="email-notifications-for-subscription-related-events">Email Notifications for Subscription-related Events</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4407,8 +4468,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="additional-dashboards-2">Additional Dashboards</h4>
+<div class="sect2">
+<h3 id="additional-dashboards-2">Additional Dashboards</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4429,10 +4490,12 @@ Microsoft Windows Server 2019</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="february-2019">February 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="february-2019">February 2019</h3>
-<div class="sect3">
-<h4 id="collecting-from-aws-child-accounts">Collecting from AWS Child Accounts</h4>
+<h3 id="collecting-from-aws-child-accounts">Collecting from AWS Child Accounts</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4441,8 +4504,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-collector-naming">Data Collector Naming</h4>
+<div class="sect2">
+<h3 id="data-collector-naming">Data Collector Naming</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4451,8 +4514,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="acquisition-unit-for-windows">Acquisition Unit for Windows</h4>
+<div class="sect2">
+<h3 id="acquisition-unit-for-windows">Acquisition Unit for Windows</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4463,10 +4526,12 @@ Microsoft Windows Server 2019</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="january-2019">January 2019</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="january-2019">January 2019</h3>
-<div class="sect3">
-<h4 id="owner-field-is-more-readable">"Owner" field is more readable</h4>
+<h3 id="owner-field-is-more-readable">"Owner" field is more readable</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4475,8 +4540,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="managed-unit-breakdown-on-subscription-page">Managed Unit Breakdown on Subscription Page</h4>
+<div class="sect2">
+<h3 id="managed-unit-breakdown-on-subscription-page">Managed Unit Breakdown on Subscription Page</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4487,10 +4552,12 @@ Microsoft Windows Server 2019</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="december-2018">December 2018</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="december-2018">December 2018</h3>
-<div class="sect3">
-<h4 id="improvement-of-ui-load-time">Improvement of UI Load Time</h4>
+<h3 id="improvement-of-ui-load-time">Improvement of UI Load Time</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4499,8 +4566,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="bulk-edit-data-collectors">Bulk Edit Data Collectors</h4>
+<div class="sect2">
+<h3 id="bulk-edit-data-collectors">Bulk Edit Data Collectors</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4512,8 +4579,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="support-and-subscription-pages-are-available-during-onboarding">Support and Subscription pages are Available During Onboarding</h4>
+<div class="sect2">
+<h3 id="support-and-subscription-pages-are-available-during-onboarding">Support and Subscription pages are Available During Onboarding</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4524,10 +4591,12 @@ Microsoft Windows Server 2019</p></td>
 <hr>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="november-2018">November 2018</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="november-2018">November 2018</h3>
-<div class="sect3">
-<h4 id="subscribe-through-netapp-sales-or-aws-marketplace">Subscribe through NetApp Sales or AWS Marketplace</h4>
+<h3 id="subscribe-through-netapp-sales-or-aws-marketplace">Subscribe through NetApp Sales or AWS Marketplace</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4536,8 +4605,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="text-annotation-hyperlinks">Text Annotation Hyperlinks</h4>
+<div class="sect2">
+<h3 id="text-annotation-hyperlinks">Text Annotation Hyperlinks</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4546,8 +4615,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="onboarding-walkthrough">Onboarding Walkthrough</h4>
+<div class="sect2">
+<h3 id="onboarding-walkthrough">Onboarding Walkthrough</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4556,8 +4625,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="import-dashboards-from-the-gallery">Import Dashboards from the Gallery</h4>
+<div class="sect2">
+<h3 id="import-dashboards-from-the-gallery">Import Dashboards from the Gallery</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4566,8 +4635,8 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="duplicating-dashboards">Duplicating Dashboards</h4>
+<div class="sect2">
+<h3 id="duplicating-dashboards">Duplicating Dashboards</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4576,14 +4645,15 @@ Microsoft Windows Server 2019</p></td>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="cloud-central-products-menu">Cloud Central products menu</h4>
+<div class="sect2">
+<h3 id="cloud-central-products-menu">Cloud Central products menu</h3>
 <div class="ulist">
 <ul>
 <li>
 <p>The menu allowing you to switch to other NetApp Cloud Central products has moved to the upper right corner of the screen.</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -4733,4 +4803,5 @@ Microsoft Windows Server 2019</p></td>
     </script>
     <script src='/us-en/cloudinsights/js/www-ntap.js'></script>
     <script src='/us-en/cloudinsights/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloudinsights/js/sidebar.js'></script>
   </body></html>

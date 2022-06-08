@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloudinsights/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloudinsights/concept_log_explorer.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloudinsights/concept_log_explorer.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloudinsights/concept_log_explorer.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloudinsights/concept_log_explorer.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloudinsights/concept_log_explorer.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloudinsights/concept_log_explorer.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloudinsights/concept_log_explorer.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloudinsights/concept_log_explorer.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloudinsights/concept_log_explorer.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloudinsights/concept_log_explorer.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -1502,7 +1494,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/index.html">
         Cloud Insights documentation
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloudinsights/concept_whats_new.html">
@@ -2009,7 +2001,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-21 14:04:03 +0000">03/21/2022</time>
+    <time datetime="2022-06-08 13:38:32 +0000">06/08/2022</time>
     
   
 
@@ -2079,8 +2071,9 @@ You can begin typing the desired text in the filter field; Cloud Insights will p
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="the-log-graph">The Log Graph</h4>
+<div class="sect1">
+<h2 id="the-log-graph">The Log Graph</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The graph shows the number of log entries, grouped into <em>buckets</em>, which are based on the selected dashboard time range. The buckets for each time range are as follows:</p>
 </div>
@@ -2157,8 +2150,10 @@ You can begin typing the desired text in the filter field; Cloud Insights will p
 <p>At any point, you can click on <em>Create a Log Monitor</em> to create a new Monitor based on the current filter.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="log-details">Log Details</h4>
+</div>
+<div class="sect1">
+<h2 id="log-details">Log Details</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Clicking anywhere in a log entry in the list will open a detail pane for that entry.  Here you can explore more information about the event.</p>
 </div>
@@ -2167,6 +2162,7 @@ You can begin typing the desired text in the filter field; Cloud Insights will p
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/LogExplorer_DetailPane.png" alt="Log Entry Detail Pane"></span></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2339,4 +2335,5 @@ You can begin typing the desired text in the filter field; Cloud Insights will p
     </script>
     <script src='/us-en/cloudinsights/js/www-ntap.js'></script>
     <script src='/us-en/cloudinsights/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloudinsights/js/sidebar.js'></script>
   </body></html>
