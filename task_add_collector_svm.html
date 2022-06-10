@@ -2001,7 +2001,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-13 13:45:51 +0000">05/13/2022</time>
+    <time datetime="2022-06-09 20:03:41 +0000">06/09/2022</time>
     
   
 
@@ -2026,8 +2026,9 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="before-you-begin">Before you begin</h3>
+<div class="sect1">
+<h2 id="before-you-begin">Before you begin</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -2145,10 +2146,12 @@ clustershell::&gt; <code>network interface modify -lif &lt;SVM_data_LIF_name&gt;
 </ul>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="a-note-about-permissions">A Note About Permissions</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="a-note-about-permissions">A Note About Permissions</h3>
-<div class="sect3">
-<h4 id="permissions-when-adding-via-cluster-management-ip">Permissions when adding via <strong>Cluster Management IP</strong>:</h4>
+<h3 id="permissions-when-adding-via-cluster-management-ip">Permissions when adding via <strong>Cluster Management IP</strong>:</h3>
 <div class="paragraph">
 <p>If you cannot use the Cluster management administrator user to allow Cloud Secure to access the ONTAP SVM data collector, you can create a new user named “csuser” with the roles as shown in the commands below. Use the username “csuser” and password for “csuser” when configuring the Cloud Secure data collector to use Cluster Management IP.</p>
 </div>
@@ -2175,8 +2178,8 @@ security login role create -role csrole -cmddirname "vserver export-policy rule"
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="permissions-when-adding-via-vserver-management-ip">Permissions when adding via <strong>Vserver Management IP</strong>:</h4>
+<div class="sect2">
+<h3 id="permissions-when-adding-via-vserver-management-ip">Permissions when adding via <strong>Vserver Management IP</strong>:</h3>
 <div class="paragraph">
 <p>If you cannot use the Cluster management administrator user to allow Cloud Secure to access the ONTAP SVM data collector, you can create a new user named “csuser” with the roles as shown in the commands below. Use the username “csuser” and password for “csuser” when configuring the Cloud Secure data collector to use Vserver Management IP.</p>
 </div>
@@ -2198,8 +2201,10 @@ security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="configure-the-data-collector">Configure the data collector</h3>
+</div>
+<div class="sect1">
+<h2 id="configure-the-data-collector">Configure the data collector</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <div class="title">Steps for Configuration</div>
 <ol class="arabic">
@@ -2298,8 +2303,10 @@ When adding via SVM IP the options are:<br>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="troubleshooting">Troubleshooting</h3>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Known problems and their resolutions are described in the following table.</p>
 </div>
@@ -2501,6 +2508,7 @@ Data Collector will restart and the error should be resolved.</p></td>
 </table>
 <div class="paragraph">
 <p>If you are still experiencing problems, reach out to the support links mentioned in the <strong>Help &gt; Support</strong> page.</p>
+</div>
 </div>
 </div>
 

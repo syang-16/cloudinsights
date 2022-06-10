@@ -323,14 +323,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/cs_notifications_email.html</loc>
       
-      <lastmod>2022-04-22T17:06:42+00:00</lastmod>
+      <lastmod>2022-06-08T14:24:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html</loc>
       
-      <lastmod>2022-03-08T16:06:25+00:00</lastmod>
+      <lastmod>2022-06-08T14:25:41+00:00</lastmod>
       
     </url>
   
@@ -435,7 +435,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html</loc>
       
-      <lastmod>2021-12-10T17:54:45+00:00</lastmod>
+      <lastmod>2022-06-09T14:40:36+00:00</lastmod>
       
     </url>
   
@@ -449,7 +449,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/kubernetes_landing_page.html</loc>
       
-      <lastmod>2022-01-25T18:34:52+00:00</lastmod>
+      <lastmod>2022-06-09T14:41:19+00:00</lastmod>
       
     </url>
   
@@ -463,7 +463,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/kubernetes_node_detail.html</loc>
       
-      <lastmod>2021-10-15T15:46:09+00:00</lastmod>
+      <lastmod>2022-06-09T19:59:53+00:00</lastmod>
       
     </url>
   
@@ -505,7 +505,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/reporting_creating_custom_reports.html</loc>
       
-      <lastmod>2020-02-20T17:48:14+00:00</lastmod>
+      <lastmod>2022-06-09T20:01:33+00:00</lastmod>
       
     </url>
   
@@ -519,7 +519,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/reporting_managing_reports.html</loc>
       
-      <lastmod>2022-02-01T20:36:20+00:00</lastmod>
+      <lastmod>2022-06-09T20:02:05+00:00</lastmod>
       
     </url>
   
@@ -568,7 +568,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights//search.html</loc>
       
-      <lastmod>2022-06-09T20:18:27+00:00</lastmod>
+      <lastmod>2022-06-10T20:14:51+00:00</lastmod>
       
     </url>
   
@@ -596,14 +596,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_add_collector_svm.html</loc>
       
-      <lastmod>2022-05-13T13:45:51+00:00</lastmod>
+      <lastmod>2022-06-09T20:03:41+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_annotation_import.html</loc>
       
-      <lastmod>2020-04-02T14:29:40+00:00</lastmod>
+      <lastmod>2022-06-09T20:04:29+00:00</lastmod>
       
     </url>
   
@@ -624,7 +624,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_config_cs_amazon_fsx.html</loc>
       
-      <lastmod>2021-09-24T18:19:36+00:00</lastmod>
+      <lastmod>2022-06-09T20:04:59+00:00</lastmod>
       
     </url>
   
@@ -869,7 +869,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_config_cs_data_collectors.html</loc>
       
-      <lastmod>2021-02-05T15:57:21+00:00</lastmod>
+      <lastmod>2022-06-09T20:06:19+00:00</lastmod>
       
     </url>
   
