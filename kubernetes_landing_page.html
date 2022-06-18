@@ -2001,7 +2001,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-09 14:41:19 +0000">06/09/2022</time>
+    <time datetime="2022-06-17 15:22:59 +0000">06/17/2022</time>
     
   
 
@@ -2025,100 +2025,39 @@
 <p>The Cloud Insights Kubernetes Explorer is a powerful tool for displaying the overall health and usage of your Kubernetes clusters and allows you to easily drill down into areas of investigation.</p>
 </div>
 <div class="paragraph">
-<p>Clicking on <strong>Dashboards &gt; Kubernetes Explorer</strong> opens the Kubernetes Cluster overview page. This overview page contains a wide variety of at-a-glance information.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Numbers displayed in blue in the various sections of this and subsequent Kubernetes Explorer pages (for example, node/pod status, namespace counts, etc.) are links to related query pages that show the details behind those numbers.
-</td>
-</tr>
-</table>
+<p>Clicking on <strong>Dashboards &gt; Kubernetes Explorer</strong> opens the Kubernetes Cluster list page. This overview page contains table of the Kubernetes clusters in your environment.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Cluster_Overview_Page.png" alt="Kubernetes Overview"></span></p>
+<p><span class="image"><img src="./media/Kubernetes_List_Page_new.png" alt="Kubernetes list page"></span></p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="cluster-usage-overview">Cluster Usage overview</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="cluster-list">Cluster list</h3>
 <div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Cluster_List.png" alt="Cluster List Overview"></span></p>
-</div>
-<div class="paragraph">
-<p>The cluster list displays the following usage information for each cluster in your environment:</p>
+<p>The cluster list displays the following information for each cluster in your environment:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>CPU: percentage of total CPU capacity in use</p>
+<p>Cluster <strong>Name</strong>. Clicking on a cluster name will open the <a href="kubernetes_cluster_detail.html"><strong>detail page</strong></a> for that cluster.</p>
 </li>
 <li>
-<p>Memory: percentage of total memory used</p>
+<p><strong>Saturation</strong> percentages. Overall Saturation is the highest of CPU, Memory, or Storage Saturation.</p>
 </li>
 <li>
-<p>Storage: percentage of total storage in use</p>
+<p>Number of <strong>Nodes</strong> in the cluster. Clicking this number will open the Node list page.</p>
+</li>
+<li>
+<p>Number of <strong>Pods</strong> in the cluster. Clicking this number will open the Pod list page.</p>
+</li>
+<li>
+<p>Number of <strong>Namespaces</strong> in the cluster. Clicking this number will open the Namespace list page.</p>
+</li>
+<li>
+<p>Number of <strong>Workloads</strong> in the cluster. Clicking this number will open the Workload list page.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>You can sort the cluster list by any of the following factors:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Node &amp; Pod Alert Level (default)</p>
-</li>
-<li>
-<p>Cluster Name</p>
-</li>
-<li>
-<p>Number of Nodes</p>
-</li>
-<li>
-<p>Most Utilized by Compute</p>
-</li>
-<li>
-<p>Least Utilized by Compute</p>
-</li>
-<li>
-<p>Most Utilized by Storage</p>
-</li>
-<li>
-<p>Least Utilized by Storage</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Clicking on a Cluster Name will open the <a href="kubernetes_cluster_detail.html"><strong>detail page</strong></a> for that cluster</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="node-and-pod-status">Node and Pod Status</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Node_Pod_Status.png" alt="Node and Pod Status"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="namespaces">Namespaces</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To the right of the screen is a list of the top three namespaces utilized in each cluster.  Click the <strong>All</strong> link to see all namespaces for the cluster.</p>
-</div>
-<div class="paragraph">
-<p>Clicking on a namespace will open the Namespace Detail Page.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Namespaces.png" alt="Namespaces"></span></p>
-</div>
 </div>
 </div>
 <div class="sect1">

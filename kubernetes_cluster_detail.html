@@ -2001,7 +2001,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-01-07 19:44:12 +0000">01/07/2021</time>
+    <time datetime="2022-06-14 20:29:37 +0000">06/14/2022</time>
     
   
 
@@ -2022,48 +2022,60 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The Kubernetes cluster detail page displays detailed information about your Kubernetes cluster.</p>
+<p>The Kubernetes cluster detail page displays a detailed overview of your Kubernetes cluster.</p>
 </div>
 <div class="paragraph">
-<p>The detail page is comprised of three distinct but linked landing pages showing cluster, node, and pod information. The "Resource Usage" section changes to show the details of the selected item (cluster, node, or pod). You can see the current page type and name at the top of the screen. The current page is shown in the following heirarchy: <em>Site Name / Kubernetes / Cluster / Node / Pod</em>.  You can click any part of this "breadcrumb" trail to go directly to that specific page.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Breadcrumb.png" alt="Page Breadcrumb"></span></p>
+<p><span class="image"><img src="./media/Kubernetes_Detail_Page_new.png" alt="Cluster detail page"></span></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cluster-overview">Cluster Overview</h2>
+<h2 id="namespace-node-and-pod-counts">Namespace, Node, and Pod Counts</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The cluster overview page provides useful information at a glance:</p>
+<p>The counts at the top of the page show you the total number of namespaces, nodes, and pods in the cluster, as well as the number of popds that are currently alerting and pending.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="shared-resources-and-saturation">Shared Resources and Saturation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On the top right of the detail page is your cluster saturation as a current percentage as well as a graph showing the recent trend over time. Cluster saturation is the highest of CPU, memory, or storage saturation at each point in time.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Cluster_View_Annotated.png" alt="Annotated Cluster View"></span></p>
-</div>
-<div class="sect2">
-<h3 id="node-and-pod-counts">Node and Pod Counts</h3>
-<div class="paragraph">
-<p>The Node/Pod counts at the top of the page show you the total number of nodes and pods in the cluster, as well as a breakdown of how many pods are currently alerting or pending.</p>
+<p>Below that, the page shows by default <strong>Shared Resources</strong> usage, with tabs for CPU, Memory, and Storage. Each tab shows the saturation percentage and trend over time, with additional usage details. For storage, the value shown is the greater of backend and filesystem saturation, which are calculated independently.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Pod_Counts.png" alt="Node and Pod Counts"></span></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-It is possible that the three pod sub-counts (healthy, alerting, pending) can add up to more than the displayed total number of pods. This can happen because the <em>pending</em> count includes <em>all</em> pending pods, both unscheduled and scheduled (in other words, unattached and attached to nodes).
-</td>
-</tr>
-</table>
+<p>The devices with the highest usage are shown in a table at the bottom. Click any link to explore these devices.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="the-cluster-wheel">The Cluster "Wheel"</h3>
+</div>
+<div class="sect1">
+<h2 id="namespaces">Namespaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Namespaces tab displays a list of all the namespaces in your Kubernetes environment, showing CPU and Memory usage as well as a count of workloads in each namespace. Click the Name links to explore each namespace.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Kubernetes_Namespace_tab_new.png" alt="list of current namespaces in your K8s environment"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workloads">Workloads</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Similarly, the Workloads tab displays a list of the workloads in each namespace, again showing CPU and Memory usage. Clicking the Namespace links drills into each.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Kubernetes_Workloads_tab_new.png" alt="list of current namespaces in your K8s environment"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-cluster-wheel">The Cluster "Wheel"</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><span class="image"><img src="./media/Kubernetes_Wheel_Section.png" alt="Cluster Wheel"></span></p>
 </div>
@@ -2098,42 +2110,12 @@ It is possible that the three pod sub-counts (healthy, alerting, pending) can ad
 <p><span class="image"><img src="./media/Kubernetes_Capacity_Info.png" alt="Node Capacity and Allocation"></span></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="detail-section">Detail Section</h3>
+</div>
+<div class="sect1">
+<h2 id="a-note-about-the-gauges">A note about the gauges</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Each page of the Kubernetes Explorer displays a set of usage graphs that may include CPU, Memory, and Storage. Below these graphs are summaries and lists of the top objects in each category, with links to underlying details. For example, <em>Node</em> shows pods and containers, <em>Pod</em> shows PVCs and related objects and containers, etc.  The following illustration shows an example of the detailed information on a <em>Node</em> page:</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Node_Resource_Usage.png" alt="Resource Usage Example"></span></p>
-</div>
-<div class="paragraph">
-<p>Resources experiencing alerts will show at the top of the lists. Click on the affected resource to drill into it for more detail.</p>
-</div>
-<div class="sect3">
-<h4 id="a-note-about-the-gauges">A note about the gauges</h4>
-<div class="paragraph">
-<p>The Memory and CPU gauges show three colors, since they show <em>used</em> in relation to both <em>allocatable capacity</em> and <em>total capacity</em>. Storage gauges only show two colors because they only show a single pair of values: <em>used</em> in relation to <em>total</em>.</p>
-</div>
-<div class="paragraph">
-<p>Keep the following in mind when reading the gauges.</p>
-</div>
-<div class="paragraph">
-<p>The dark blue band shows the amount used.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>When viewed against the <em>light blue band</em>, the dark blue shows used as the % of allocatable amount. This matches the "% of allocatable" value shown (81 in the example below).</p>
-</li>
-<li>
-<p>When viewed against the <em>white background</em>, the dark blue shows used as the % of total capacity. This matches the "% of capacity" value shown (63 in this example).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Kubernetes_Gauge_Explained.png" alt="Gauge Numbers Explained"></span></p>
-</div>
-</div>
+<p>The Memory and CPU gauges show three colors, since they show <em>used</em> in relation to both <em>allocatable capacity</em> and <em>total capacity</em>.</p>
 </div>
 </div>
 </div>
