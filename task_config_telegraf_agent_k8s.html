@@ -1937,7 +1937,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-13 15:11:28 +0000">07/13/2022</time>
+    <time datetime="2022-07-13 15:18:17 +0000">07/13/2022</time>
     
   
 
@@ -2103,6 +2103,9 @@ If you are using a proxy, read the proxy instructions for your platform before i
 <ul>
 <li>
 <p>If you are running on OpenShift 4.6 - 4.8, you must follow the <strong>OpenShift Instructions</strong> below in addition to ensuring these pre-requisites are met.</p>
+</li>
+<li>
+<p>The NetApp Kubernetes Monitoring Operator and its dependencies (telegraf, kube-state-metrics, fluentbit, etc.) are not supported on nodes that are running with Arm64 architecture.</p>
 </li>
 <li>
 <p>The following commands must be available: <em>curl</em>, <em>sudo</em> (not required for script-based installation), <em>openssl</em>, <em>sha256sum</em>, and <em>kubectl</em>. For best results, add these commands to the PATH.</p>
