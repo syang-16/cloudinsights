@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Researching a failed data collector](https://docs.netapp.com/us-en/cloudinsights/task_research_failed_collector.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/task_research_failed_collector.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Researching a failed data collector](https://docs.netapp.com/us-en/cloudinsights/task_research_failed_collector.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/task_research_failed_collector.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/us-en/cloudinsights/search.html"
           data-type="widget" 
-          data-placeholder="Search Documentation" 
-          data-no-results-found="No results were found for {query}" 
-          data-did-you-mean="Search for {suggestion}." 
-          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
-          data-results-found="{hitCount} results found"  
+          data-placeholder="Search Documentation"
+          data-no-results-found="No results were found for {query}"
+          data-did-you-mean="Search for {suggestion}."
+          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?"
+          data-results-found="{hitCount} results found"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -341,7 +343,7 @@
   <div class="col-md-3" id="sidebar-height">
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
-    <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>Available PDFs<span>
+    <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>Available PDFs<span>
     </span>
   </a>
 </div>
@@ -351,7 +353,7 @@
         
         
         <a target="_blank" href="/us-en/cloudinsights/pdfs/fullsite-sidebar/Cloud_Insights_documentation.pdf" >
-          <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
+          <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>PDF of this doc site</a>
 
 
 
@@ -370,7 +372,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Security.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Security
           </a>
           
@@ -378,8 +380,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -399,7 +399,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Getting_Started.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Getting Started
           </a>
           
@@ -417,7 +417,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Collecting_Data.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Collecting Data
           </a>
           
@@ -437,19 +437,10 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/cloudinsights/pdfs/pages/task_research_failed_collector.pdf" >
-    <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
 
-
-          
         </li>
       </ul>
     
@@ -463,8 +454,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -488,7 +477,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Automatic_Device_Resolution.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Automatic Device Resolution
           </a>
           
@@ -504,8 +493,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -525,7 +512,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Creating_Dashboards.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Creating Dashboards
           </a>
           
@@ -545,14 +532,12 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Sample_Dashboards.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Sample Dashboards
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -562,8 +547,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -583,7 +566,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Kubernetes_Explorer.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Kubernetes Explorer
           </a>
           
@@ -591,8 +574,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -612,7 +593,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Working_with_Queries.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Working with Queries
           </a>
           
@@ -632,8 +613,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -653,7 +632,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Working_with_Annotations.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Working with Annotations
           </a>
           
@@ -665,8 +644,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -686,7 +663,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Working_with_Applications.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Working with Applications
           </a>
           
@@ -694,8 +671,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -715,7 +690,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Monitors_and_Alerts.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Monitors and Alerts
           </a>
           
@@ -727,8 +702,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -752,7 +725,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Monitoring_your_Environment.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Monitoring your Environment
           </a>
           
@@ -760,8 +733,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -781,7 +752,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Asset_Page_Information.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Asset Page Information
           </a>
           
@@ -799,8 +770,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -820,7 +789,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Reporting.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Reporting
           </a>
           
@@ -848,8 +817,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -869,7 +836,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Cloud_Secure.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Cloud Secure
           </a>
           
@@ -887,7 +854,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Getting_Started.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Getting Started
           </a>
           
@@ -913,8 +880,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -936,7 +901,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Forensics.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Forensics
           </a>
           
@@ -946,8 +911,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -965,8 +928,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -988,7 +949,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Troubleshooting.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Troubleshooting
           </a>
           
@@ -998,19 +959,10 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/cloudinsights/pdfs/pages/task_research_failed_collector.pdf" >
-    <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1030,7 +982,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Reference___Support.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Reference & Support
           </a>
           
@@ -1050,7 +1002,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Data_Collector_Reference___Infrastructure.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Data Collector Reference - Infrastructure
           </a>
           
@@ -1072,7 +1024,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Broadcom.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Broadcom
           </a>
           
@@ -1080,8 +1032,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1103,14 +1053,12 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Dell.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Dell
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1130,7 +1078,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Dell_EMC.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Dell EMC
           </a>
           
@@ -1160,8 +1108,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1185,7 +1131,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/HP_Enterprise.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             HP Enterprise
           </a>
           
@@ -1195,8 +1141,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1216,7 +1160,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Hitachi_Data_Systems.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Hitachi Data Systems
           </a>
           
@@ -1226,8 +1170,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1251,7 +1193,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/IBM.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             IBM
           </a>
           
@@ -1267,8 +1209,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1290,7 +1230,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Microsoft.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Microsoft
           </a>
           
@@ -1298,8 +1238,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1319,7 +1257,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/NetApp.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             NetApp
           </a>
           
@@ -1345,8 +1283,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1366,8 +1302,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1387,7 +1321,7 @@
               href="/us-en/cloudinsights/pdfs/sidebar/Data_Collector_Reference___Services.pdf" 
             
           >
-            <img src="/us-en/cloudinsights/images/pdf.png" width="16" height="16"/>
+            <img src="/us-en/cloudinsights/images/pdf.png" alt="" width="16" height="16"/>
             Data Collector Reference - Services
           </a>
           
@@ -1445,8 +1379,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1456,21 +1388,18 @@
 
 
 
-
-          
         </li>
       </ul>
     
 
   
-
 
 
 
 </li></ul>
   <div class="zip-pdf-link-container" style="display: none;">   
     <a href="#" id="zipPdf">
-      <img src="/us-en/cloudinsights/images/pdf-zip.png" width="16" height="16"/>
+      <img src="/us-en/cloudinsights/images/pdf-zip.png" alt="" width="16" height="16"/>
       <pre>Collection of separate PDF docs<span class="zip-size"></span></pre>
     </a><div id="zip-link-popup" class="hide">
     <div class="inner-modal">
