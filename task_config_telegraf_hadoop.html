@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-02-25 20:16:15 +0000">02/25/2021</time>
+    <time datetime="2022-06-10 20:20:51 +0000">06/10/2022</time>
     
   
 
@@ -2025,16 +2025,16 @@
 <div class="paragraph">
 <p>The Hadoop plugin is based on the telegraf&#8217;s Jolokia plugin. As such as a requirement to gather info from all Hadoop components, JMX needs to be configured and exposed via Jolokia on all components.</p>
 </div>
-<div class="sect3">
-<h4 id="compatibility">Compatibility</h4>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
 <div class="paragraph">
 <p>Configuration was developed against Hadoop version 2.9.2.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="setting-up">Setting Up</h3>
 <div class="sect3">
-<h4 id="setting-up">Setting Up</h4>
-<div class="sect4">
-<h5 id="jolokia-agent-jar">Jolokia Agent Jar</h5>
+<h4 id="jolokia-agent-jar">Jolokia Agent Jar</h4>
 <div class="paragraph">
 <p>For all individual components, a version the Jolokia agent jar file must be downloaded. The version tested against was <a href="https://jolokia.org/download.html">Jolokia agent 1.6.0</a>.</p>
 </div>
@@ -2042,8 +2042,8 @@
 <p>Instructions below assume that downloaded jar file (jolokia-jvm-1.6.0-agent.jar) is placed under location '/opt/hadoop/lib/'.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="namenode">NameNode</h5>
+<div class="sect3">
+<h4 id="namenode">NameNode</h4>
 <div class="paragraph">
 <p>To configure NameNode to expose the Jolokia API, you can setup the following in &lt;HADOOP_HOME&gt;/etc/hadoop/hadoop-env.sh:</p>
 </div>
@@ -2054,8 +2054,8 @@ You can choose a different port for JMX (8000 above) and Jolokia (7800). If you 
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="secondary-namenode">Secondary NameNode</h5>
+<div class="sect3">
+<h4 id="secondary-namenode">Secondary NameNode</h4>
 <div class="paragraph">
 <p>To configure the Secondary NameNode to expose the Jolokia API, you can setup the following in &lt;HADOOP_HOME&gt;/etc/hadoop/hadoop-env.sh:</p>
 </div>
@@ -2066,8 +2066,8 @@ You can choose a different port for JMX (8002 above) and Jolokia (7802). If you 
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="datanode">DataNode</h5>
+<div class="sect3">
+<h4 id="datanode">DataNode</h4>
 <div class="paragraph">
 <p>To configure the DataNodes to expose the Jolokia API, you can setup the following in &lt;HADOOP_HOME&gt;/etc/hadoop/hadoop-env.sh:</p>
 </div>
@@ -2078,8 +2078,8 @@ You can choose a different port for JMX (8001 above) and Jolokia (7801). If you 
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="resourcemanager">ResourceManager</h5>
+<div class="sect3">
+<h4 id="resourcemanager">ResourceManager</h4>
 <div class="paragraph">
 <p>To configure the ResourceManager to expose the Jolokia API, you can setup the following in &lt;HADOOP_HOME&gt;/etc/hadoop/hadoop-env.sh:</p>
 </div>
@@ -2090,8 +2090,8 @@ You can choose a different port for JMX (8003 above) and Jolokia (7803). If you 
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="nodemanager">NodeManager</h5>
+<div class="sect3">
+<h4 id="nodemanager">NodeManager</h4>
 <div class="paragraph">
 <p>To configure the NodeManagers to expose the Jolokia API, you can setup the following in &lt;HADOOP_HOME&gt;/etc/hadoop/hadoop-env.sh:</p>
 </div>
@@ -2102,8 +2102,8 @@ You can choose a different port for JMX (8004 above) and Jolokia (7804). If you 
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="jobhistoryserver">JobHistoryServer</h5>
+<div class="sect3">
+<h4 id="jobhistoryserver">JobHistoryServer</h4>
 <div class="paragraph">
 <p>To configure the JobHistoryServer to expose the Jolokia API, you can setup the following in &lt;HADOOP_HOME&gt;/etc/hadoop/hadoop-env.sh:</p>
 </div>

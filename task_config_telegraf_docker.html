@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-07-23 13:16:46 +0000">07/23/2021</time>
+    <time datetime="2022-06-10 20:18:33 +0000">06/10/2022</time>
     
   
 
@@ -2004,16 +2004,18 @@
 <div class="paragraph">
 <p>The Telegraf input plugin for Docker collects metrics through a specified UNIX socket or a TCP endpoint.</p>
 </div>
-<div class="sect3">
-<h4 id="compatibility">Compatibility</h4>
+<div class="sect2">
+<h3 id="compatibility">Compatibility</h3>
 <div class="paragraph">
 <p>Configuration was developed against Docker version 1.12.6.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="setting-up">Setting Up</h4>
-<div class="sect4">
-<h5 id="accessing-docker-through-a-unix-socket">Accessing Docker through a UNIX socket</h5>
+<div class="sect2">
+<h3 id="setting-up">Setting Up</h3>
+
+</div>
+<div class="sect2">
+<h3 id="accessing-docker-through-a-unix-socket">Accessing Docker through a UNIX socket</h3>
 <div class="paragraph">
 <p>If the Telegraf agent is running on baremetal, add the telegraf Unix user to the docker Unix group by running the following:</p>
 </div>
@@ -2050,11 +2052,10 @@ mountPath: /var/run/docker.sock</pre>
 <p>Note that the Cloud Insights installer provided for the Kubernetes platform takes care of this mapping automatically.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="access-docker-through-a-tcp-endpoint">Access Docker through a TCP endpoint</h5>
+<div class="sect2">
+<h3 id="access-docker-through-a-tcp-endpoint">Access Docker through a TCP endpoint</h3>
 <div class="paragraph">
 <p>By default, Docker uses port 2375 for unencrypted access and port 2376 for encrypted access.</p>
-</div>
 </div>
 </div>
 </div>

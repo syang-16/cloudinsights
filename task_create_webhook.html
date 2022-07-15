@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-11-01 14:02:27 +0000">11/01/2021</time>
+    <time datetime="2022-06-10 20:29:00 +0000">06/10/2022</time>
     
   
 
@@ -2011,8 +2011,9 @@
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="creating-a-webhook">Creating a Webhook</h3>
+<div class="sect1">
+<h2 id="creating-a-webhook">Creating a Webhook</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To create a Cloud Insights webhook, go to <strong>Admin &gt; Notifications</strong> and select the <strong>Webhooks</strong> tab.</p>
 </div>
@@ -2028,26 +2029,29 @@
 <div class="paragraph">
 <p><span class="image"><img src="./media/Webhook_Default_Parameters.png" alt="Cloud Insights Default Webhook Parameters"></span></p>
 </div>
-<div class="sect3">
-<h4 id="parameters-what-are-they-and-how-do-i-use-them">Parameters: What are they and how do I use them?</h4>
+<div class="sect2">
+<h3 id="parameters-what-are-they-and-how-do-i-use-them">Parameters: What are they and how do I use them?</h3>
 <div class="paragraph">
 <p>Alert Parameters are dynamic values populated per alert. For example, the <em>%%TriggeredOn%%</em> parameter will be replaced with the object on which the alert was triggered.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="custom-parameters-and-secrets">Custom Parameters and Secrets</h4>
+<div class="sect2">
+<h3 id="custom-parameters-and-secrets">Custom Parameters and Secrets</h3>
 <div class="paragraph">
 <p>In this section you can add any custom parameters and/or secrets you wish. For security reasons, if a secret is defined only the webhook creator can modify this webhook channel. It is read-only for others. You can use secrets in URL/Headers as <em>%%&lt;secret_name&gt;%%</em>.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="choosing-webhook-notification-in-a-monitor">Choosing Webhook Notification in a Monitor</h3>
+</div>
+<div class="sect1">
+<h2 id="choosing-webhook-notification-in-a-monitor">Choosing Webhook Notification in a Monitor</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To choose the webhook notification in a <a href="task_create_monitor.html#creating-a-monitor">monitor</a>, go to <strong>Alerts &gt; Manage Monitors</strong> and select the desired monitor, or add a new monitor. In the <em>Set up team notifications</em> section, choose <em>Webhook</em> as the delivery method. Select the alert levels (Critical, Warning, Resolved), then choose the desired webhook.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/Webhook_Monitor_Notify.png" alt="Webhook Monitor Notification"></span></p>
+</div>
 </div>
 </div>
 <div class="sect1">
