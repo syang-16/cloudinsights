@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Restricting User Access</title>
+  <title>Blocking User Access</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Restricting User Access" />
+  <meta property="og:title" content="Blocking User Access" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html" />
 	<meta property="og:description" content="With Cloud Secure, you can restrict user access in the event of suspected sabotage" />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Restricting User Access](https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/cs_restrict_user_access.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Blocking User Access](https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/cs_restrict_user_access.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1934,14 +1934,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Restricting User Access</h1>
+  <h1 class="n-doc__component-detail-heading">Blocking User Access</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 14:25:41 +0000">06/08/2022</time>
+    <time datetime="2022-07-15 13:25:22 +0000">07/15/2022</time>
     
   
 
@@ -1962,116 +1962,46 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Once an attack is detected, Cloud Secure can stop the attack by restricting user access to the file system. Access can be restricted automatically, using Automated Response Policies or manually from the alert or user details pages.</p>
+<p>Once an attack is detected, Cloud Secure can stop the attack by blocking user access to the file system. Access can be blocked automatically, using Automated Response Policies or manually from the alert or user details pages.</p>
 </div>
 <div class="paragraph">
-<p>When restricting user access, you should define the access limit type (Block or Read-only) and time-period. After the selected time period ends, user access is automatically restored.</p>
+<p>When blocking user access, you should define a blocking time period. After the selected time period ends, user access is automatically restored.<br>
+Access blocking is supported for both SMB and NFS protocols.</p>
 </div>
 <div class="paragraph">
-<p>Access restriction is supported for both SMB and NFS protocols.</p>
+<p>User is directly blocked for SMB and IP address of the host machines causing the attack will be blocked for NFS. Those machine IP addresses will be blocked from accessing any of the Storage Virtual Machines (SVMs) monitored by Cloud Secure.</p>
 </div>
 <div class="paragraph">
-<p>Restriction happens via IP address of the host machines, meaning the machines from which the user has accessed the storage. Those machine IP addresses will be blocked from accessing any of the Storage Virtual Machines (SVMs) monitored by Cloud Secure.</p>
+<p>For example, let’s say Cloud Secure manages 10 SVMs and the Automatic Response Policy is configured for four of those SVMs. If the attack originates in one of the four SVMs, the user’s access will be blocked in all 10 SVMs. A Snapshot is still taken on the originating SVM.</p>
 </div>
 <div class="paragraph">
-<p>For example, let&#8217;s say Cloud Secure manages 10 SVMs and the Automatic Response Policy is configured for four of those SVMs. If the attack originates in one of the four SVMs, the user&#8217;s access will be restricted in all 10 SVMs. A Snapshot is still taken on the originating SVM.</p>
-</div>
-<div class="paragraph">
-<p>If there are four SVMs with one SVM configured for CIFS, one configured for NFS, and the remaining two configured for both NFS and CIFS, all the SVMs will be blocked if the attack originates in any of the four SVMs.</p>
+<p>If there are four SVMs with one SVM configured for SMB, one configured for NFS, and the remaining two configured for both NFS and SMB, all the SVMs will be blocked if the attack originates in any of the four SVMs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="prerequisites-for-user-access-restriction">Prerequisites for User Access Restriction</h2>
+<h2 id="prerequisites-for-user-access-blocking">Prerequisites for User Access Blocking</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Customers must configure export policies for SMB and NFS for this feature to work. Follow the steps below if NFS and SMB are configured in the Data Source Collector.</p>
+<p>Cluster level credentials are needed for this feature to work.</p>
 </div>
 <div class="paragraph">
-<p>For NFS, export policies are configured by default. By default, an export policy is created when NFS service is created in the SVM.</p>
+<p>If you are using cluster administration credentials, no new permissions are needed.</p>
 </div>
 <div class="paragraph">
-<p>For SMB, the export policies must be configured.</p>
-</div>
-<div class="paragraph">
-<p>If you are NOT using cluster/svm credentials but using a csuser then follow the steps below first, to allow Cloud Secure to create a custom export policy rule.</p>
+<p>If you are using a custom user like csuser with permissions given to the user, then follow the steps below to give permissions to CloudSecure to block user.</p>
 </div>
 <div class="paragraph">
 <p>For csuser with cluster credentials, do the following from the ONTAP command line:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>security login role create -role csrole -cmddirname "vserver export-policy rule" -access all</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For csuser with SVM credentials, do the following from the ONTAP command line, inserting the correct &lt;vservername&gt;:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname "vserver export-policy rule" -access all</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Below are the commands to configure a default export policy.<br>
-Copy the commands to a text editor and replace the &lt;vserver&gt; name with the name of your vserver. Then copy each line one at a time and execute it in the ONTAP console.<br>
-Note that you must first switch to advanced mode before running the commands.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-This is particularly helpful for running PoCs. In the machines where you want to test, SMB can be configured as shown below. During PoCs, in the Data Source Collectors, enable only SMB/CIFs protocol and disable NFS protocol.
-</td>
-</tr>
-</table>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>set -privilege advanced</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cifs options modify -is-exportpolicy-enabled true -vserver &lt;vserver&gt;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>export-policy rule create -vserver &lt;vserver&gt; -policyname default -protocol cifs -clientmatch 0.0.0.0/0 -rorule any -rwrule any</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The clientmatch is either a specific address or a subnet (for example 10.0.3.212 or 192.168.5.0/24), a hostname, or a netgroup, like @netgroup. If you want an export policy to apply to all possible IP4 addresses, set the clientmatch to 0.0.0.0/0.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To check if the <em>exportpolicy</em> and <em>exportpolicy rule</em> have been configured correctly, run the following commands after running the above commands.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cifs options show  -fields is-exportpolicy-enabled -vserver &lt;vserver&gt;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>export-policy show -vserver &lt;vserver&gt;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>export-policy rule show -policyname default -vserver &lt;vserver&gt;</pre>
+<pre>security login role create -role csrole -cmddirname "vserver export-policy rule" -access all
+security login role create -role csrole -cmddirname set -access all
+security login role create -role csrole -cmddirname "vserver cifs session" -access all
+security login role create -role csrole -cmddirname "vserver services access-check authentication translate" -access all
+security login role create -role csrole -cmddirname "vserver name-mapping" -access all
+security login role create -role csrole -cmddirname "cluster show" -access readonly</pre>
 </div>
 </div>
 </div>
@@ -2082,17 +2012,17 @@ The clientmatch is either a specific address or a subnet (for example 10.0.3.212
 <div class="ulist">
 <ul>
 <li>
-<p>In Cloud Secure, navigate to <strong>Admin &gt; Automated Response Policies &gt; Response Policy Settings &gt; Access Limitation</strong>.</p>
+<p>In Cloud Secure, navigate to <strong>Admin &gt; Automated Response Policies &gt; Response Policy Settings &gt; Block User Access</strong>.</p>
 </li>
 <li>
-<p>Set “Enable Restrict User Access” to <em>enabled</em>.</p>
+<p>Set “Enable Block User Access” to <em>enabled</em>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="how-to-set-up-automatic-user-access-restriction">How to set up Automatic user access restriction?</h2>
+<h2 id="how-to-set-up-automatic-user-access-blocking">How to set up Automatic user access blocking?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -2103,34 +2033,34 @@ The clientmatch is either a specific address or a subnet (for example 10.0.3.212
 <p>Select the SVMs on which the attack policy should be monitored.</p>
 </li>
 <li>
-<p>Click on the checkbox “Restrict User IP File Access”. The feature will be enabled when this is selected.</p>
+<p>Click on the checkbox “Block User File Access”. The feature will be enabled when this is selected.</p>
 </li>
 <li>
 <p>Under “Limit User Access” select what mode of restriction should be applied.</p>
 </li>
 <li>
-<p>Under “Time Period” select the time until which the restriction should be applied.</p>
+<p>Under “Time Period” select the time until which the blocking should be applied.</p>
 </li>
 <li>
-<p>To test automatic restriction,, you can simulate an attack via a <a href="concept_cs_attack_simulator.html">simulated script</a>.</p>
+<p>To test automatic user blocking,, you can simulate an attack via a <a href="concept_cs_attack_simulator.html">simulated script</a>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="how-to-know-if-there-are-restricted-users-in-the-system">How to know if there are restricted users in the system?</h2>
+<h2 id="how-to-know-if-there-are-blocked-users-in-the-system">How to know if there are blocked users in the system?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>In the alert lists page, a banner on the top of screen will be displayed in case any user is restricted.</p>
+<p>In the alert lists page, a banner on the top of screen will be displayed in case any user is blocked.</p>
 </li>
 <li>
-<p>Clicking on the banner will take you to the “Users” page. In that the list of restricted users can be seen.</p>
+<p>Clicking on the banner will take you to the “Users” page, where the list of blocked users can be seen.</p>
 </li>
 <li>
-<p>In the “Users” page, there in a column named “IP Access”. In that column, the current state of user restriction will be displayed.</p>
+<p>In the “Users” page, there in a column named “User/IP Access”. In that column, the current state of user blocking will be displayed.</p>
 </li>
 </ul>
 </div>
@@ -2142,17 +2072,17 @@ The clientmatch is either a specific address or a subnet (for example 10.0.3.212
 <div class="ulist">
 <ul>
 <li>
-<p>You can go to the alert details or user details screen and then manually restrict or un-restrict a user from those screens.</p>
+<p>You can go to the alert details or user details screen and then manually block or restore a user from those screens.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="user-restrict-access-history">User Restrict Access History</h2>
+<h2 id="user-access-limitation-history">User Access Limitation History</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the alert details and user details page, in the user panel, you can view an audit of the user’s restrict access limitation history: Time, Action (Block, Read-only, restore), duration, action taken by, manual/automatic, and affected IPs.</p>
+<p>In the alert details and user details page, in the user panel, you can view an audit of the user’s access limitation history: Time, Action (Block, Unblock), duration, action taken by, manual/automatic, and affected IPs for NFS.</p>
 </div>
 </div>
 </div>
@@ -2165,10 +2095,10 @@ The clientmatch is either a specific address or a subnet (for example 10.0.3.212
 <div class="ulist">
 <ul>
 <li>
-<p>In Cloud Secure, navigate to <strong>Admin &gt; Automated Response Policies &gt; Response Policy Settings &gt; Access Limitation</strong></p>
+<p>In Cloud Secure, navigate to <strong>Admin &gt; Automated Response Policies &gt; Response Policy Settings &gt; Block User Access</strong></p>
 </li>
 <li>
-<p>De-select “Enable Restrict User Access” to disable.</p>
+<p>De-select “Enable Block User Access” to disable.</p>
 </li>
 </ul>
 </div>
@@ -2178,7 +2108,7 @@ The clientmatch is either a specific address or a subnet (for example 10.0.3.212
 </div>
 </div>
 <div class="sect1">
-<h2 id="manually-restore-ips">Manually Restore IPs</h2>
+<h2 id="manually-restore-ips-for-nfs">Manually Restore IPs for NFS</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Use the following steps to manually restore any IPs from ONTAP if your Cloud Secure trial expires, or if the agent/collector is down.</p>
@@ -2194,12 +2124,12 @@ The clientmatch is either a specific address or a subnet (for example 10.0.3.212
 Vserver      Name            Index   Protocol Match                 Rule
 ------------ --------------- ------  -------- --------------------- ---------
 svm_s_____a default         1       nfs3,    cloudsecure_rule,     never
-                                     nfs4,    10.19.12.216
+                                     nfs4,    10.11.12.13
                                      cifs
 svm_s_____a default         4       cifs,    0.0.0.0/0             any
                                      nfs
 svm_s_____a test            1       nfs3,    cloudsecure_rule,     never
-                                     nfs4,    10.19.12.216
+                                     nfs4,    10.11.12.13
                                      cifs
 svm_s_____a test            3       cifs,    0.0.0.0/0             any
                                      nfs,
@@ -2209,7 +2139,7 @@ svm_s_____a test            3       cifs,    0.0.0.0/0             any
 </div>
 </li>
 <li>
-<p>Delete the all rules across all policies on the SVM which have “cloudsecure_rule” as Client Match by specifying its respective RuleIndex. CloudSecure rule will usually be at 1.</p>
+<p>Delete the rules across all policies on the SVM which have “cloudsecure_rule” as Client Match by specifying its respective RuleIndex. Cloud Secure rule will usually be at 1.</p>
 <div class="literalblock">
 <div class="content">
 <pre>contrail-qa-fas8020::*&gt; export-policy rule delete -vserver &lt;svm name&gt; -policyname * -ruleindex 1</pre>
@@ -2217,7 +2147,7 @@ svm_s_____a test            3       cifs,    0.0.0.0/0             any
 </div>
 </li>
 <li>
-<p>Ensure cloudsecure rule is deleted (optional step to confirm)</p>
+<p>Ensure Cloud Secure rule is deleted (optional step to confirm).</p>
 <div class="literalblock">
 <div class="content">
 <pre>contrail-qa-fas8020::*&gt; export-policy rule show -vserver &lt;svm name&gt;
@@ -2264,8 +2194,8 @@ Restricting happens via IP address of the host through which the user is accessi
 <td class="tableblock halign-left valign-top"><p class="tableblock">The IP to be restricted is already being restricted from another user.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Restrict Access fails with warning “Export policy usage for SMB protocol is disabled for the SVM. Enable use of export-policy to use restrict user access feature”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure -is-exportpolicy-enabled option is true for the vserver as mentioned in the Prerequisites.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy could not be modified. Reason: not authorized for that command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check if using csuser, permissions are given to the user as mentioned above.</p></td>
 </tr>
 </tbody>
 </table>
