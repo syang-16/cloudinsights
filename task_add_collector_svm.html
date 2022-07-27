@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-09 20:03:41 +0000">06/09/2022</time>
+    <time datetime="2022-07-27 16:47:53 +0000">07/27/2022</time>
     
   
 
@@ -2439,10 +2439,16 @@ Edit the ONTAP SVM data collector and un-check CIFs as allowed protocol. Save th
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Collector shows the error message:<br>
 “Error: Failed to determine the health of the collector within 2 retries, try restarting the collector again (Error Code: AGENT008)”.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">On the Data Collectors page, scroll to the right of the data collector giving the error and click on the 3 dots menu. Select <em>Edit</em>.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. On the Data Collectors page, scroll to the right of the data collector giving the error and click on the 3 dots menu. Select <em>Edit</em>.<br>
 Enter the password of the data collector again.<br>
 Save the data collector by pressing on the <em>Save</em> button.<br>
-Data Collector will restart and the error should be resolved.</p></td>
+Data Collector will restart and the error should be resolved.<br>
+<br>
+2. The Agent machine may not enough CPU or RAM headroom, that is why the DSCs are failing.<br>
+Please check the number of Data Collectors which are added to the Agent in the machine.<br>
+If it is more than 20, please increase the CPU and RAM capacity of the Agent machine.<br>
+Once the CPU and RAM is increased, the DSCs will get into Initializing and then to Running state automatically.<br>
+Look into the sizing guide on <a href="https://docs.netapp.com/us-en/cloudinsights/concept_cs_event_rate_checker.html">this page</a>.</p></td>
 </tr>
 </tbody>
 </table>
