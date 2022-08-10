@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-15 18:37:56 +0000">07/15/2022</time>
+    <time datetime="2022-07-28 20:19:44 +0000">07/28/2022</time>
     
   
 
@@ -2063,6 +2063,30 @@ Monitors and Alerting is available in Cloud Insights Standard Edition and higher
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/alert_detail_page.png" alt="Alert Detail Page"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alerts-when-data-is-missing">Alerts When Data Is Missing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a realtime system such as Cloud Insights, to trigger the analysis of a Monitor to decide if an Alert should be generated, we rely on one of two things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the next datapoint to arrive</p>
+</li>
+<li>
+<p>a timer to fire when there is no datapoint and you have waited long enough</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As is the case with slow data arrival&#8212;&#8203;or no data arrival&#8212;&#8203;the timer mechanism needs to take over as the data arrival rate is insufficient to trigger alerts in "real time." So the question typically becomes "How long do I wait before I close the analysis window and look at what I have?" If you wait too long then you are not generating the alerts fast enough to be useful.</p>
+</div>
+<div class="paragraph">
+<p>If you have a Monitor with a 30-minute window that notices that a condition is violated by the last data point before a long-term loss-of-data, an Alert will be generated because the Monitor received no other information to use to confirm a recovery of the metric or notice that the condition persisted.</p>
 </div>
 </div>
 </div>
