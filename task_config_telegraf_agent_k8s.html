@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-15 16:42:47 +0000">07/15/2022</time>
+    <time datetime="2022-08-11 18:03:50 +0000">08/11/2022</time>
     
   
 
@@ -2296,7 +2296,7 @@ password: &lt;password from docker secret step above&gt;</pre>
 <p>Push the operator docker image to your private/local/enterprise docker repository according to your corporate policies.</p>
 </div>
 <div class="paragraph">
-<p>Download all open source dependencies to your private docker registry. The following open source images need to be downloaded:</p>
+<p>Download all open source dependencies to your private docker registry. Use the same directory structure as the public repositories. The following open source images need to be downloaded:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2344,6 +2344,14 @@ dockerRepoSecret: &lt;optional: name of the docker secret of enterprise/corp doc
       substitutions:
         - key: k8s.gcr.io
           value: &lt;same as "docker-repo" field above&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Edit the monitoring-operator deployment to reflect the new docker repo location:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl -n netapp-monitoring edit deploy monitoring-operator</pre>
 </div>
 </div>
 </div>
