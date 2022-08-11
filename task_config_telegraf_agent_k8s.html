@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-11 18:37:23 +0000">08/11/2022</time>
+    <time datetime="2022-08-11 18:57:01 +0000">08/11/2022</time>
     
   
 
@@ -3132,6 +3132,20 @@ For example, edit the ReplicaSet&#8230;&#8203;<br>
 <br>
 [inputs.prometheus] Error in plugin: error making HTTP request to http://kube-state-metrics.&lt;namespace&gt;.svc.cluster.local:8080/metrics: Get http://kube-state-metrics.&lt;namespace&gt;.svc.cluster.local:8080/metrics: dial tcp: lookup kube-state-metrics.&lt;namespace&gt;.svc.cluster.local: no such host</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This message is typically only seen when a new operator is installed and the <em>telegraf-rs</em> pod is up before the <em>ksm</em> pod is up. These messages should stop once all pods are running.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I ran the command to install a CI agent to collect Kubernetes information, but I do not see any of my Kubernetes information in the UI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Run the following commands, collect the outputs, and contact NetApp Support.<br>
+<br>
+Note that these commands are using the default namespace. If you have set your own namespace, substitute that namespace in these and all subsequent commands.<br>
+<br>
+kubectl -n netapp-monitoring describe deploy,agent,rs,ds,pods<br>
+kubectl -n netapp-monitoring describe deploy<br>
+<br>
+kubectl -n netapp-monitoring logs &lt;monitoring-operator pod&gt; -c manager<br>
+kubectl -n netapp-monitoring logs &lt;telegraf-ds pods&gt;<br>
+kubectl -n netapp-monitoring logs &lt;telegraf-rs pod&gt;<br>
+kubectl -n netapp-monitoring logs &lt;kube-state-metrics pod&gt;</p></td>
 </tr>
 </tbody>
 </table>
