@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-11 18:03:50 +0000">08/11/2022</time>
+    <time datetime="2022-08-11 18:37:23 +0000">08/11/2022</time>
     
   
 
@@ -3126,6 +3126,12 @@ For example, edit the ReplicaSet&#8230;&#8203;<br>
  kubectl edit rs telegraf-rs<br>
 <br>
 &#8230;&#8203;and add the appropriate tolerations to the spec. Then, restart the ReplicaSet pod.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I&#8217;m seeing the following in my logs immediately after installing the NetApp Kubernetes Monitoring Operator:<br>
+<br>
+[inputs.prometheus] Error in plugin: error making HTTP request to http://kube-state-metrics.&lt;namespace&gt;.svc.cluster.local:8080/metrics: Get http://kube-state-metrics.&lt;namespace&gt;.svc.cluster.local:8080/metrics: dial tcp: lookup kube-state-metrics.&lt;namespace&gt;.svc.cluster.local: no such host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This message is typically only seen when a new operator is installed and the <em>telegraf-rs</em> pod is up before the <em>ksm</em> pod is up. These messages should stop once all pods are running.</p></td>
 </tr>
 </tbody>
 </table>
