@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-11 18:57:01 +0000">08/11/2022</time>
+    <time datetime="2022-08-12 18:17:48 +0000">08/12/2022</time>
     
   
 
@@ -2352,6 +2352,22 @@ dockerRepoSecret: &lt;optional: name of the docker secret of enterprise/corp doc
 <div class="literalblock">
 <div class="content">
 <pre>kubectl -n netapp-monitoring edit deploy monitoring-operator</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace the following line&#8230;&#8203;</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>image: gcr.io/kubebuilder/kube-rbac-proxy:&lt;kube-rbac-proxy-version&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>image: &lt;same as "docker-repo" field above&gt;/kubebuilder/kube-rbac-proxy:&lt;kube-rbac-proxy-version&gt;</pre>
 </div>
 </div>
 </div>
