@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Insights provides multiple user accounts with different permission levels.">
-  <meta name="keywords" content=" roles, guest, user, administrator, SSO, Federate, federation, identity, single sign-on, Account Owner, Reporting, Cloud Secure"><!-- Icons -->
+  <meta name="keywords" content=" roles, guest, user, administrator, SSO, Federate, federation, identity, single sign-on, Account Owner, Reporting, Cloud Secure, Monitor and Optimize, security, observabilityu"><!-- Icons -->
   <link rel="icon" href="/us-en/cloudinsights/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-30 17:44:15 +0000">03/30/2022</time>
+    <time datetime="2022-07-28 20:13:13 +0000">07/28/2022</time>
     
   
 
@@ -1962,7 +1962,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights provides up to four user account roles: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels as noted in the table below. (Note that <em>User</em> and <em>Guest</em> roles are not available in the Cloud Secure feature.). Users are either <a href="#creating-accounts-by-inviting-users">invited</a> to Cloud Insights and assigned a specific role, or can sign in via <a href="#single-sign-on-sso-accounts">Single Sign-On (SSO) Authorization</a> with a default role. SSO Authorization is available as a feature in Cloud Insights Premium Edition.</p>
+<p>Cloud Insights provides up to four user account roles: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels as noted in the table below. (Note that <em>User</em> and <em>Guest</em> roles are not available in the Security feature set.). Users are either <a href="#creating-accounts-by-inviting-users">invited</a> to Cloud Insights and assigned a specific role, or can sign in via <a href="#single-sign-on-sso-accounts">Single Sign-On (SSO) Authorization</a> with a default role. SSO Authorization is available as a feature in Cloud Insights Premium Edition.</p>
 </div>
 </div>
 </div>
@@ -1982,15 +1982,15 @@
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Role</th>
-<th class="tableblock halign-left valign-top">Monitoring</th>
-<th class="tableblock halign-left valign-top">Cloud Secure</th>
+<th class="tableblock halign-left valign-top">Observability</th>
+<th class="tableblock halign-left valign-top">Security</th>
 <th class="tableblock halign-left valign-top">Reporting</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Account Owner</p></td>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Can modify subscriptions, view billing and usage information, and perform all Administrator functions for Monitoring &amp; Optimization, Cloud Secure, and Reporting.<br>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Can modify subscriptions, view billing and usage information, and perform all Administrator functions for Observability, Security, and Reporting.<br>
 Owners can also invite and manage users, as well as manage SSO Authentication and Identity Federation settings.<br>
 <br>
 The first Account Owner is created when you register for Cloud Insights.<br>
@@ -1999,10 +1999,10 @@ It is strongly recommended to have at least two Account Owners for each Cloud In
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Administrator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Can perform all Monitoring &amp; Optimization functions, all user functions, as well as management of data collectors, Monitoring &amp; Optimization API tokens, and notifications.<br>
-An Administrator can also invite other users but can only assign Monitor and Optimize roles.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Can perform all Cloud Secure functions, including those for Alerts, Forensics, data collectors, automated response policies, and API tokens for Cloud Secure.<br>
-An Administrator can also invite other users but can only assign Cloud Secure roles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can perform all Observability functions, all user functions, as well as management of data collectors, Observability API tokens, and notifications.<br>
+An Administrator can also invite other users but can only assign Observability roles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can perform all Security functions, including those for Alerts, Forensics, data collectors, automated response policies, and API tokens for Security.<br>
+An Administrator can also invite other users but can only assign Security roles.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Can perform all User/Author functions including managing Reporting API tokens, as well as all administrative tasks such as configuration of reports, and the shutdown and restart of reporting tasks.<br>
 An Administrator can also invite other users but can only assign Reporting roles.</p></td>
 </tr>
@@ -2110,7 +2110,7 @@ Account Owner</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Secure*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
@@ -2246,7 +2246,7 @@ Account Owner</p></td>
 <img src="/us-en/cloudinsights/images/note.svg" alt="Note">
 </td>
 <td class="content">
-The features and roles you can choose from depend on which features you have access to in your particular Administrator role. For example, if you have Admin role only for Reporting, you will be able to assign users to any role in Reporting, but will not be able to assign roles for Monitor and Optimize or Cloud Secure.
+The features and roles you can choose from depend on which features you have access to in your particular Administrator role. For example, if you have Admin role only for Reporting, you will be able to assign users to any role in Reporting, but will not be able to assign roles for Observability or Security.
 </td>
 </tr>
 </table>
@@ -2290,7 +2290,7 @@ The features and roles you can choose from depend on which features you have acc
 <div class="sect2">
 <h3 id="to-assign-a-secondary-account-owner">To assign a Secondary Account Owner</h3>
 <div class="paragraph">
-<p>You must be logged in as an account owner for Monitor &amp; Optimize in order to assign the account owner role to another user.</p>
+<p>You must be logged in as an account owner for Observability in order to assign the account owner role to another user.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
