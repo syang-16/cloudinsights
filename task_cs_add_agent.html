@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 15:20:56 +0000">02/25/2022</time>
+    <time datetime="2022-07-15 13:47:45 +0000">07/15/2022</time>
     
   
 
@@ -2183,6 +2183,19 @@ The command fails when the agent installation command is being run by a non-root
     a.	id cssys<br>
     b.	groups cssys<br>
     c.	cat /etc/os-release</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agent installation Fails with useradd: cannot create directory /home/cssys</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This error can occur if user&#8217;s login directory cannot be created under /home, due to lack of permissions.<br>
+<br>
+The workaround would be to create cssys user and add its login directory manually using the following command:<br>
+<br>
+<em>sudo useradd user_name -m -d HOME_DIR</em><br>
+<br>
+-m :Create the user&#8217;s home directory if it does not exist.<br>
+-d : The new user is created using HOME_DIR as the value for the user&#8217;s login directory.<br>
+<br>
+For instance, <em>sudo useradd cssys -m -d /cssys</em>, adds a user <em>cssys</em> and creates its login directory under root.</p></td>
 </tr>
 </tbody>
 </table>
