@@ -1941,7 +1941,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-15 13:47:45 +0000">07/15/2022</time>
+    <time datetime="2022-08-23 14:53:06 +0000">08/23/2022</time>
     
   
 
@@ -2183,6 +2183,23 @@ The command fails when the agent installation command is being run by a non-root
     a.	id cssys<br>
     b.	groups cssys<br>
     c.	cat /etc/os-release</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The cloudsecure-agent-symptom-collector.sh script fails with the following error.<br>
+<br>
+[root@machine tmp]# /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh<br>
+Collecting service log<br>
+Collecting application logs<br>
+Collecting agent configurations<br>
+Taking service status snapshot<br>
+Taking agent directory structure snapshot<br>
+………………….<br>
+………………….<br>
+/opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh: line 52: zip: command not found<br>
+ERROR: Failed to create /tmp/cloudsecure-agent-symptoms.zip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zip tool is not installed..<br>
+Install the zip tool by running the command “yum install zip”.<br>
+Then run the cloudsecure-agent-symptom-collector.sh again.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Agent installation Fails with useradd: cannot create directory /home/cssys</p></td>
