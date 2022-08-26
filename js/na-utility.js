@@ -18,10 +18,5 @@ $(document).ready(function() {
       $('#search-demo-container').show();
     }
   });
-  var parentWidth = $('.ie-utility').parent().width();
-  $('.ie-utility').width(parentWidth);
-  $(window).on('resize', function(event) {
-    parentWidth = $('.ie-utility').parent().width();
-    $('.ie-utility').width(parentWidth);
-  });
+
 });

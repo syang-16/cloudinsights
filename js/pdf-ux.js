@@ -26,19 +26,24 @@ $(document).ready(function () {
 
     // get pdf urls for a specific level
     function getPdfUrls(zipLevel, baseUrlSection){
-      const pdfUrls = [];
-      let entryQuery = ">li"
-      for(let i=1; i<zipLevel; i++) {
-        entryQuery = entryQuery + ">" + "ul>li";
+      let pdfUrls = [];
+      for(let i=1; i<=zipLevel; i++) {
+        pdfUrls = pdfUrls.concat(getPdfUrlsByLevel(i, true, baseUrlSection))
       }
+      pdfUrls = pdfUrls.concat(getPdfUrlsByLevel(zipLevel, false, baseUrlSection))
 
-      let sidebarLinks = document.querySelectorAll(".ie-main>.col-md-3 ul#mysidebar"+entryQuery);
-      sidebarLinks.forEach(li => {
-        if(li.children.length <= 1 || li.querySelector('ul').children.length < 1) return;
-        const pdfName = li.querySelector('a').textContent.trim().replace(/\s|\-|\,|\(|\)|\[|\]|\;|\'|\.|\:/g, "_") + '.pdf';
+      return pdfUrls;
+    }
+
+    function getPdfUrlsByLevel(level, terminus, baseUrlSection) {
+      const pdfUrls = [];
+      const terminus_level = terminus ? '#' : '';
+      let li_entries = $(`[data-li-level="${level}${terminus_level}"]`);
+      li_entries.each(function(index, li) { 
+        if(!($(li).data('pdfExists'))) return;
+        const pdfName = $(li).data('pdfFilename').trim().replace(/\s|\-|\,|\(|\)|\[|\]|\;|\'|\.|\?|\:/g, "_") + '.pdf';
         pdfUrls.push(baseUrlSection+pdfName);
-      });
-
+      });  
       return pdfUrls;
     }
 

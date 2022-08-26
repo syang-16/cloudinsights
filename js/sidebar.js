@@ -13,3 +13,11 @@ window.addEventListener("load", () => {
         pdfPageLink.remove();
     }
 });
+
+function showSidebar() {
+	$("#page").removeClass("hide-sidebar");
+}
+
+function hideSidebar() {
+	$("#page").addClass("hide-sidebar");
+}
