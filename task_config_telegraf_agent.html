@@ -3056,7 +3056,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-17 15:29:13 +0000">06/17/2022</time>
+    <time datetime="2022-09-07 20:10:29 +0000">09/07/2022</time>
     
   
 
@@ -3066,14 +3066,6 @@
           alt="netapp-alavoie"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/39956590?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mjryan">
-    <img  class="avatar avatar-small"
-          alt="netapp-mjryan"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/68082657?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3205,19 +3197,58 @@ If you are using a proxy, read the proxy instructions for your platform before i
 </div>
 <div class="sect2">
 <h3 id="windows">Windows</h3>
-<div class="paragraph">
-<p><span class="image"><img src="./media/AgentInstallWindows.png" alt="Windows Agent Install"></span></p>
-</div>
+<div class="sect3">
+<h4 id="pre-requisites">Pre-requisites:</h4>
 <div class="ulist">
-<div class="title">Pre-requisites:</div>
 <ul>
 <li>
 <p>PowerShell must be installed</p>
 </li>
 <li>
-<p>If you are behind a proxy, follow the instructions in the <strong>Configuring Proxy Support for Windows</strong> section.</p>
+<p>If you are behind a proxy, you must follow the instructions in the <strong>Configuring Proxy Support for Windows</strong> section.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuring-proxy-support-for-windows">Configuring Proxy Support for Windows</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If your environment uses a proxy, read this section before you install.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The steps below outline the actions needed to set the <em>http_proxy/https_proxy</em> environment variables. For some proxy environments, users may also need to set the <em>no_proxy environment</em> variable.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For systems residing behind a proxy, perform the following to set the <em>https_proxy</em> and/or <em>http_proxy</em> environment variable(s) <strong>PRIOR</strong> to installing the Telegraf agent:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[System.Environment]::SetEnvironmentVariable(“https_proxy”, “&lt;proxy_server&gt;:&lt;proxy_port&gt;”, [System.EnvironmentVariableTarget]::Machine)</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-the-agent">Installing the agent</h4>
+<div class="paragraph">
+<p><span class="image"><img src="./media/AgentInstallWindows.png" alt="Windows Agent Install"></span></p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps to install agent on Windows:</div>
@@ -3249,28 +3280,6 @@ If you are using a proxy, read the proxy instructions for your platform before i
 <div class="content">
 <pre>Start-Service telegraf
 Stop-Service telegraf</pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="windows-proxy">Configuring Proxy Support for Windows</h4>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The steps below outline the actions needed to set the <em>http_proxy/https_proxy</em> environment variables. For some proxy environments, users may also need to set the <em>no_proxy environment</em> variable.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>For systems residing behind a proxy, perform the following to set the <em>https_proxy</em> and/or <em>http_proxy</em> environment variable(s) <strong>PRIOR</strong> to installing the Telegraf agent:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>[System.Environment]::SetEnvironmentVariable(“https_proxy”, “&lt;proxy_server&gt;:&lt;proxy_port&gt;”, [System.EnvironmentVariableTarget]::Machine)</pre>
 </div>
 </div>
 </div>
@@ -3342,19 +3351,73 @@ sc.exe delete telegraf</pre>
 </div>
 <div class="sect2">
 <h3 id="rhel-and-centos">RHEL and CentOS</h3>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Agent_Requirements_Rhel.png" alt="Rhel/CentOS Agent Install"></span></p>
-</div>
+<div class="sect3">
+<h4 id="pre-requisites-2">Pre-requisites:</h4>
 <div class="ulist">
-<div class="title">Pre-requisites:</div>
 <ul>
 <li>
 <p>The following commands must be available: curl, sudo, ping, sha256sum, openssl, and dmidecode</p>
 </li>
 <li>
-<p>If you are behind a proxy, follow the instructions in the <strong>Configuring Proxy Support for RHEL/CentOS</strong> section.</p>
+<p>If you are behind a proxy, you must follow the instructions in the <strong>Configuring Proxy Support for RHEL/CentOS</strong> section.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuring-proxy-support-for-rhelcentos">Configuring Proxy Support for RHEL/CentOS</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If your environment uses a proxy, read this section before you install.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The steps below outline the actions needed to set the <em>http_proxy/https_proxy</em> environment variables. For some proxy environments, users may also need to set the <em>no_proxy environment</em> variable.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For systems residing behind a proxy, perform the following steps <strong>PRIOR</strong> to installing the Telegraf agent:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set the <em>https_proxy</em> and/or <em>http_proxy</em> environment variable(s) for the current user:</p>
+<div class="literalblock">
+<div class="content">
+<pre>export https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create <em>/etc/default/telegraf</em>, and insert definitions for the <em>https_proxy</em> and/or <em>http_proxy</em> variable(s):</p>
+<div class="literalblock">
+<div class="content">
+<pre>https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-the-agent-2">Installing the agent</h4>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Agent_Requirements_Rhel.png" alt="Rhel/CentOS Agent Install"></span></p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps to install agent on RHEL/CentOS:</div>
@@ -3399,43 +3462,6 @@ sudo systemctl stop telegraf</pre>
 <pre>sudo service telegraf start
 sudo service telegraf stop</pre>
 </div>
-</div>
-<div class="sect3">
-<h4 id="configuring-proxy-support-for-rhelcentos">Configuring Proxy Support for RHEL/CentOS</h4>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The steps below outline the actions needed to set the <em>http_proxy/https_proxy</em> environment variables. For some proxy environments, users may also need to set the <em>no_proxy environment</em> variable.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>For systems residing behind a proxy, perform the following steps <strong>PRIOR</strong> to installing the Telegraf agent:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Set the <em>https_proxy</em> and/or <em>http_proxy</em> environment variable(s) for the current user:</p>
-<div class="literalblock">
-<div class="content">
-<pre>export https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create <em>/etc/default/telegraf</em>, and insert definitions for the <em>https_proxy</em> and/or <em>http_proxy</em> variable(s):</p>
-<div class="literalblock">
-<div class="content">
-<pre>https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
-</div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
@@ -3507,19 +3533,73 @@ rm -rf /var/log/telegraf*</pre>
 </div>
 <div class="sect2">
 <h3 id="ubuntu-and-debian">Ubuntu and Debian</h3>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Agent_Requirements_Ubuntu.png" alt="Ubuntu/Debian Agent Install"></span></p>
-</div>
+<div class="sect3">
+<h4 id="pre-requisites-3">Pre-requisites:</h4>
 <div class="ulist">
-<div class="title">Pre-requisites:</div>
 <ul>
 <li>
 <p>The following commands must be available: curl, sudo, ping, sha256sum, openssl, and dmidecode</p>
 </li>
 <li>
-<p>If you are behind a proxy, follow the instructions in the <strong>Configuring Proxy Support for Ubuntu/Debian</strong> section.</p>
+<p>If you are behind a proxy, you must follow the instructions in the <strong>Configuring Proxy Support for Ubuntu/Debian</strong> section.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuring-proxy-support-for-ubuntudebian">Configuring Proxy Support for Ubuntu/Debian</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If your environment uses a proxy, read this section before you install.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The steps below outline the actions needed to set the <em>http_proxy/https_proxy</em> environment variables. For some proxy environments, users may also need to set the <em>no_proxy environment</em> variable.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For systems residing behind a proxy, perform the following steps <strong>PRIOR</strong> to installing the Telegraf agent:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set the <em>https_proxy</em> and/or <em>http_proxy</em> environment variable(s) for the current user:</p>
+<div class="literalblock">
+<div class="content">
+<pre>export https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create /etc/default/telegraf, and insert definitions for the <em>https_proxy</em> and/or <em>http_proxy</em> variable(s):</p>
+<div class="literalblock">
+<div class="content">
+<pre>https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-the-agent-3">Installing the agent</h4>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Agent_Requirements_Ubuntu.png" alt="Ubuntu/Debian Agent Install"></span></p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps to install agent on Debian or Ubuntu:</div>
@@ -3564,43 +3644,6 @@ sudo systemctl stop telegraf</pre>
 <pre>sudo service telegraf start
 sudo service telegraf stop</pre>
 </div>
-</div>
-<div class="sect3">
-<h4 id="configuring-proxy-support-for-ubuntudebian">Configuring Proxy Support for Ubuntu/Debian</h4>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The steps below outline the actions needed to set the <em>http_proxy/https_proxy</em> environment variables. For some proxy environments, users may also need to set the <em>no_proxy environment</em> variable.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>For systems residing behind a proxy, perform the following steps <strong>PRIOR</strong> to installing the Telegraf agent:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Set the <em>https_proxy</em> and/or <em>http_proxy</em> environment variable(s) for the current user:</p>
-<div class="literalblock">
-<div class="content">
-<pre>export https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create /etc/default/telegraf, and insert definitions for the <em>https_proxy</em> and/or <em>http_proxy</em> variable(s):</p>
-<div class="literalblock">
-<div class="content">
-<pre>https_proxy=&lt;proxy_server&gt;:&lt;proxy_port&gt;</pre>
-</div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
@@ -3672,57 +3715,33 @@ rm -rf /var/log/telegraf*</pre>
 </div>
 <div class="sect2">
 <h3 id="macos">macOS</h3>
-<div class="paragraph">
-<p><span class="image"><img src="./media/Agent_Requirements_Macos.png" alt="macOS Agent Install"></span></p>
-</div>
+<div class="sect3">
+<h4 id="pre-requisites-4">Pre-requisites:</h4>
 <div class="ulist">
-<div class="title">Pre-requisites:</div>
 <ul>
 <li>
 <p>The following commands must be available: curl, sudo, openssl, and shasum</p>
 </li>
 <li>
-<p>If you are behind a proxy, follow the instructions in the <strong>Configuring Proxy Support for macOS</strong> section.</p>
+<p>If you are behind a proxy, you must follow the instructions in the <strong>Configuring Proxy Support for macOS</strong> section.</p>
 </li>
 </ul>
-</div>
-<div class="olist arabic">
-<div class="title">Steps to install agent on macOS:</div>
-<ol class="arabic">
-<li>
-<p>Choose an Agent Access Key.</p>
-</li>
-<li>
-<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
-</li>
-<li>
-<p>Open a Bash window</p>
-</li>
-<li>
-<p>Paste the command into the Bash window and press Enter.</p>
-</li>
-<li>
-<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
-</li>
-<li>
-<p>If you previously installed a Telegraf agent using Homebrew, you will be prompted to uninstall it. Once the previously installed Telegraf agent is uninstalled, re-run the command in step 5 above.</p>
-</li>
-<li>
-<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After the agent is installed, you can use the following commands to start/stop the service:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo launchctl start telegraf
-sudo launchctl stop telegraf</pre>
 </div>
 </div>
 <div class="sect3">
 <h4 id="configuring-proxy-support-for-macos">Configuring Proxy Support for macOS</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If your environment uses a proxy, read this section before you install.
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3786,6 +3805,47 @@ The steps below outline the actions needed to set the <em>http_proxy/https_proxy
 sudo launchctl unload -w /Library/LaunchDaemons/telegraf.plist
 sudo launchctl load -w /Library/LaunchDaemons/telegraf.plist
 sudo launchctl start telegraf</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-the-agent-4">Installing the agent</h4>
+<div class="paragraph">
+<p><span class="image"><img src="./media/Agent_Requirements_Macos.png" alt="macOS Agent Install"></span></p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps to install agent on macOS:</div>
+<ol class="arabic">
+<li>
+<p>Choose an Agent Access Key.</p>
+</li>
+<li>
+<p>Copy the command block from the agent installation dialog. You can click the clipboard icon to quickly copy the command to the clipboard.</p>
+</li>
+<li>
+<p>Open a Bash window</p>
+</li>
+<li>
+<p>Paste the command into the Bash window and press Enter.</p>
+</li>
+<li>
+<p>The command will download the appropriate agent installer, install it, and set a default configuration. When finished, it will restart the agent service. The command has a unique key and is valid for 24 hours.</p>
+</li>
+<li>
+<p>If you previously installed a Telegraf agent using Homebrew, you will be prompted to uninstall it. Once the previously installed Telegraf agent is uninstalled, re-run the command in step 5 above.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong> or <strong>Continue</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After the agent is installed, you can use the following commands to start/stop the service:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo launchctl start telegraf
+sudo launchctl stop telegraf</pre>
 </div>
 </div>
 </div>
