@@ -3056,7 +3056,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-08 14:47:36 +0000">03/08/2022</time>
+    <time datetime="2022-09-07 14:53:39 +0000">09/07/2022</time>
     
   
 
@@ -3318,6 +3318,131 @@ This page provides an overview of activities in your environment, highlighting t
 <div class="paragraph">
 <p>Activity history is retained for 13 months for active Cloud Secure environments.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="applicability-of-filters-in-forensics-page">Applicability of Filters in Forensics Page</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What it does</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable in Which Filters?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not applicable for which filters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*	(Asterisk)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enables you to search for everything</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auto*03172022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User, PATH, Entity Type, Device Type, Volume, Original Path</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns all resources that start with “Auto" and end with “03172022”</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">? (question mark)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enables you to search for a specific number of characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AutoSabotageUser1_03172022?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User, Entity Type, Device, Volume</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022AB, AutoSabotageUser1_031720225, and so on</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enables you to specify multiple entities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AutoSabotageUser1_03172022 OR AutoRansomUser4_03162022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User, Domain, Username, PATH, Entity Type, Device, Original Path</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns any of AutoSabotageUser1_03172022 OR AutoRansomUser4_03162022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allows you to exclude text from the search results</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT AutoRansomUser4_03162022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User, Domain, Username, PATH, Entity Type, Original PATH, Volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns everything that does not start with"AutoRansomUser4_03162022”</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">searches for NULL values in all fields</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns results where the target field is empty</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="path-original-path-search">Path / Original path Search</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Search results with and  without / will be different</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/AutoDir1/AutoFile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AutoDir1/AutoFile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doesn’t work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/AutoDir1/AutoFile (Dir1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dir1 Partial substring doesn’t work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"/AutoDir1/AutoFile03242022"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exact search works</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auto*03242022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doesn’t work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AutoSabotageUser1_03172022?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doesn’t work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/AutoDir1/AutoFile03242022 OR /AutoDir1/AutoFile03242022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT /AutoDir1/AutoFile03242022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT /AutoDir1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOT /AutoFile03242022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doesn’t work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows all the entries</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

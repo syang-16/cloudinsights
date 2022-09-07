@@ -3056,7 +3056,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-23 14:53:06 +0000">08/23/2022</time>
+    <time datetime="2022-09-07 14:23:54 +0000">09/07/2022</time>
     
   
 
@@ -3328,6 +3328,29 @@ The workaround would be to create cssys user and add its login directory manuall
 -d : The new user is created using HOME_DIR as the value for the user&#8217;s login directory.<br>
 <br>
 For instance, <em>sudo useradd cssys -m -d /cssys</em>, adds a user <em>cssys</em> and creates its login directory under root.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agent is not running after installation.<br>
+<em>Systemctl status cloudsecure-agent.service</em> shows the following:<br>
+<br>
+[root@demo ~]# systemctl status cloudsecure-agent.service<br>
+agent.service – Cloud Secure Agent Daemon Service<br>
+Loaded: loaded (/usr/lib/systemd/system/cloudsecure-agent.service; enabled; vendor preset: disabled)<br>
+Active: activating (auto-restart) (Result: exit-code) since Tue 2021-08-03 21:12:26 PDT; 2s ago<br>
+Process: 25889 ExecStart=/bin/bash /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent (code=exited status=126)<br>
+Main PID: 25889 (code=exited, status=126),<br>
+<br>
+Aug 03 21:12:26 demo systemd[1]: cloudsecure-agent.service: main process exited, code=exited, status=126/n/a<br>
+Aug 03 21:12:26 demo systemd[1]: Unit cloudsecure-agent.service entered failed state.<br>
+Aug 03 21:12:26 demo systemd[1]: cloudsecure-agent.service failed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This can be failing because <em>cssys</em> user may not have permission to install.<br>
+<br>
+If /opt/netapp is an NFS mount and if <em>cssys</em> user does not have access to this folder, installation will fail. <em>cssys</em> is a local user created by the Cloud Secure installer that may not have permission to access the mounted share.<br>
+<br>
+You can check this by attempting to access /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent using <em>cssys</em> user.<br>
+If it returns “Permission denied”, installation permission is not present.<br>
+<br>
+Instead of a mounted folder, install on a directory local to the machine.</p></td>
 </tr>
 </tbody>
 </table>
