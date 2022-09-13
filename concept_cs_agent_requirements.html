@@ -3056,7 +3056,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-27 16:47:53 +0000">07/27/2022</time>
+    <time datetime="2022-09-13 13:35:23 +0000">09/13/2022</time>
     
   
 
@@ -3117,7 +3117,9 @@ This computer should be running no other application-level software. A dedicated
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Available disk space</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Disk space should be allocated in this manner:<br>
-/opt/netapp 35 GB (minimum)</p></td>
+/opt/netapp 35 GB (minimum)<br>
+<br>
+If /opt is a mounted folder from a NAS storage, make sure that local users have access to this folder. Agent or Data collector may fail to install if local users do not have permission to this folder. see the <a href="task_cs_add_agent.html#troubleshooting-agent-errors">troubleshooting</a> section for more details.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Network</p></td>
