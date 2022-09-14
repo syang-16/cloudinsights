@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Configuring the Cloud Volumes ONTAP Data Collector</title>
+  <title>Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Configuring the Cloud Volumes ONTAP Data Collector" />
+  <meta property="og:title" content="Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloudinsights/task_config_cs_incloud.html" />
 	<meta property="og:description" content="Cloud Secure uses data collectors to collect file and user access data from devices." />
@@ -173,7 +173,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Configuring the Cloud Volumes ONTAP Data Collector](https://docs.netapp.com/us-en/cloudinsights/task_config_cs_incloud.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/task_config_cs_incloud.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector](https://docs.netapp.com/us-en/cloudinsights/task_config_cs_incloud.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/task_config_cs_incloud.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -3049,14 +3049,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Configuring the Cloud Volumes ONTAP Data Collector</h1>
+  <h1 class="n-doc__component-detail-heading">Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2021-03-25 18:53:47 +0000">03/25/2021</time>
+    <time datetime="2022-09-14 14:13:51 +0000">09/14/2022</time>
     
   
 
@@ -3095,8 +3095,32 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="supported-platforms">Supported Platforms</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP, supported in all the available cloud service providers wherever available. For example: Amazon, Azure, Google Cloud.</p>
+</li>
+<li>
+<p>ONTAP Amazon FSx</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="agent-machine-configuration">Agent Machine Configuration</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The agent machine must be configured in the respective subnets of the cloud Service providers. Read more about network access in the [Agent Requirements].</p>
+</div>
+<div class="paragraph">
+<p>Below are the steps for Agent installation in AWS. Equivalent steps, as applicable to the cloud service provider, can be followed in Azure or Google Cloud for the installation.</p>
+</div>
+<div class="paragraph">
+<p>In AWS, use the following steps to configure the machine to be used as a Cloud Secure Agent:</p>
+</div>
 <div class="paragraph">
 <p>Use the following steps to configure the machine to be used as a Cloud Secure Agent:</p>
 </div>
