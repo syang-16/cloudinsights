@@ -830,6 +830,8 @@
 
 
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -2077,6 +2079,13 @@
         Schema Tables
       </a></li></ul></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Essentials"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloudinsights/concept_ontap_essentials.html">
+        ONTAP Essentials
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Cloud Secure"
       data-li-level="1" 
       class="subfolders "
@@ -3056,7 +3065,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-16 18:17:58 +0000">05/16/2022</time>
+    <time datetime="2022-09-13 20:51:29 +0000">09/13/2022</time>
     
   
 
@@ -3105,6 +3114,7 @@ Most System Monitors are in <em>Paused</em> state by default. Before resuming th
 <li><a href="#k8s-monitors">K8s Monitors</a></li>
 <li><a href="#change-log-monitors">Change Log Monitors</a></li>
 <li><a href="#data-collection-monitors">Data Collection Monitors</a></li>
+<li><a href="#security-monitors">Security Monitors</a></li>
 </ul>
 </li>
 <li><a href="#more-information">More Information</a></li>
@@ -4086,6 +4096,30 @@ Critical @ &lt; 5 %</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Check the configuration of the data collector or target system.<br>
 <br>
 Note that the monitor for Collector Warning can send more alerts than other monitor types, so it is recommended to set no alert recipients unless you are troubleshooting.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="security-monitors">Security Monitors</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monitor name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corrective Action</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FIPS Mode Disabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When FIPS 140-2 compliance is enabled, TLSv1 and SSLv3 are disabled, and only TLSv1.1 and TLSv1.2 remain enabled. ONTAP prevents you from enabling TLSv1 and SSLv3 when FIPS 140-2 compliance is enabled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To enable FIPS 140-2 compliance on a cluster, run the following ONTAP command in advanced privilege mode:<br>
+<br>
+security config modify -interface SSL -is-fips-enabled true</p></td>
 </tr>
 </tbody>
 </table>

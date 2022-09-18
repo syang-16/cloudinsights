@@ -827,6 +827,10 @@
   
 
 
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
 
     
       <ul class="subfolders" style="display:none;">
@@ -2075,6 +2079,13 @@
         Schema Tables
       </a></li></ul></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Essentials"
+      data-li-level="1#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/us-en/cloudinsights/concept_ontap_essentials.html">
+        ONTAP Essentials
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Cloud Secure"
       data-li-level="1" 
       class="subfolders "
@@ -3054,7 +3065,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-09 14:49:26 +0000">08/09/2022</time>
+    <time datetime="2022-09-15 20:14:28 +0000">09/15/2022</time>
     
   
 
@@ -3080,18 +3091,18 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Infrastructure/Inventory: List view of objects that provide storage/networking services to user data</p>
+<p>Infrastructure/Inventory: Objects that provide storage/networking services to user data</p>
 </li>
 <li>
-<p>Workloads: List view of objects that provide interface to users to read/write data.</p>
+<p>Workloads: Objects that provide interface to users to read/write data.</p>
 </li>
 <li>
-<p>Data Protection: List view of various objects that can be protected using NetApp data protection technologies</p>
+<p>Data Protection: Objects that can be protected using NetApp data protection technologies</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>ONTAP Essentials requires at least one working ONTAP data collector with data collected in the last week.</p>
+<p>ONTAP Essentials requires at least one working ONTAP data collector with data collected within the last seven days.</p>
 </div>
 </div>
 </div>
@@ -3102,7 +3113,7 @@
 <p>To begin exploring, select <strong>ONTAP Essentials</strong> from the main Cloud Insights menu.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/ONTAP_Essentials_Menu_and_screen.png" alt="Overview dashboard for ONTAP Essentials"></span></p>
+<p><span class="image"><img src="./media/ONTAP_Essentials_Overview_Sept.png" alt="Overview dashboard for ONTAP Essentials"></span></p>
 </div>
 <div class="paragraph">
 <p>The <strong>Overview</strong> dashboard displays useful information like the number of clusters in your environment with their overall capacity and performance percentages. You will also see predictive data regarding the number of expected days until storage capacity or performance capacity runs out of space. And if any controllers in your infrastructure are running at high temperatures, ONTAP Essentials will show you those.</p>
@@ -3130,6 +3141,18 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="alerts">Alerts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here you can view the Active alerts in your environment and quickly drill down into potential problems. Select the <em>Resolved</em> tab to view alerts that have been resolved.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ONTAP_Essentials_Alerts_Menu.png" alt="ONTAP Alerts Menu"></span><br>
+<span class="image"><img src="./media/ONTAP_Essentials_Alerts_Page.png" alt="ONTAP Alerts page example showing active alerts"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="infrastructure">Infrastructure</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -3145,10 +3168,22 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="networking">Networking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ONTAP Essentials Networking gives you views into your FC, NVME FC, Ethernet, and iSCSI infrastructure. On these pages you can explore things like ports in your clusters and their nodes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ONTAP_Essentials_Alerts_Menu.png" alt="ONTAP Essentials Networking Menu"></span><br>
+<span class="image"><img src="./media/ONTAP_Essentials_Alerts_Page.png" alt="ONTAP Essentials Networking FC page showing ports into cluster nodes"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="workloads">Workloads</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>View and explore workloads on LUNs/Volumes or Qtrees in your environment.</p>
+<p>View and explore workloads on LUNs/Volumes, NFS or SMB Shares, or Qtrees in your environment.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/ONTAP_Essentials_Workloads_Menu.png" alt="Workloads Menu"></span></p>
