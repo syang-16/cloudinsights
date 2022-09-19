@@ -3065,7 +3065,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-27 13:03:19 +0000">07/27/2022</time>
+    <time datetime="2022-09-19 20:11:23 +0000">09/19/2022</time>
     
   
 
@@ -3101,17 +3101,25 @@
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Problem:</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Try this:</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Problem:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Try this:</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Insights logs out every 5 minutes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enable 3rd party cookie acceptance from <em>[*.]auth0.com</em> in your browser settings.<br>
-For example in Chrome&#8217;s incognito mode, the default browser settings block third-party cookies. Try the following:<br>
-Enter "chrome://settings/cookies" in browser URL.<br>
-Select "Allow all cookies" option.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enable third-party acceptance for the necessary NetApp and auth0 cookies.<br>
+<br>
+Example:<br>
+In Chrome, enter "chrome://settings/cookies" in the browser URL.<br>
+<br>
+Select the "Allow all cookies" option.<br>
+<strong>OR</strong><br>
+Select "Block third-party cookies" and add exceptions for [<strong>.]auth0.com and [</strong>.]netapp.com.<br>
+<br>
+Note: Make sure to select the "Including third-party cookies on this site" option when creating an exception.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I have a Cloud Central account but am unable to login to Cloud Central.</p></td>
