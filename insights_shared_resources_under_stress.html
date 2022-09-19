@@ -3054,7 +3054,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-28 17:32:27 +0000">07/28/2022</time>
+    <time datetime="2022-09-19 13:56:51 +0000">09/19/2022</time>
     
   
 
@@ -3086,13 +3086,13 @@
 <p>When talking about workload or resource impact, the following definitions are useful.</p>
 </div>
 <div class="paragraph">
-<p>A <strong>Demanding</strong> or <strong>Impactful</strong> resource is one that causes a negative impact on another resource. For example, a volume experiencing very high IOPS may cause increased latency in other volumes (i.e. <em>Impacted</em> or <em>Degraded</em> resources). Demanding and Impacted resources are “peers” that utilize the same shared resource, for example, a storage pool or Volume.  Demanding resources are sometimes called <em>greedy</em> resources.</p>
-</div>
-<div class="paragraph">
 <p>A <strong>Demanding Workload</strong> is a workload that is currently identified as impacting other resources in the shared storage pool. These workloads drive higher IOPS (for example), reducing IOPS in the Impacted Workloads. Demanding workloads are sometimes called <em>high-consuming workloads</em>.</p>
 </div>
 <div class="paragraph">
 <p>An <strong>Impacted Workload</strong> is a workload that is affected by a high-consuming workload in the shared Storage Pool. These workloads are experiencing reduced IOPS and/or higher latency, caused by the Demanding Workloads.</p>
+</div>
+<div class="paragraph">
+<p>Note that if Cloud Insights has not discovered the leading compute workload, the volume or internal volume itself will be treated as the workload. This applies to both demanding and impacted workloads.</p>
 </div>
 <div class="paragraph">
 <p><strong>Shared Resource Saturation</strong> is the ratio of impacting IOPS to <em>baseline</em>.</p>
