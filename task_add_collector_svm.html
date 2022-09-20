@@ -3065,7 +3065,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-13 15:00:03 +0000">09/13/2022</time>
+    <time datetime="2022-09-20 17:44:12 +0000">09/20/2022</time>
     
   
 
@@ -3141,7 +3141,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>By Using Cluster IP, SVM name, and Cluster Management Username and Password. <em>This is the recommended method.</em></p>
+<p>By Using Cluster IP, SVM name, and Cluster Management Username and Password. <strong><em>This is the recommended method.</em></strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3240,8 +3240,7 @@ security login role create -role csrole -cmddirname "event notification destinat
 security login role create -role csrole -cmddirname "event notification" -access all
 security login role create -role csrole -cmddirname "security certificate" -access all
 security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole
-security login create -user-or-group-name csuser -application ssh -authmethod password -role csrole
-security login role create -role csrole -cmddirname "vserver export-policy rule" -access all -query "-policyname cloudsecure_*"</pre>
+security login create -user-or-group-name csuser -application ssh -authmethod password -role csrole</pre>
 </div>
 </div>
 </div>
@@ -3262,8 +3261,7 @@ security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname
 security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname vserver -access readonly
 security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname "vserver fpolicy" -access all
 security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname "volume snapshot" -access all
-security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver &lt;vservername&gt;
-security login role create -vserver &lt;vservername&gt; -role csrole -cmddirname "vserver export-policy rule" -access all -query "-policyname cloudsecure_*"</pre>
+security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver &lt;vservername&gt;</pre>
 </div>
 </div>
 </div>
