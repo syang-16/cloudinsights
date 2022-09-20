@@ -3065,7 +3065,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-15 15:30:25 +0000">07/15/2022</time>
+    <time datetime="2022-09-20 13:34:15 +0000">09/20/2022</time>
     
   
 
@@ -3158,6 +3158,33 @@
 <p>Port requirement: 215 HTTP/HTTPS</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="required-performance-metrics">Required Performance metrics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Oracle ZFS appliances give storage administators large amounts of flexibility to capture performance statistics. Cloud Insights expects you to have <em>each</em> controller in a high availability pair configured to capture the following metrics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>smb2.ops[share]</p>
+</li>
+<li>
+<p>nfs3.ops[share]</p>
+</li>
+<li>
+<p>nfs4.ops[share]</p>
+</li>
+<li>
+<p>nfs4-1.ops[share]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Failure to have the controller capture any or all of these will likely result in Cloud Insights not having, or underreporting, the workload on the "Internal Volumes".</p>
 </div>
 </div>
 </div>
