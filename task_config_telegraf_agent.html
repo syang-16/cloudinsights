@@ -3058,7 +3058,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-09 20:23:59 +0000">09/09/2022</time>
+    <time datetime="2022-10-05 20:26:12 +0000">10/05/2022</time>
     
   
 
@@ -4036,7 +4036,7 @@ sudo /tmp/uninstall</pre>
 <p>YAML files</p>
 </li>
 <li>
-<p>a signed checksum file (sha256.signed)</p>
+<p>a signed checksum file (ending in sha256.signed or sha256.ps1)</p>
 </li>
 <li>
 <p>a PEM file (netapp_cert.pem) for signature verification</p>
@@ -4084,21 +4084,25 @@ sudo /tmp/uninstall</pre>
 <ul>
 <li>
 <p>Non-Windows:</p>
-<div class="literalblock">
-<div class="content">
-<pre>openssl smime -verify -in sha256.signed -CAfile netapp_cert.pem -purpose any</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Windows (after installing the certificate via Import-Certificate above):</p>
-<div class="literalblock">
-<div class="content">
-<pre>Get-AuthenticodeSignature -FilePath .\sha256.ps1 $result = Get-AuthenticodeSignature -FilePath .\sha256.ps1 $signer = $result.SignerCertificate Add-Type -Assembly System.Security [Security.Cryptography.x509Certificates.X509Certificate2UI]::DisplayCertificate($signer)</pre>
-</div>
-</div>
 </li>
 </ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>openssl smime -verify -in telegraf*.sha256.signed -CAfile netapp_cert.pem -purpose any</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows (after installing the certificate via Import-Certificate above):</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Get-AuthenticodeSignature -FilePath .\telegraf.zip.sha256.ps1 $result = Get-AuthenticodeSignature -FilePath .\telegraf.zip.sha256.ps1 $signer = $result.SignerCertificate Add-Type -Assembly System.Security [Security.Cryptography.x509Certificates.X509Certificate2UI]::DisplayCertificate($signer)</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Once all of the artifacts have been satisfactorily verified, the agent installation can be initiated by running:</p>
