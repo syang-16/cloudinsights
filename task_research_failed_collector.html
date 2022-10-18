@@ -143,6 +143,17 @@
               $("#mysidebar").navgoco('toggle', true);
           });
 
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/us-en/cloudinsights"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
       });
 
   </script>
@@ -1471,7 +1482,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Security</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Security Practices"
@@ -1494,7 +1505,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Getting Started</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Feature Tutorials"
@@ -1510,7 +1521,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Collecting Data</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -1617,7 +1628,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Automatic Device Resolution</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Device Resolution Overview"
@@ -1668,7 +1679,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Creating Dashboards</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Dashboard Overview"
@@ -1691,7 +1702,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Sample Dashboards</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Virtual Machine Performance"
@@ -1714,7 +1725,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Kubernetes Explorer</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Kubernetes Overview Page"
@@ -1737,7 +1748,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working with Queries</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Querying Assets"
@@ -1802,7 +1813,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working with Annotations</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Defining Annotations"
@@ -1839,7 +1850,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working with Applications</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Application Concepts"
@@ -1862,7 +1873,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Monitors and Alerts</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Creating Monitors"
@@ -1913,7 +1924,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Monitoring your Environment</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Auditing Events"
@@ -1936,7 +1947,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Asset Page Information</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Asset Page Overview"
@@ -1994,7 +2005,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Reporting</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Reporting Overview"
@@ -2087,7 +2098,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Cloud Secure</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="About Cloud Secure"
@@ -2103,7 +2114,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Getting Started</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Getting Started With Cloud Secure"
@@ -2189,7 +2200,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Forensics</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Activity Forensics - All Activity"
@@ -2261,7 +2272,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Troubleshooting</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="General Troubleshooting"
@@ -2298,7 +2309,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Reference & Support</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Requesting Support"
@@ -2321,7 +2332,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Data Collector Reference - Infrastructure</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Vendor Reference Overview"
@@ -2358,7 +2369,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Broadcom</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Brocade Network Advisor"
@@ -2395,7 +2406,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Dell</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="XC series"
@@ -2411,7 +2422,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Dell EMC</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Data Domain"
@@ -2525,7 +2536,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> HP Enterprise</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="HP Alletra 9000 and Primera"
@@ -2555,7 +2566,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Hitachi Data Systems</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="HDS Command Suite"
@@ -2599,7 +2610,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> IBM</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Cleversafe"
@@ -2657,7 +2668,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Microsoft</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Azure NetApp Files"
@@ -2680,7 +2691,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> NetApp</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Astra Data Store"
@@ -2808,7 +2819,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Data Collector Reference - Services</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Host/Node"
@@ -3023,6 +3034,7 @@
 </script>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
 
 
   </div>
