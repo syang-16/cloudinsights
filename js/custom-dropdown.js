@@ -2,7 +2,11 @@ $(document).ready(function () {
   $('.custom-dropdown').click(function () {
     $(this).attr('tabindex', 1).focus();
     $(this).toggleClass('active');
-    $(this).find('.custom-dropdown-menu').slideToggle(300);
+    if ($(this).hasClass('active')) {
+      $(this).find('.custom-dropdown-menu').slideDown(300);
+    } else {
+      $(this).find('.custom-dropdown-menu').delay(100).slideUp(300);
+    }
     $(this).find('.chevrondown').toggleClass('invisible');
     $(this).find('.chevronup').toggleClass('invisible');
   });
