@@ -3088,7 +3088,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-05 20:26:12 +0000">10/05/2022</time>
+    <time datetime="2022-11-01 14:26:41 +0000">11/01/2022</time>
     
   
 
@@ -4131,7 +4131,11 @@ sudo /tmp/uninstall</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Get-AuthenticodeSignature -FilePath .\telegraf.zip.sha256.ps1 $result = Get-AuthenticodeSignature -FilePath .\telegraf.zip.sha256.ps1 $signer = $result.SignerCertificate Add-Type -Assembly System.Security [Security.Cryptography.x509Certificates.X509Certificate2UI]::DisplayCertificate($signer)</pre>
+<pre>Get-AuthenticodeSignature -FilePath .\telegraf.zip.sha256.ps1
+$result = Get-AuthenticodeSignature -FilePath .\telegraf.zip.sha256.ps1
+$signer = $result.SignerCertificate
+Add-Type -Assembly System.Security
+[Security.Cryptography.x509Certificates.X509Certificate2UI]::DisplayCertificate($signer)</pre>
 </div>
 </div>
 <div class="paragraph">
