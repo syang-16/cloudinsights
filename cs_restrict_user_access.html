@@ -3088,7 +3088,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-17 13:03:58 +0000">08/17/2022</time>
+    <time datetime="2022-11-03 13:52:55 +0000">11/03/2022</time>
     
   
 
@@ -3132,18 +3132,6 @@ Access blocking is supported for both SMB and NFS protocols.</p>
 <div class="paragraph">
 <p>Cluster level credentials are needed for this feature to work.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-When using the Amazon FSx data collector, user blocking for SMB cannot kill the current user session.  See the <a href="#troubleshooting">Troubleshooting</a> section for more information.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>If you are using cluster administration credentials, no new permissions are needed.</p>
 </div>
@@ -3159,8 +3147,7 @@ When using the Amazon FSx data collector, user blocking for SMB cannot kill the 
 security login role create -role csrole -cmddirname set -access all
 security login role create -role csrole -cmddirname "vserver cifs session" -access all
 security login role create -role csrole -cmddirname "vserver services access-check authentication translate" -access all
-security login role create -role csrole -cmddirname "vserver name-mapping" -access all
-security login role create -role csrole -cmddirname "cluster show" -access readonly</pre>
+security login role create -role csrole -cmddirname "vserver name-mapping" -access all</pre>
 </div>
 </div>
 </div>
@@ -3420,17 +3407,6 @@ Restricting happens via IP address of the host through which the user is accessi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy could not be modified. Reason: not authorized for that command.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Check if using csuser, permissions are given to the user as mentioned above.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I see an error:<br>
-svm1: existing cifs session for user domain\\user01 is not closed.<br>
-<br>
-This error is seen in the Action Taken section on the alert detail page and also under Access Limitation History under Alert &amp; User list pages.<br>
-<br>
-The users current session is not closed when this error is seen, however, user is blocked for any new sessions until the bocking period expires.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a known issue with Amazon FSx. Cloud Secure will NOT be able to close the existing SMB session. No workaround is currently available to block the existing SMB session for Amazon FSx.<br>
-<br>
-If the collector type is CVO or ONTAP, ensure the correct permissions as mentioned in the <a href="#prerequisites-for-user-access-blocking">Prerequisites</a> section.</p></td>
 </tr>
 </tbody>
 </table>
