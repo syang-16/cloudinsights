@@ -3088,7 +3088,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-04 15:52:30 +0000">11/04/2022</time>
+    <time datetime="2022-11-04 18:16:35 +0000">11/04/2022</time>
     
   
 
@@ -3808,20 +3808,6 @@ kubectl delete ns &lt;NAMESPACE&gt;</pre>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For clusters where <em>etcd</em> is not the Kubernetes cluster datastore, you will see the following message in the telegraf RS pod:<br>
-<br>
- [inputs.prometheus] Error in plugin: could not load keypair /etc/kubernetes/pki/etcd/server.crt:/etc/kubernetes/pki/etcd/server.key: open /etc/kubernetes/pki/etcd/server.crt: no such file or directory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Insights only supports monitoring of <em>etcd</em> as the K8s datastore. You can modify the agent to avoid collecting etcd data by changing the configuration with the following instructions:<br>
-<br>
- kubectl -n netapp-monitoring edit agent agent-monitoring-netapp<br>
-<br>
-In that file, delete the following section:<br>
-<br>
- - name: prometheus_etcd<br>
-   run-mode:<br>
-   - ReplicaSet</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I do not see a hyperlink/connection between my Kubernetes Persistent Volume and the corresponding back-end storage device. My Kubernetes Persistent Volume is configured using the hostname of the storage server.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Follow the steps to uninstall the existing Telegraf agent, then re-install the latest Telegraf agent. You must be using Telegraf version 2.0 or later, and your Kubernetes cluster storage must be actively monitored by Cloud Insights.</p></td>
