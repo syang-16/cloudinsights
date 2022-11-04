@@ -3088,7 +3088,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-30 17:26:19 +0000">09/30/2022</time>
+    <time datetime="2022-11-04 17:49:29 +0000">11/04/2022</time>
     
   
 
@@ -3604,39 +3604,27 @@ Timestamp is in UNIX time format.
 <div class="paragraph">
 <p>Note that these commands are using the default namespace "netapp-monitoring".  If you have set your own namespace, substitute that namespace in these and all subsequent commands and files.</p>
 </div>
+<div class="paragraph">
+<p>Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and using an API access token that is renewable, expiring tokens will automatically be replaced by new/refreshed API access tokens.  There is no need to perform the manual steps listed below.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Edit the Telegraf ConfigMaps (CM), and replace all instances of the old API token with the new API token.</p>
+<p>Edit the the NetApp Kubernetes Monitoring Operator.</p>
 <div class="literalblock">
 <div class="content">
-<pre>kubectl -n netapp-monitoring edit cm
-:%s/&lt;OLD_API_TOKEN&gt;/&lt;NEW_API_TOKEN&gt;/g
-:wq!</pre>
+<pre>kubectl -n netapp-monitoring edit agent agent-monitoring-netapp</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Edit the Telegraf DaemonSet (DS) and ReplicaSet (RS), and replace all instances of the old API token with the new API token.</p>
+<p>Modify the <em>spec.output-sink.api-key</em> value, replacing the old API token with the new API token.</p>
 <div class="literalblock">
 <div class="content">
-<pre>kubectl -n netapp-monitoring edit ds telegraf-ds
-:%s/&lt;OLD_API_TOKEN&gt;/&lt;NEW_API_TOKEN&gt;/g
-:wq!
-kubectl -n netapp-monitoring edit rs telegraf-rs
-:%s/&lt;OLD_API_TOKEN&gt;/&lt;NEW_API_TOKEN&gt;/g
-:wq!</pre>
-</div>
-</div>
-</li>
-<li>
-<p>The Kubernetes controller will automatically restart the Telegraf DS pods.</p>
-</li>
-<li>
-<p>Restart the Telegraf RS pod</p>
-<div class="literalblock">
-<div class="content">
-<pre>kubectl -n netapp-monitoring delete pod &lt;telegraf-rs-pod&gt;</pre>
+<pre>spec:
+…
+  output-sink:
+  - api-key: &lt;NEW_API_TOKEN&gt;</pre>
 </div>
 </div>
 </li>
