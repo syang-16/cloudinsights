@@ -3088,7 +3088,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-07 14:37:23 +0000">11/07/2022</time>
+    <time datetime="2022-11-07 15:02:14 +0000">11/07/2022</time>
     
   
 
@@ -3842,20 +3842,6 @@ resources=certificatesigningrequests,configmaps,cronjobs,daemonsets, deployments
 The default resource list is:<br>
 <br>
 "certificatesigningrequests,configmaps,cronjobs,daemonsets,deployments, endpoints,horizontalpodautoscalers,ingresses,jobs,leases,limitranges, mutatingwebhookconfigurations,namespaces,networkpolicies,nodes, persistentvolumeclaims,persistentvolumes,poddisruptionbudgets,pods,replicasets, replicationcontrollers,resourcequotas,secrets,services,statefulsets,storageclasses, validatingwebhookconfigurations,volumeattachments"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I installed or upgraded Telegraf on Kubernetes, but the Telegraf pods are not starting up.  The Telegraf ReplicaSet or DaemonSet is reporting a failure resembling the following:<br>
-<br>
- Error creating: pods "telegraf-rs-" is forbidden": unable to validate against any security context constraint: To relax this restriction, edit the agent (<code>kubectl edit agent agent-monitoring-netapp</code>), and change "privileged-mode: false" to "privileged-mode: true"[spec.volumes[2]: Invalid value: "hostPath": hostPath volumes are not allowed to be used]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create a Security Context Constraint if one does not already exist.<br>
-<br>
-Ensure the namespace and service account specified for the Security Context Constraint matches the namespace and service account for the Telegraf ReplicaSet and DaemonSet.<br>
-<br>
- kubectl describe scc telegraf-hostaccess |grep serviceaccount<br>
- kubectl -n ci-monitoring --describe rs telegraf-rs | grep -i "Namespace:"<br>
- kubectl -n ci-monitoring describe rs telegraf-rs | grep -i "Service Account:"<br>
- kubectl -n ci-monitoring --describe ds telegraf-ds | grep -i "Namespace:"<br>
- kubectl -n ci-monitoring describe ds telegraf-ds | grep -i "Service Account:"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I see error messages from Telegraf resembling the following, but Telegraf does start up and run:<br>
