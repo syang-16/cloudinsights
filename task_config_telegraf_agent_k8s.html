@@ -3088,7 +3088,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-07 15:02:14 +0000">11/07/2022</time>
+    <time datetime="2022-11-08 19:02:05 +0000">11/08/2022</time>
     
   
 
@@ -3786,6 +3786,113 @@ kubectl delete ns &lt;NAMESPACE&gt;</pre>
 <p><a href="https://github.com/kubernetes/kube-state-metrics/blob/master/docs/statefulset-metrics.md">StatefulSet metrics</a></p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verifying-kubernetes-checksums">Verifying Kubernetes Checksums</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Cloud Insights agent installer performs integrity checks, but some users may want to perform their own verifications before installing or applying downloaded artifacts. To perform a download-only operation (as opposed to the default download-and-install), these users can edit the agent installation command obtained from the UI and remove the trailing “install” option.</p>
+</div>
+<div class="paragraph">
+<p>Follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy the Agent Installer snippet as directed.</p>
+</li>
+<li>
+<p>Instead of pasting the snippet into a command window, paste it into a text editor.</p>
+</li>
+<li>
+<p>Remove the trailing “--install” from the command.</p>
+</li>
+<li>
+<p>Copy the entire command from the text editor.</p>
+</li>
+<li>
+<p>Now paste it into your command window (in a working directory) and run it.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Download and install (default):</p>
+<div class="literalblock">
+<div class="content">
+<pre>installerName=cloudinsights-kubernetes.sh … &amp;&amp; sudo -E -H ./$installerName --download –-install</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Download-only:</p>
+<div class="literalblock">
+<div class="content">
+<pre>installerName=cloudinsights-kubernetes.sh … &amp;&amp; sudo -E -H ./$installerName --download</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The download-only command will download all required artifacts from Cloud Insights to the working directory.  The artifacts include, but may not be limited to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>an installation script</p>
+</li>
+<li>
+<p>an environment file</p>
+</li>
+<li>
+<p>YAML files</p>
+</li>
+<li>
+<p>a signed checksum file (sha256.signed)</p>
+</li>
+<li>
+<p>a PEM file (netapp_cert.pem) for signature verification</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The installation script, environment file, and YAML files can be verified using visual inspection.</p>
+</div>
+<div class="paragraph">
+<p>The PEM file can be verified by confirming its fingerprint to be the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>E5:FB:7B:68:C0:8B:1C:A9:02:70:85:84:C2:74:F8:EF:C7:BE:8A:BC</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More specifically,</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>openssl x509 -fingerprint -sha1 -noout -inform pem -in netapp_cert.pem</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The signed checksum file can be verified using the PEM file:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>openssl smime -verify -in sha256.signed -CAfile netapp_cert.pem -purpose any</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once all of the artifacts have been satisfactorily verified, the agent installation can be initiated by running:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo -E -H ./&lt;installation_script_name&gt; --install</pre>
 </div>
 </div>
 </div>
