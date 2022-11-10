@@ -25,28 +25,8 @@
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
-  <!-- Controls AsciiDoctor Admonition Blocks -->
-  <link rel="stylesheet" type="text/css" href="/us-en/cloudinsights/css/font-awesome.min.css">
-
-  <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/us-en/cloudinsights/css/boxshadowproperties.css">
-
-  <!-- NetApp CSS controls the technical content -->
-  <link rel="stylesheet" type="text/css" href="/us-en/cloudinsights/css/netapp.css">
-
-  <!-- WWW CSS Content -->
-  <link rel="stylesheet" type="text/css" href="/us-en/cloudinsights/css/www-luci-dotcom.min.css">
-  <link rel="stylesheet" type="text/css" href="/us-en/cloudinsights/css/www-netapp-dotcom.css">
-  <link rel="stylesheet" href="/us-en/cloudinsights/css/www-netapp-library-critical.min.css" media="all" >
-  <link rel="stylesheet" href="/us-en/cloudinsights/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="stylesheet" href="/us-en/cloudinsights/css/www-netapp-library-global-header-footer.min.css">
-
-  <!-- NetApp IE Customizations -->
-  <link rel="stylesheet" href='/us-en/cloudinsights/css/na-utility.css' type='text/css'>
-  <link rel="stylesheet" href='/us-en/cloudinsights/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/us-en/cloudinsights/css/clouddocs.css' type='text/css'>
-  <link rel='stylesheet' href='/us-en/cloudinsights/css/custom-dropdown.css' type='text/css'>
-  <link rel='stylesheet' href='/us-en/cloudinsights/css/na-pagenav.css' type='text/css'>
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloudinsights/css/netappdocs.css">
 
   
   <link rel="stylesheet" href="/us-en/cloudinsights/css/landing-page.css" type="text/css">
@@ -98,11 +78,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloudinsights/js/na-search.js'></script><script src='/us-en/cloudinsights/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/cloudinsights/css/prism.css' type='text/css'>
-  <link rel='stylesheet' href='/us-en/cloudinsights/css/prism-netapp.css' type='text/css'>
-
-
-  <script src='/us-en/cloudinsights/js/na-utility.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloudinsights/js/na-search.js'></script><script src='/us-en/cloudinsights/js/na-pagenav.js'></script><script src='/us-en/cloudinsights/js/na-utility.js'></script>
   <script src='/us-en/cloudinsights/js/clouddocs.js'></script>
   <script src='/us-en/cloudinsights/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -3088,7 +3064,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-08 19:02:05 +0000">11/08/2022</time>
+    <time datetime="2022-11-10 19:51:28 +0000">11/10/2022</time>
     
   
 
@@ -3458,6 +3434,58 @@ dockerRepoSecret: &lt;optional: name of the docker secret of enterprise/corp doc
 </div>
 </div>
 <div class="sect1">
+<h2 id="installing-the-netapp-kubernetes-monitoring-operator">Installing the NetApp Kubernetes Monitoring Operator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="./media/NKMO_Install_Instructions.png" alt="Operator-Based Install"></span></p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps to install NetApp Kubernetes Monitoring Operator agent on Kubernetes:</div>
+<ol class="arabic">
+<li>
+<p>Enter a unique cluster name and namespace. If you are <a href="#upgrading">upgrading</a> from the script-based agent or a previous Kubernetes Operator, use the same cluster name and namespace.</p>
+</li>
+<li>
+<p>Once these are entered, you can copy the Agent Installer snippet</p>
+</li>
+<li>
+<p>Click the button to copy this snippet to the clipboard.</p>
+</li>
+<li>
+<p>Paste the snippet into a <em>bash</em> window and execute it. Note that the snippet has a unique key and is valid for 24 hours.</p>
+</li>
+<li>
+<p>The installation proceeds automatically. When it is complete, click the <em>Complete Setup</em> button.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Setup is incomplete until you <a href="#configuring-proxy-support">configure your proxy</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you have a custom repository, you must follow the instructions for <a href="#using-a-custom-or-private-docker-repository">Using a custom/private docker repository</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="upgrading">Upgrading</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
@@ -3570,58 +3598,6 @@ If you have a previously installed script-based agent, you <em>must</em> upgrade
 <div class="paragraph">
 <p><a href="#installing-the-netapp-kubernetes-monitoring-operator">Install</a> the latest Operator. Use the same cluster name, and ensure you are pulling new container images if you have set up a custom repo.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installing-the-netapp-kubernetes-monitoring-operator">Installing the NetApp Kubernetes Monitoring Operator</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="./media/NKMO_Install_Instructions.png" alt="Operator-Based Install"></span></p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps to install NetApp Kubernetes Monitoring Operator agent on Kubernetes:</div>
-<ol class="arabic">
-<li>
-<p>Enter a unique cluster name and namespace. If you are <a href="#upgrading">upgrading</a> from the script-based agent or a previous Kubernetes Operator, use the same cluster name and namespace.</p>
-</li>
-<li>
-<p>Once these are entered, you can copy the Agent Installer snippet</p>
-</li>
-<li>
-<p>Click the button to copy this snippet to the clipboard.</p>
-</li>
-<li>
-<p>Paste the snippet into a <em>bash</em> window and execute it. Note that the snippet has a unique key and is valid for 24 hours.</p>
-</li>
-<li>
-<p>The installation proceeds automatically. When it is complete, click the <em>Complete Setup</em> button.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Setup is incomplete until you <a href="#configuring-proxy-support">configure your proxy</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloudinsights/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If you have a custom repository, you must follow the instructions for <a href="#using-a-custom-or-private-docker-repository">Using a custom/private docker repository</a>.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -3979,8 +3955,8 @@ For example, edit the ReplicaSet&#8230;&#8203;<br>
 &#8230;&#8203;and add the appropriate tolerations to the spec. Then, restart the ReplicaSet pod.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I have a PSP environment. Does this affect my monitoring operator?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If your Kubernetes cluster is running with Pod Security Policy (PSP) in place, you must upgrade to the latest NetApp Kubernetes Monitoring Operator. Follow these steps to upgrade to the current NKMO with support for PSP:<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I have a PSP/PSA environment. Does this affect my monitoring operator?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If your Kubernetes cluster is running with Pod Security Policy (PSP) or Pod Security Admission (PSA) in place, you must upgrade to the latest NetApp Kubernetes Monitoring Operator. Follow these steps to upgrade to the current NKMO with support for PSP/PSA:<br>
 <br>
 1. <a href="#uninstalling">Uninstall</a> the previous monitoring operator:<br>
 <br>
@@ -3993,12 +3969,12 @@ For example, edit the ReplicaSet&#8230;&#8203;<br>
 2. <a href="#installing-the-netapp-kubernetes-monitoring-operator">Install</a> the latest version of the monitoring operator.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I ran into issues trying to deploy the NKMO, and I have PSP in use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I ran into issues trying to deploy the NKMO, and I have PSP/PSA in use.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1. Edit the agent using the following command:<br>
 <br>
 kubectl -n &lt;name-space&gt; edit agent<br>
 <br>
-2. Mark 'security-policy-enabled' as 'false'. This will disable Pod Security Policies and allow the NKMO to deploy. Confirm by using the following commands:<br>
+2. Mark 'security-policy-enabled' as 'false'. This will disable Pod Security Policies and Pod Security Admission and allow the NKMO to deploy. Confirm by using the following commands:<br>
 <br>
 kubectl get psp (should show Pod Security Policy removed)<br>
 kubectl get all -n &lt;namespace&gt; | grep -i psp (should show that nothing is found)</p></td>
