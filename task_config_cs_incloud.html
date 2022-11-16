@@ -3068,7 +3068,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-14 14:13:51 +0000">09/14/2022</time>
+    <time datetime="2022-11-16 18:01:43 +0000">11/16/2022</time>
     
   
 
@@ -3200,6 +3200,32 @@ This installs the Cloud Secure agent, providing all of the <a href="concept_cs_a
 <p>For detailed steps please refer to this link:<br>
 <a href="https://docs.netapp.com/us-en/cloudinsights/task_cs_add_agent.html#steps-to-install-agent" class="bare">https://docs.netapp.com/us-en/cloudinsights/task_cs_add_agent.html#steps-to-install-agent</a></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Known problems and their resolutions are described in the following table.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Problem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resolution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">“Cloud Secure: Failed to determine ONTAP type for Amazon FxSN data collector” error is shown by the Data Collector.<br>
+Customer is unable to add new Amazon FSxN data collector into Cloud Secure.  Connection to FSxN cluster on port 443 from the agent is timing out. Firewall and AWS security groups have the required rules enabled to allow communication. An agent is already deployed and is in the same AWS account as well. This same agent is used to connect and monitor the remaining NetApp devices (and all of them are working).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solve this issue by adding fsxadmin LIF network segment to agent&#8217;s security rule.<br>
+Allowed all ports if you are not sure about the ports.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

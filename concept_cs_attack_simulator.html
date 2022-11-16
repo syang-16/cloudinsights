@@ -3068,7 +3068,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-20 15:14:33 +0000">01/20/2022</time>
+    <time datetime="2022-11-16 17:59:14 +0000">11/16/2022</time>
     
   
 
@@ -3120,6 +3120,27 @@ Do not create the files and encrypt them using the same user. Cloud Secure consi
 </div>
 <div class="paragraph">
 <p>See below for instructions to <a href="#create-files-programmatically">programmatically create non-empty files</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="guidelines-before-you-run-the-simulator">Guidelines before you run the simulator:</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Make sure encrypted files are not empty.</p>
+</li>
+<li>
+<p>Make sure you encrypt &gt; 50 files. A small number of files will be ignored.</p>
+</li>
+<li>
+<p>Do not run an attack with the same user multiple times. After a few times, CS will learn this user behavior and assume it is the user&#8217;s normal behavior.</p>
+</li>
+<li>
+<p>Do not encrypt files the same user has just created. Changing a file that was just created by a user is not considered a risky activity. Instead, use files created by another user OR wait for a few hours between creating the files and encrypting them.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
