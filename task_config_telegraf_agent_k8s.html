@@ -3068,7 +3068,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-10 19:51:28 +0000">11/10/2022</time>
+    <time datetime="2022-11-18 18:10:50 +0000">11/18/2022</time>
     
   
 
@@ -3681,8 +3681,8 @@ If you are running on a previously-installed script-based Kubernetes agent, you 
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>kubectl delete agent &lt;name-space&gt;
-kubectl delete ns,clusterrole,clusterrolebinding,crd &lt;name-space&gt;</pre>
+<pre>kubectl delete agent -A -l installed-by=nkmo-&lt;name-space&gt;
+kubectl delete ns,clusterrole,clusterrolebinding,crd -l installed-by=nkmo-&lt;name-space&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
