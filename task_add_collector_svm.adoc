@@ -365,7 +365,6 @@ If it is more than 20, please increase the CPU and RAM capacity of the Agent mac
 Once the CPU and RAM is increased, the DSCs will get into Initializing and then to Running state automatically.
 Look into the sizing guide on link:https://docs.netapp.com/us-en/cloudinsights/concept_cs_event_rate_checker.html[this page].
 
-| [[ref,Test]] Test c | Testc
 
 |===
 
