@@ -3068,7 +3068,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-20 17:44:12 +0000">09/20/2022</time>
+    <time datetime="2022-12-20 15:49:57 +0000">12/20/2022</time>
     
   
 
@@ -3124,7 +3124,7 @@
 <p>Only data type SVMs are supported. SVMs with infinite volumes are not supported.</p>
 </li>
 <li>
-<p>SVM has several sub-types. Of these, only <em>default</em> and <em>sync_source</em> are supported.</p>
+<p>SVM has several sub-types. Of these, only <em>default</em>, <em>sync_source</em>, and <em>sync_destination</em> are supported.</p>
 </li>
 <li>
 <p>An Agent <a href="task_cs_add_agent.html">must be configured</a> before you can configure data collectors.</p>
@@ -3369,6 +3369,58 @@ When adding via SVM IP the options are:<br>
 <p>In the Installed Data Collectors page, use the options menu on the right of each collector to edit the data collector. You can restart the data collector or edit data collector configuration attributes.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="recommended-configuration-for-metro-cluster">Recommended Configuration for Metro Cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is recommended for Metro Cluster:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Connect two data collectors, one to the source SVM and another to the destination SVM.</p>
+</li>
+<li>
+<p>The data collectors should be connected by <em>Cluster IP</em>.</p>
+</li>
+<li>
+<p>At any moment of time, one data collector should be in running, another will be in error.</p>
+<div class="paragraph">
+<p>The current ‘running’ SVM’s data collector will show as <em>Running</em>. The current ‘stopped’ SVM’s<br>
+data collector will show as <em>Error</em>.</p>
+</div>
+</li>
+<li>
+<p>Whenever there is a switchover, the state of the data collector will change from ‘running’ to ‘error’ and vice versa.</p>
+</li>
+<li>
+<p>It will take up to two minutes for the data collector to move from Error state to Running state.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="service-policy">Service Policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If using service policy from ONTAP version 9.9.1, in order to connect to the Data Source Collector, the <em>data-fpolicy-client</em> service is required along with the data service <em>data-nfs</em>, and/or <em>data-cifs</em>.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Testcluster-1::*&gt; net int service-policy create -policy only_data_fpolicy -allowed-addresses 0.0.0.0/0 -vserver aniket_svm
+-services data-cifs,data-nfs,data,-core,data-fpolicy-client
+(network interface service-policy create)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In versions of ONTAP prior to 9.9.1, <em>data-fpolicy-client</em> need not be set.</p>
 </div>
 </div>
 </div>
