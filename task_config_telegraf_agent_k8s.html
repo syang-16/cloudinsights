@@ -3068,7 +3068,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-16 21:59:20 +0000">12/16/2022</time>
+    <time datetime="2022-12-20 20:31:54 +0000">12/20/2022</time>
     
   
 
@@ -3883,6 +3883,30 @@ kubectl delete ns &lt;NAMESPACE&gt;</pre>
 <div class="paragraph">
 <p>You can adjust the NetApp Kubernetes Monitoring Operator for optimal performance by fine-tuning certain variables for Custom Resources.  See the following tables for variables that you can set.</p>
 </div>
+<div class="paragraph">
+<p>To modify these values, edit the agent CR with the following command (substituting &lt;namespace&gt; for your namespace):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl edit agent agent-monitoring-netapp -n &lt;namespace&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The CR specification follows the format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> - name: &lt;plugin-name&gt;
+   ...
+   substitutions:
+   - key: &lt;variable-name&gt;
+     value: &lt;desired-value&gt;
+     ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Items marked "yes" for "Included in default CR" will already be present in the agent CR and can be found under their respective plugin. Items marked "no" must be added manually following the examples provided by the included default substitutions.</p>
+</div>
 <div class="sect2">
 <h3 id="resource-related-variables">Resource related variables</h3>
 <div class="paragraph">
@@ -3897,7 +3921,7 @@ kubectl delete ns &lt;NAMESPACE&gt;</pre>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Placeholder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variable Name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plugin Name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Included in default CR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
