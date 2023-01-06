@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Dashboard features and concepts.">
-  <meta name="keywords" content=" dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility"><!-- Icons -->
+  <meta name="keywords" content=" dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand"><!-- Icons -->
   <link rel="icon" href="/us-en/cloudinsights/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1263,8 +1263,6 @@
             NetApp
           </a>
           
-
-
 
 
 
@@ -2690,13 +2688,6 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Astra Data Store"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloudinsights/task_dc_na_astra_data_store.html">
-        Astra Data Store
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Cloud Connection for ONTAP 9.9+"
       data-li-level="4#" 
       class=" "
@@ -3068,7 +3059,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 13:32:16 +0000">06/08/2022</time>
+    <time datetime="2022-11-08 16:13:56 +0000">11/08/2022</time>
     
   
 
@@ -3110,6 +3101,7 @@
 <li><a href="#variables">Variables</a></li>
 <li><a href="#formatting-gauge-widgets">Formatting Gauge Widgets</a></li>
 <li><a href="#formatting-single-value-widget">Formatting Single-Value Widget</a></li>
+<li><a href="#formatting-table-widgets">Formatting Table Widgets</a></li>
 <li><a href="#choosing-the-unit-for-displaying-data">Choosing the Unit for Displaying Data</a></li>
 <li><a href="#tv-mode-and-auto-refresh">TV Mode and Auto-Refresh</a></li>
 <li><a href="#dashboard-groups">Dashboard Groups</a></li>
@@ -4048,6 +4040,32 @@ For example, when setting a variable filter to a specific storage <em>Model</em>
 </div>
 <div class="paragraph">
 <p>Clicking the link in either a single-value widget or a gauge widget will display a query page corresponding to the first query in the widget.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="formatting-table-widgets">Formatting Table Widgets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like single-value and gauge widgets, you can set conditional formatting in table widgets, allowing you to highlight data with colors and/or special icons.</p>
+</div>
+<div class="paragraph">
+<p>Conditional Formatting allows you to set and highlight Warning-level and Critical-level thresholds in table widgets, bringing instant visibility to outliers and exceptional data points.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ConditionalFormattingExample.png" alt="Conditional Formatting Example"></span></p>
+</div>
+<div class="paragraph">
+<p>Conditional formatting is set separately for each column in a table. Foe example, you can choose one set of thresholds for a capacity column, and another set for a throughput column.</p>
+</div>
+<div class="paragraph">
+<p>If you change the Unit Display for a column, the conditional formatting remains and reflects the change in values. The images below show the same conditional formatting even though the display unit is different.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ConditionalFormatting_GiB.png" alt="Conditional Formatting - GiB"></span>    <span class="image"><img src="./media/ConditionalFormatting_TiB.png" alt="Conditional Formatting - TiB"></span></p>
+</div>
+<div class="paragraph">
+<p>You can choose whether to display condition formatting as color, icons, or both.</p>
 </div>
 </div>
 </div>

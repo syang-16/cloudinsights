@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>NetApp ONTAP Streaming Telemetry</title>
+  <title></title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="NetApp ONTAP Streaming Telemetry" />
+  <meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloudinsights/concept_ontap_streaming_telemetry.html" />
 	<meta property="og:description" content="Configure Cloud Insights with NetApp ONTAP Streaming Telemetry" />
@@ -160,7 +160,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[NetApp ONTAP Streaming Telemetry](https://docs.netapp.com/us-en/cloudinsights/concept_ontap_streaming_telemetry.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/concept_ontap_streaming_telemetry.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/issues/new?body=Page%3A%20[](https://docs.netapp.com/us-en/cloudinsights/concept_ontap_streaming_telemetry.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloudinsights/blob/main/concept_ontap_streaming_telemetry.adocold" class="page-nav-contribute-link" role="button"><img src="/us-en/cloudinsights/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloudinsights/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1261,8 +1261,6 @@
             NetApp
           </a>
           
-
-
 
 
 
@@ -2688,13 +2686,6 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Astra Data Store"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/cloudinsights/task_dc_na_astra_data_store.html">
-        Astra Data Store
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Cloud Connection for ONTAP 9.9+"
       data-li-level="4#" 
       class=" "
@@ -3059,14 +3050,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">NetApp ONTAP Streaming Telemetry</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-10-13 18:29:32 +0000">10/13/2022</time>
+    <time datetime="2022-10-13 18:09:41 +0000">10/13/2022</time>
     
   
 
@@ -3084,9 +3075,59 @@
 
 </p>
 
-<div class="paragraph lead">
-<p>For up-to-date information, see the <a href="https://docs.netapp.com/us-en/cloudinsights/task_dc_na_cloud_connection.html">NetApp Cloud Connection for ONTAP 9.9+</a> data collector page.</p>
-</div>
+= NetApp ONTAP Streaming Telemetry
+
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+
+For up-to-date information, see the link:https://docs.netapp.com/us-en/cloudinsights/task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+] data collector page.
+
+////
+Thank you for your interest in Cloud Insights ONTAP Streaming Telemetry. This feature is currently in private preview. Please reach out to ng-ci-preview@netapp.com to request more information or access.
+////
+
+////
+This data collector creates a cloud connection to support data collection from ONTAP 9.9+ systems. 
+
+
+== Configuration
+
+Configuration of the Cloud Connection for ONTAP 9.9+ data collector requires you to copy a Pairing Code to the ONTAP System Manager, which will then establish a connection to your Cloud Insights environment. 
+
+image:Cloud_Agent_DC.png[Cloud Agent Data Collector Configuration]
+
+Follow these steps to configure the connection:
+
+* Generate a unique token which will be used to establish the connection to the ONTAP system.
+
+* Copy the Pairing Code, which includes the token. You can view the pairing code by clicking on _[+] Reveal Code Snippet_.
++
+Once you copy the pairing code, the data collector configuration screen will reveal a step 6, prompting you to wait for the connection to be established. Nothing more needs to be done on this screen until the connection is established.
++
+image:Cloud_Agent_Step_Waiting.png[Waiting for connection]
+
+* In a new browser tab, log into the ONTAP System Manager and navigate to _Cluster > Settings > Cloud Connections_.
+
+* Click _Add Cloud Connection_ and paste the pairing code.
+
+* Return to the Cloud Insights browser tab and wait for the connection to be established. Once it is established, a _Complete_ button is revealed.
+
+* Click _Complete_.
+
+           
+== Troubleshooting
+
+Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf[Data Collector Support Matrix].
+
+
 
     </article>
     <!-- Page Container -->

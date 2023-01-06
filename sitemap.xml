@@ -15,7 +15,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/API_Overview.html</loc>
       
-      <lastmod>2022-12-16T21:41:58+00:00</lastmod>
+      <lastmod>2023-01-06T14:23:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/</loc>
+      
+      <lastmod>2022-09-29T14:35:15+00:00</lastmod>
       
     </url>
   
@@ -23,6 +30,13 @@
       <loc>https://docs.netapp.com/us-en/cloudinsights/TBD.html</loc>
       
       <lastmod>2018-11-30T15:56:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/bluexp_overview.html</loc>
+      
+      <lastmod>2022-10-25T18:46:20+00:00</lastmod>
       
     </url>
   
@@ -134,7 +148,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/concept_dashboard_features.html</loc>
       
-      <lastmod>2022-06-08T13:32:16+00:00</lastmod>
+      <lastmod>2022-11-08T16:13:56+00:00</lastmod>
       
     </url>
   
@@ -181,6 +195,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/concept_high_consuming_workloads.html</loc>
+      
+      <lastmod>2021-11-22T21:28:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/concept_import_from_dashboard_gallery.html</loc>
       
       <lastmod>2022-09-27T20:05:02+00:00</lastmod>
@@ -223,9 +244,16 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/concept_ontap_streaming_telemetry.html</loc>
+      
+      <lastmod>2022-10-13T18:09:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/concept_preview_features.html</loc>
       
-      <lastmod>2022-10-25T17:58:59+00:00</lastmod>
+      <lastmod>2022-10-31T13:26:51+00:00</lastmod>
       
     </url>
   
@@ -288,7 +316,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/concept_whats_new.html</loc>
       
-      <lastmod>2022-12-19T16:18:40+00:00</lastmod>
+      <lastmod>2022-12-19T19:20:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/concept_whats_new.html</loc>
+      
+      <lastmod>2022-10-31T13:14:31+00:00</lastmod>
       
     </url>
   
@@ -330,7 +365,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/data_collector_list.html</loc>
       
-      <lastmod>2022-11-23T15:27:21+00:00</lastmod>
+      <lastmod>2023-01-06T14:08:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/data_collector_support_matrix.html</loc>
+      
+      <lastmod>2022-10-31T15:17:52+00:00</lastmod>
       
     </url>
   
@@ -454,16 +496,16 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/us-en/cloudinsights/reference_data_collector_support_matrix.html</loc>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/data_collector_support_matrix.html</loc>
       
-      <lastmod>2019-10-08T15:48:41+00:00</lastmod>
+      <lastmod>2022-10-31T17:08:00+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/reference_legal_notices.html</loc>
       
-      <lastmod>2022-12-19T17:48:30+00:00</lastmod>
+      <lastmod>2022-12-19T19:20:15+00:00</lastmod>
       
     </url>
   
@@ -531,6 +573,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/reporting_querying_odata.html</loc>
+      
+      <lastmod>2021-11-02T18:10:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/reporting_schema_diagrams.html</loc>
       
       <lastmod>2021-12-13T18:35:57+00:00</lastmod>
@@ -554,7 +603,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights//search.html</loc>
       
-      <lastmod>2022-12-21T16:14:49+00:00</lastmod>
+      <lastmod>2023-01-06T14:26:15+00:00</lastmod>
       
     </url>
   
@@ -608,6 +657,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_config_cs_amazon_fsx.html</loc>
+      
+      <lastmod>2022-02-17T14:09:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_config_cs_incloud.html</loc>
       
       <lastmod>2022-11-16T18:01:43+00:00</lastmod>
@@ -624,14 +680,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent.html</loc>
       
-      <lastmod>2022-11-10T14:30:23+00:00</lastmod>
+      <lastmod>2022-12-19T19:20:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent_k8s.html</loc>
       
-      <lastmod>2022-12-20T20:31:54+00:00</lastmod>
+      <lastmod>2023-01-06T14:23:13+00:00</lastmod>
       
     </url>
   
@@ -1021,6 +1077,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_emc_isilon_rest.html</loc>
+      
+      <lastmod>2022-12-23T15:13:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_emc_powerstore.html</loc>
       
       <lastmod>2021-03-30T17:11:02+00:00</lastmod>
@@ -1038,6 +1101,13 @@
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_emc_scaleio.html</loc>
       
       <lastmod>2020-01-02T15:08:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_emc_unisphere_rest.html</loc>
+      
+      <lastmod>2022-12-23T15:03:52+00:00</lastmod>
       
     </url>
   
@@ -1458,6 +1528,13 @@
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_isolate_root_volume.html</loc>
       
       <lastmod>2018-11-30T21:52:51+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_kubernetes_operator_proxy.html</loc>
+      
+      <lastmod>2022-02-17T14:15:12+00:00</lastmod>
       
     </url>
   
