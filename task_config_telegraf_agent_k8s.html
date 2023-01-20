@@ -3059,7 +3059,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-20 14:00:08 +0000">01/20/2023</time>
+    <time datetime="2023-01-20 14:23:33 +0000">01/20/2023</time>
     
   
 
@@ -3094,12 +3094,12 @@
 <div class="sect1">
 <h2 id="before-installing-the-netapp-kubernetes-monitoring-operator">Before installing the NetApp Kubernetes Monitoring Operator</h2>
 <div class="sectionbody">
-<div class="ulist">
+<div id="nkmoversion" class="ulist">
 <div class="title">Pre-requisites:</div>
 <ul>
 <li>
-<p>Please note the following component versions. These are the current versions included with the NetApp Kubernetes Monitoring Operator:</p>
-<div id="nkmoversion" class="ulist">
+<p>Please note the following component versions. These are the current versions included with the NetApp Kubernetes Monitoring Operator. You will particularly need to note these versions if you are <a href="#using-a-custom-or-private-docker-repository">using a custom or private docker repository</a>:</p>
+<div class="ulist">
 <ul>
 <li>
 <p>Telegraf: 1.24.0</p>
@@ -3358,13 +3358,13 @@ password: &lt;password from docker secret step above&gt;</pre>
 <p>Push the operator docker image to your private/local/enterprise docker repository according to your corporate policies.</p>
 </div>
 <div class="paragraph">
-<p>Download all open source dependencies to your private docker registry. The following open source images need to be downloaded:</p>
+<p>Download all open source dependencies to your private docker registry. The following open source images need to be downloaded. See the <a href="#before-installing-the-netapp-kubernetes-monitoring-operator">Pre-requisites</a> section above for the most current versions of these components:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>docker.io/telegraf: 1.24.0
-gcr.io/kubebuilder/kube-rbac-proxy: v10.13.0
-k8s.gcr.io/kube-state-metrics/kube-state-metrics: v2.6.0</pre>
+<pre>docker.io/telegraf
+gcr.io/kubebuilder/kube-rbac-proxy
+k8s.gcr.io/kube-state-metrics/kube-state-metrics</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3372,8 +3372,8 @@ k8s.gcr.io/kube-state-metrics/kube-state-metrics: v2.6.0</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>docker.io/fluent-bit:1.9.8
-docker.io/kubernetes-event-exporter:0.10</pre>
+<pre>docker.io/fluent-bit
+docker.io/kubernetes-event-exporter</pre>
 </div>
 </div>
 <div class="paragraph">
