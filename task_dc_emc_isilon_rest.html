@@ -9,14 +9,14 @@
   <meta property="og:title" content="Dell Dell EMC Isilon REST data collector" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloudinsights/task_dc_emc_isilon_rest.html" />
-	<meta property="og:description" content="Configuring the Dell EMC Isilon REST data collector." />
+	<meta property="og:description" content="Configuring the Dell EMC Isilon / PowerScale REST data collector." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloudinsights/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Configuring the Dell EMC Isilon REST data collector.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Configuring the Dell EMC Isilon / PowerScale REST data collector.">
   <meta name="keywords" content=" data collector, isilon, EMC, DELL, PowerScale"><!-- Icons -->
   <link rel="icon" href="/us-en/cloudinsights/images/favicon.ico" type="image/x-icon">
 
@@ -3057,7 +3057,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-23 15:13:05 +0000">12/23/2022</time>
+    <time datetime="2023-01-24 14:42:18 +0000">01/24/2023</time>
     
   
 
@@ -3078,7 +3078,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Insights uses the Dell EMC Isilon REST SSH data collector to acquire inventory and performance data from Dell EMC Isilon storage.</p>
+<p>Cloud Insights uses the Dell EMC Isilon / PowerScale REST data collector to acquire inventory and performance data from Dell EMC Isilon or PowerScale storage.</p>
 </div>
 </div>
 </div>
@@ -3113,8 +3113,16 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Storage Node</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">File System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OneFS File System</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Internal Volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OneFS File System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Pool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Qtree</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Qtree</p></td>
 </tr>
 </tbody>
 </table>
@@ -3132,16 +3140,117 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Administrator permissions to the Dell EMC Isilon REST storage</p>
+<p>A user account and password. This account does NOT need to be admin/root, but you MUST grant a substantial number of read only privileges to your service account - see table below</p>
 </li>
 <li>
-<p>IP address of the Dell EMC Isilon REST cluster</p>
+<p>IP address / Fully Qualified Domain Name of the Dell EMC Isilon / PowerScale cluster</p>
 </li>
 <li>
 <p>HTTPS access to port 8080</p>
 </li>
 </ul>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Privilege Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">r(read) or rw (read+write)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_LOGIN_PAPI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Platform API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_SYS_TIME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_AUTH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_ROLE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privilege</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_DEVICES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_EVENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Event</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_HDFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HDFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_NDMP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_NETWORK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_NFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_PAPI_CONFIG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configure Platform API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_QUOTA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quota</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_SMARTPOOLS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SmartPools</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_SMB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_STATISTICS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statistics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_SWIFT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Swift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISI_PRIV_JOB_ENGINE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Job Engine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
