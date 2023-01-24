@@ -3059,7 +3059,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-19 18:43:31 +0000">01/19/2023</time>
+    <time datetime="2023-01-24 18:54:18 +0000">01/24/2023</time>
     
   
 
@@ -4177,7 +4177,7 @@ Add-Type -Assembly System.Security
 </div>
 </div>
 <div class="sect1">
-<h2 id="troubleshooting-agent-installation">Troubleshooting Agent Installation</h2>
+<h2 id="troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Some things to try if you encounter problems setting up an agent:</p>
@@ -4194,6 +4194,12 @@ Add-Type -Assembly System.Security
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After configuring a new plugin and restarting Telegraf, Telegraf fails to start up. The logs indicate that an error resembling the following:<br>
+<br>
+"[telegraf] Error running agent: Error loading config file /etc/telegraf/telegraf.d/cloudinsights-default.conf: plugin outputs.http: line 88: configuration specified the fields ["use_system_proxy"], but they weren&#8217;t used"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The installed Telegraf version is outdated. Follow the steps on this page to <strong>Upgrade the Agent</strong> for your appropriate platform.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I already installed an agent using Cloud Insights</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you have already installed an agent on your host/VM, you do not need to install the agent again. In this case, simply choose the appropriate Platform and Key in the Agent Installation screen, and click on <strong>Continue</strong> or <strong>Finish</strong>.</p></td>
