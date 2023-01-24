@@ -3057,7 +3057,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-23 15:03:52 +0000">12/23/2022</time>
+    <time datetime="2023-01-24 15:03:20 +0000">01/24/2023</time>
     
   
 
@@ -3078,7 +3078,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>This data collector acquires inventory and performance data from Dell EMC Unisphere RESTstorage systems. For configuration, the data collector requires an IP address of the Unisphere server and an administrative level domain account.</p>
+<p>This data collector acquires inventory and performance data from Dell EMC Unisphere for PowerMax / Vmax 3 management systems.</p>
+</div>
+<div class="paragraph">
+<p>Please note that Dell/EMC did not introduce per volume statistics until Unisphere 10.0 - this data collector support 9.2.0+, but will not be able to collect volume statistics as they do not exist.</p>
+</div>
+<div class="paragraph">
+<p>One Unisphere for Vmax/PowerMax instance may be managing one or more Symmetrix 3 or higher storage arrays - this collector will default to attempting to discovering all of them.</p>
+</div>
+<div class="paragraph">
+<p>For configuration, the data collector requires an IP address/FQDN of the Unisphere server, TCP connectivity to port 8443, and a username and password.</p>
 </div>
 </div>
 </div>
@@ -3088,10 +3097,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>An IP address of the Unisphere server</p>
+<p>An IP address/Fully Qualified Domain Name of the Unisphere server</p>
 </li>
 <li>
-<p>Administrative level domain account for the Unisphere server</p>
+<p>Username and password</p>
 </li>
 <li>
 <p>Port 8443.</p>
@@ -3156,7 +3165,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Performance Poll Interval (sec)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between performance polls. The default is 600 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval between performance polls.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Choose 'Exclude' or 'Include' to Specify a List</p></td>
