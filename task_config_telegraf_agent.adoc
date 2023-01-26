@@ -61,6 +61,8 @@ NOTE: If you are using a proxy, read the proxy instructions for your platform be
 
 === Windows
 
+NOTE: Windows 2012 and 2012R2 are not supported when installing the Windows Telegraf agent. 
+
 ==== Pre-requisites:
 
 * PowerShell must be installed
