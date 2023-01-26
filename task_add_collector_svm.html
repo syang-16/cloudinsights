@@ -3059,7 +3059,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-20 15:49:57 +0000">12/20/2022</time>
+    <time datetime="2023-01-26 14:22:04 +0000">01/26/2023</time>
     
   
 
@@ -3527,7 +3527,10 @@ If not pingable, make sure the network settings in ONTAP are correct, so that th
 Basically, in a tenant, 1 SVM should be added only once, via 1 data collector. 1 SVM should not added twice via 2 data collectors.<br>
 <br>
 6. In instances where the same SVM was added in two different Cloud Secure environments (tenants), the last one will always succeed. The second collector will configure fpolicy with its own IP address and kick out the first one. So the collector in the first one will stop receiving events and its "audit" service will enter into error state.<br>
-To prevent this, configure each SVM on a single environment.</p></td>
+To prevent this, configure each SVM on a single environment.<br>
+<br>
+<br>
+7. This error may also occur if service policies are not configured correctly. With ONTAP 9.8 or later, in order to connect to the Data Source Collector, the data-fpolicy-client service is required along with the data service data-nfs, and/or data-cifs. Additionally, the data-fpolicy-client service must be associated with the data lif(s) for the monitored SVM.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No events seen in activity page.</p></td>
