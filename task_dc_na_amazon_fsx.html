@@ -3059,7 +3059,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-15 15:25:39 +0000">07/15/2022</time>
+    <time datetime="2023-01-30 21:53:14 +0000">01/30/2023</time>
     
   
 
@@ -3141,7 +3141,7 @@
 <p>IP – generally will be the IP(s) or hostname(s) as configured in the data source.</p>
 </li>
 <li>
-<p>Raw Capacity – base 2 summation of all the physical disks in the system, regardless of their role.</p>
+<p>Raw Capacity – base 2 summation of all the SSD storage assigned to the FSx filesystem.</p>
 </li>
 <li>
 <p>Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Cloud Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Cloud Insights is generally performing an IOPs-weighted calculation derived from the individual internal volumes’ statistics.</p>
@@ -3164,26 +3164,13 @@ Management – this may contain a hyperlink for the management interface of the 
 <p>Type – a descriptive value from a list of an enumerated list of possibilities. Most commonly will be “Aggregate” or “RAID Group””.</p>
 </li>
 <li>
-<p>Uses Flash Pool – Yes/No value – does this SATA/SAS based pool have SSDs used for caching acceleration?</p>
-</li>
-<li>
-<p>Redundancy – RAID level or protection scheme. RAID_DP is dual parity, RAID_TP is triple parity.</p>
-</li>
-<li>
 <p>Capacity – the values here are the logical used, usable capacity and the logical total capacity, and the percentage used across these.</p>
 </li>
 <li>
-<p>Over-committed capacity – If by using efficiency technologies you have allocated a sum total of volume or internal volume capacities larger than the logical capacity of the storage pool, the percentage value here will be greater than 0%.</p>
+<p>IOPS – the sum IOPs of all the volumes allocated on this storage pool.</p>
 </li>
 <li>
-<p>Snapshot – snapshot capacities used and total, if your storage pool architecture dedicates part of its capacity to segments areas exclusively for snapshots. ONTAP in MetroCluster configurations are likely to exhibit this, while other ONTAP configurations are less so.</p>
-</li>
-<li>
-<p>Utilization – a percentage value showing the highest disk busy percentage of any disk contributing capacity to this storage pool. Disk utilization does not necessarily have a strong correlation with array performance – utilization may be high due to disk rebuilds, deduplication activities, etc in the absence of host driven workloads. Also, many arrays’ replication implementations may drive disk utilization while not showing as internal volume or volume workload.</p>
-</li>
-<li>
-<p>IOPS – the sum IOPs of all the disks contributing capacity to this storage pool.<br>
-Throughput – the sum throughput of all the disks contributing capacity to this storage pool.</p>
+<p>Throughput – the sum throughput of all the volumes allocated on this storage pool.</p>
 </li>
 </ul>
 </div>
@@ -3240,6 +3227,51 @@ Throughput – the sum throughput of all the disks contributing capacity to this
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advanced-metrics">Advanced Metrics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This data collector collects the following advanced metrics from the FSx for NetApp ONTAP storage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>fpolicy</p>
+</li>
+<li>
+<p>nfsv3</p>
+</li>
+<li>
+<p>nfsv3:node</p>
+</li>
+<li>
+<p>nfsv4</p>
+</li>
+<li>
+<p>nfsv4_1</p>
+</li>
+<li>
+<p>nfsv4_1:node</p>
+</li>
+<li>
+<p>nfsv4:node</p>
+</li>
+<li>
+<p>policy_group</p>
+</li>
+<li>
+<p>qtree</p>
+</li>
+<li>
+<p>volume</p>
+</li>
+<li>
+<p>workload_volume</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
