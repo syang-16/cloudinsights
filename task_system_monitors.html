@@ -3029,7 +3029,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-16 22:00:25 +0000">12/16/2022</time>
+    <time datetime="2023-02-03 18:33:31 +0000">02/03/2023</time>
     
   
 
@@ -3081,6 +3081,7 @@ Most System Monitors are in <em>Paused</em> state by default. Before resuming th
 <li><a href="#data-protection-monitors">Data Protection Monitors</a></li>
 <li><a href="#cloud-volume-cvo-monitors">Cloud Volume (CVO) Monitors</a></li>
 <li><a href="#snapmirror-for-business-continuity-smbc-mediator-log-monitors">SnapMirror for Business Continuity (SMBC) Mediator Log Monitors</a></li>
+<li><a href="#additional-power-heartbeat-and-miscellaneous-system-monitors">Additional Power, Heartbeat, and Miscellaneous System Monitors</a></li>
 </ul>
 </li>
 <li><a href="#more-information">More Information</a></li>
@@ -4554,6 +4555,186 @@ Note: UM doesn&#8217;t have this one</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WARNING</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This message occurs when the ONTAP Mediator server certificate is due to expire within the next 30 days.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Before this certificate expires, remove the configuration of the current ONTAP Mediator by using the "snapmirror mediator remove" command. Update a new server certificate on the ONTAP Mediator server. Reconfigure access to the ONTAP Mediator by using the "snapmirror mediator add" command.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><a href="#top">Back to Top</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="additional-power-heartbeat-and-miscellaneous-system-monitors">Additional Power, Heartbeat, and Miscellaneous System Monitors</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Monitor Name</th>
+<th class="tableblock halign-left valign-top">Severity</th>
+<th class="tableblock halign-left valign-top">Monitor Description</th>
+<th class="tableblock halign-left valign-top">Corrective Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk Shelf Power Supply Discovered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFORMATIONAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This message occurs when a power supply unit is added to the disk shelf.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NONE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disk Shelves Power Supply Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFORMATIONAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This message occurs when a power supply unit is removed from the disk shelf.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NONE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Automatic Unplanned Switchover Disabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This message occurs when automatic unplanned switchover capability is disabled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Run the "metrocluster modify -node-name &lt;nodename&gt; -automatic-switchover-onfailure true" command for each node in the cluster to enable automatic switchover.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Storage Bridge Unreachable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The storage bridge is not reachable over the management network</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) If the bridge is monitored by SNMP, verify that the node management LIF is up by using the "network interface show" command. Verify that the bridge is alive by using the "network ping" command.<br>
+2) If the bridge is monitored in-band, check the fabric cabling to the bridge, and then verify that the bridge is powered up.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Bridge Temperature Abnormal - Below Critical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sensor on the Fibre Channel bridge is reporting a temperature that is below the critical threshold.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the operational status of the fans on the storage bridge.<br>
+2) Verify that the bridge is operating under recommended temperature conditions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Bridge Temperature Abnormal - Above Critical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sensor on the Fibre Channel bridge is reporting a temperature that is above the critical threshold.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the operational status of the chassis temperature sensor on the storage bridge using the command "storage bridge show -cooling".<br>
+2) Verify that the storage bridge is operating under recommended temperature conditions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Aggregate Left Behind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WARNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The aggregate was left behind during switchback.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the aggregate state by using the command "aggr show".<br>
+2) If the aggregate is online, return it to its original owner by using the command "metrocluster switchback".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All Links Between Metrocluster Partners Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDMA interconnect adapters and intercluster LIFs have broken connections to the peered cluster or the peered cluster is down.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Ensure that the intercluster LIFs are up and running. Repair the intercluster LIFs if they are down.<br>
+2) Verify that the peered cluster is up and running by using  the "cluster peer ping" command. See the MetroCluster Disaster Recovery Guide if the peered cluster is down.<br>
+3) For fabric MetroCluster, verify that the back-end fabric ISLs are up and running. Repair the back-end fabric ISLs if they are down.<br>
+4) For non-fabric MetroCluster configurations, verify that the cabling is correct between the RDMA interconnect adapters. Reconfigure the cabling if the links are down.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Partners Not Reachable Over Peering Network</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The connectivity to the peer cluster is broken.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Ensure that the port is connected to the correct network/switch.<br>
+2) Ensure that the intercluster LIF is connected with the peered cluster.<br>
+3) Ensure that the peered cluster is up and running by using the command "cluster peer ping". Refer to the MetroCluster Disaster Recovery Guide if the peered cluster is down.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Inter Switch All Links Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All Inter-Switch Links (ISLs) on the storage switch are down.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Repair the back-end fabric ISLs on the storage switch.<br>
+2) Ensure that the partner switch is up and its ISLs are operational.<br>
+3) Ensure that intermediate equipment, such as xWDM devices, are operational.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Node To Storage Stack SAS Link Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WARNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SAS adapter or its attached cable might be at fault.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Verify that the SAS adapter is online and running.<br>
+2. Verify that the physical cable connection is secure and operating, and replace the cable if necessary.<br>
+3. If the SAS adapter is connected to disk shelves, ensure IOMs and disks are properly seated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroClusterFC Initiator Links Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The FC initiator adapter is at fault.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Ensure that the FC initiator link has not been tampered with.<br>
+2. Verify the operational status of the FC initiator adapter by using the command "system node run -node local -command storage show adapter".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FC-VI Interconnect Link Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The physical link on the FC-VI port is offline.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Ensure that the FC-VI link has not been tampered with.<br>
+2. Verify that the physical status of the FC-VI adapter is "Up" by using the command "metrocluster interconnect adapter show".<br>
+3. If the configuration includes fabric switches, ensure that they are properly cabled and configured.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Spare Disks Left Behind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WARNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spare disk was left behind during switchback.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If the disk is not failed, return it to its original owner by using the command "metrocluster switchback".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Storage Bridge Port Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The port on the storage bridge is offline.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the operational status of the ports on the storage bridge by using the command "storage bridge show -ports".<br>
+2) Verify logical and physical connectivity to the port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Storage Switch Fans Failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The fan on the storage switch failed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Ensure that the fans in the switch are operating correctly by using the command "storage switch show -cooling".<br>
+2) Ensure that the fan FRUs are properly inserted and operational.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Storage Switch Unreachable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The storage switch is not reachable over the management network.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Ensure that the node management LIF is up by using the command "network interface show".<br>
+2) Ensure that the switch is alive by using the command "network ping".<br>
+3) Ensure that the switch is reachable over SNMP by checking its SNMP settings after logging into the switch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Switch Power Supplies Failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A power supply unit on the storage switch is not operational.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the error details by using the command "storage switch show -error -switch-name &lt;swtich name&gt;".<br>
+2) Identify the faulty power supply unit by using the command "storage switch show -power -switch-name &lt;switch name&gt;".<br>
+3) Ensure that the power supply unitis properly inserted into the chassis of the storage switch and fully operational.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Switch Temperature Sensors Failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sensor on the Fibre Channel switch failed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the operational status of the temperature sensors on the storage switch by using the command "storage switch show -cooling".<br>
+2) Verify that the switch is operating under recommended temperature conditions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster Switch Temperature Abnormal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRITICAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The temperature sensor on the Fibre Channel switch reported abnormal temperature.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1) Check the operational status of the temperature sensors on the storage switch by using the command "storage switch show -cooling".<br>
+2) Verify that the switch is operating under recommended temperature conditions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Processor Heartbeat Missed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFORMATIONAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This message occurs when ONTAP does not receive an expected "heartbeat" signal from the Service Processor (SP). Along with this message, log files from SP will be sent out for debugging. ONTAP will reset the SP to attempt to restore communication. The SP will be unavailable for up to two minutes while it reboots.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact NetApp technical support.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Processor Heartbeat Stopped</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WARNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This message occurs when ONTAP is no longer receiving heartbeats from the Service Processor (SP). Depending on the hardware design, the system may continue to serve data or may determine to shut down to prevent data loss or hardware damage. The system continues to serve data, but because the SP might not be working, the system cannot send notifications of down appliances, boot errors, or Open Firmware (OFW) Power-On Self-Test (POST) errors. If your system is configured to do so, it generates and transmits an AutoSupport (or 'call home') message to NetApp technical support and to the configured destinations. Successful delivery of an AutoSupport message significantly improves problem determination and resolution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If the system has shut down, attempt a hard power cycle: Pull the controller out from the chassis, push it back in then power on the system. Contact NetApp technical support if the problem persists after the power cycle, or for any other condition that may warrant attention.</p></td>
 </tr>
 </tbody>
 </table>
