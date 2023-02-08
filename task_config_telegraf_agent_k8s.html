@@ -3029,7 +3029,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-20 18:32:11 +0000">01/20/2023</time>
+    <time datetime="2023-01-24 20:25:31 +0000">01/24/2023</time>
     
   
 
@@ -3842,7 +3842,16 @@ kubectl delete ns &lt;NAMESPACE&gt;</pre>
 <h2 id="tuning-the-operator">Tuning the Operator</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can adjust the NetApp Kubernetes Monitoring Operator for optimal performance by fine-tuning certain variables for Custom Resources.  See the following tables for variables that you can set.</p>
+<p>You can adjust the NetApp Kubernetes Monitoring Operator for optimal performance by fine-tuning certain variables for Custom Resources. For instructions and lists of the variables you can tune, see the README file included with the installation package. After you have installed the operator, use the following command to view the README:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>kubectl exec -c manager -it &lt;operator-pod-name&gt; -n &lt;namespace&gt; -- cat configs/substitution-vars/README.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>//// - start tuning section<br>
+You can adjust the NetApp Kubernetes Monitoring Operator for optimal performance by fine-tuning certain variables for Custom Resources.  See the following tables for variables that you can set.</p>
 </div>
 <div class="paragraph">
 <p>To modify these values, edit the agent CR with the following command (substituting &lt;namespace&gt; for your namespace):</p>
@@ -4044,6 +4053,9 @@ kubectl delete ns &lt;NAMESPACE&gt;</pre>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>//// - end tuning section</p>
+</div>
 </div>
 </div>
 </div>
