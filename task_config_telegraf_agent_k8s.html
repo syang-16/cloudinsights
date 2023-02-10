@@ -3029,7 +3029,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-08 21:35:02 +0000">02/08/2023</time>
+    <time datetime="2023-02-10 14:27:55 +0000">02/10/2023</time>
     
   
 
@@ -3321,7 +3321,7 @@ password: &lt;password from docker secret step above&gt;</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>kubectl -n netapp-monitoring get deployment monitoring-operator | grep "image:"</pre>
+<pre>kubectl -n netapp-monitoring describe deployment monitoring-operator | grep -i "image:" |grep netapp-monitoring</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3332,9 +3332,9 @@ password: &lt;password from docker secret step above&gt;</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>docker.io/telegraf
-gcr.io/kubebuilder/kube-rbac-proxy
-k8s.gcr.io/kube-state-metrics/kube-state-metrics</pre>
+<pre>docker pull docker.&lt;cluster&gt;.cloudinsights.netapp.com/telegraf:&lt;telegraf version&gt;
+docker pull docker.&lt;cluster&gt;.cloudinsights.netapp.com/kube-rbac-proxy:&lt;kube-rbac-proxy version&gt;
+docker pull docker.&lt;cluster&gt;.cloudinsights.netapp.com/kube-state-metrics:&lt;kube-state-metrics version&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3342,21 +3342,25 @@ k8s.gcr.io/kube-state-metrics/kube-state-metrics</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>docker.io/fluent-bit
-docker.io/kubernetes-event-exporter</pre>
+<pre>docker pull docker.&lt;cluster&gt;.cloudinsights.netapp.com/fluent-bit:&lt;fluent-bit version&gt;
+docker pull docker.&lt;cluster&gt;.cloudinsights.netapp.com/kubernetes-event-exporter:&lt;kubernetes-event-exporter version&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Edit the agent CR to reflect the new docker repo location, disable auto upgrade (if enabled).</p>
+<p>Edit the monitoring-operator deployment, and modify all image references to use the new docker repo location:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>image: &lt;docker repo of the enterprise/corp docker repo&gt;/kube-rbac-proxy:&lt;kube-rbac-proxy version&gt;
+image: &lt;docker repo of the enterprise/corp docker repo&gt;/netapp-monitoring:&lt;version&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Edit the agent CR to reflect the new docker repo location.</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>kubectl -n netapp-monitoring edit agent agent-monitoring-netapp</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>enableAutoUpgrade: false</pre>
 </div>
 </div>
 <div class="literalblock">
