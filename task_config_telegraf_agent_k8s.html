@@ -3029,7 +3029,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-10 19:37:27 +0000">02/10/2023</time>
+    <time datetime="2023-02-14 14:55:21 +0000">02/14/2023</time>
     
   
 
@@ -3484,14 +3484,10 @@ If you have a previously installed script-based agent, you <em>must</em> upgrade
 </div>
 </div>
 </li>
-<li>
-<p>Back up the existing configurations:</p>
-<div class="literalblock">
-<div class="content">
-<pre>kubectl --namespace ci-monitoring get cm -o yaml &gt; /tmp/telegraf-configs.yaml</pre>
+</ol>
 </div>
-</div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Save the K8s cluster name for use during installation of the K8s operator-based monitoring solution to ensure data continuity.</p>
 <div class="paragraph">
@@ -3548,14 +3544,6 @@ If you have a previously installed script-based agent, you <em>must</em> upgrade
 <div class="literalblock">
 <div class="content">
 <pre>kubectl -n netapp-monitoring get agent -o jsonpath='{.items[0].spec.cluster-name}'</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Back up the existing configurations:</p>
-<div class="literalblock">
-<div class="content">
-<pre>kubectl --namespace netapp-monitoring get cm -o yaml &gt; /tmp/telegraf-configs.yaml</pre>
 </div>
 </div>
 </li>
