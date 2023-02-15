@@ -3029,7 +3029,7 @@
 <p class="page-details">
   
     
-    <time datetime="2020-12-15 14:06:34 +0000">12/15/2020</time>
+    <time datetime="2023-02-15 16:17:05 +0000">02/15/2023</time>
     
   
 
@@ -3111,6 +3111,38 @@
 <div class="sect1">
 <h2 id="troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Some things to try if you encounter problems with this data collector:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Problem:</th>
+<th class="tableblock halign-left valign-top">Try this:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I received an error similar to this one:<br>
+'Failed to execute request: Connect to &lt;AWS region endpoint&gt;:8080 [&lt;AWS region endpoint&gt;/AWS region endpoint IP&gt;] failed: connect timed out: GET <a href="https://&lt;AWS" class="bare">https://&lt;AWS</a> Region Endpoint FQDN&gt;:8080/v1/Storage/IPRanges HTTP/1.1'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="task_configure_acquisition_unit.html#proxy-configuration-2">proxy</a> used by Cloud Insights to communicate with the Acquisition Unit does not communicate between Cloud Insights and the Data Collector itself. Here are a few things you can try:<br>
+<br>
+Ensure that the acquisition unit is able to resolve the fqdn and reach the required port.<br>
+Confirm that a proxy is not required to reach the specified endpoint in the error message.<br>
+Curl can be used to test the communication between the acquisition unit and the endpoint. Make sure that you are <strong>not</strong> using a Proxy for this test.<br>
+<br>
+Example:<br>
+<br>
+root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api key used in the data collector credentials -H secret-key:&lt;secret key used in the data collector credentials&gt; -X GET <a href="https://&lt;AWS" class="bare">https://&lt;AWS</a> Regional Endpoint&gt;:8080/v1/Storage/IPRanges<br>
+<br>
+See this <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Cloud_Insights_fails_discovery_for_Cloud_Volumes_Service_for_AWS">NetApp KB article</a>.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Additional information on this Data Collector may be found from the <a href="concept_requesting_support.html">Support</a> page or in the <a href="https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf">Data Collector Support Matrix</a>.</p>
 </div>
