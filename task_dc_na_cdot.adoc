@@ -170,6 +170,17 @@ The resulting role and user login will look something like the following. Your a
 
 
 
+== What is "Perf Tier Inactive User Data"
+
+*Perf Tier inactive user data* in an ONTAP system shows how much of the physical used space is cold (after all the efficiencies are applied). The ZAPI _performance_tier_inactive_used_data_ maps to the Volume REST API’s _space.block_storage_inactive_user_data_ field. The API documentation describes this field as:
+
+_The size that is physically used in the block storage of the volume and has a cold temperature. In bytes. This parameter is only supported if the volume is in an aggregate that is either attached to a cloud store or could be attached to a cloud store._
+
+So if you have a volume with storage efficiency enabled, inactive data is how much physical (not logical) data is cold. It tells you how much data you could tier to the cloud, and that ONTAP is going to tier the data after it applies storage efficiencies to it.
+
+
+
+
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:
 
