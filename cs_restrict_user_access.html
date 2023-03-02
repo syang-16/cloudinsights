@@ -3028,7 +3028,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-14 19:17:12 +0000">02/14/2023</time>
+    <time datetime="2023-03-02 22:07:21 +0000">03/02/2023</time>
     
   
 
@@ -3344,6 +3344,26 @@ Restricting happens via IP address of the host through which the user is accessi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy could not be modified. Reason: not authorized for that command.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Check if using csuser, permissions are given to the user as mentioned above.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User (IP Address) blocking for NFS works, but for SMB / CIFS, I see an error message: “SID to DomainName transformation failed. Reason timeout: socket is not established”</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This can happen is <em>csuser</em> does not have permission to perform ssh. (Ensure connection at cluster level, then ensure user can perform ssh).  <em>csuser</em> role requires these permissions.<br>
+<br>
+ <a href="https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html#prerequisites-for-user-access-blocking" class="bare">https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html#prerequisites-for-user-access-blocking</a><br>
+<br>
+For <em>csuser</em> with cluster credentials, do the following from the ONTAP command line:<br>
+<br>
+ security login role create -role csrole -cmddirname "vserver export-policy rule" -access all<br>
+ security login role create -role csrole -cmddirname set -access all<br>
+ security login role create -role csrole -cmddirname "vserver cifs session" -access all<br>
+ security login role create -role csrole -cmddirname "vserver services access-check authentication translate" -access all<br>
+ security login role create -role csrole -cmddirname "vserver name-mapping" -access all<br>
+<br>
+If <em>csuser</em> is not used and if admin user at cluster level is used, make sure that the admin user has ssh permission to ONTAP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
