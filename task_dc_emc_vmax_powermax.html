@@ -3037,7 +3037,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-19 16:30:39 +0000">12/19/2022</time>
+    <time datetime="2023-03-09 17:50:57 +0000">03/09/2023</time>
     
   
 
@@ -3333,7 +3333,17 @@ cisys storapid &lt;all&gt;</pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I&#8217;m seeing data collection errors with the message: "unknown code"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You may see this message if permissions are not declared in the Solutions Enabler server&#8217;s daemon configuration file (see the <a href="#requirements">Requirements</a> above.) This assumes your SE client version matches your SE server version.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You may see this message if permissions are not declared in the Solutions Enabler server&#8217;s daemon configuration file (see the <a href="#requirements">Requirements</a> above.) This assumes your SE client version matches your SE server version.<br>
+<br>
+This error may also occur if the <em>cisys</em> user (which executes Solutions Enabler commands) has not been configured with the necessary daemon permissions in the /var/symapi/config/daemon_users configuration file.<br>
+<br>
+To fix this, edit the /var/symapi/config/daemon_users file and make sure the cisys user has &lt;all&gt; permission specified for the storapid daemon.<br>
+<br>
+Example:<br>
+<br>
+ 14:11:25 # tail /var/symapi/config/daemon_users<br>
+ &#8230;&#8203;<br>
+ cisys storapid &lt;all&gt;</p></td>
 </tr>
 </tbody>
 </table>
