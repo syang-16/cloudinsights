@@ -3037,7 +3037,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-10 15:29:09 +0000">03/10/2023</time>
+    <time datetime="2023-03-13 16:54:15 +0000">03/13/2023</time>
     
   
 
@@ -3968,6 +3968,20 @@ kubectl get all -n &lt;namespace&gt; | grep -i psp (should show that nothing is 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"ImagePullBackoff" errors seen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">These errors may be seen if you have a custom or private docker repository and have not yet configured the NetApp Kubernetes Monitoring Operator to properly recognize it.  <a href="#using-a-custom-or-private-docker-repository">Read more</a> about configuring for custom/private repo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I am having an issue with my monitoring-operator deployment, and the current documentation does not help me resolve it.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Capture or otherwise note the output from the following commands, and contact the Technical Support team.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> kubectl -n netapp-monitoring get all
+ kubectl -n netapp-monitoring describe all
+ kubectl -n netapp-monitoring logs &lt;monitoring-operator-pod&gt; --all-containers=true
+ kubectl -n netapp-monitoring logs &lt;telegraf-pod&gt; --all-containers=true</pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
