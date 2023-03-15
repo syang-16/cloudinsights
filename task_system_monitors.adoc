@@ -835,6 +835,38 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 <<top,Back to Top>>
 
 
+
+== Synthetic Metric Monitors
+
+|===
+|Monitor Name|Severity|Monitor Description|Corrective Action|
+|Storage Capacity Time To Full|CRITICAL|When a storage pool (aggregate) is filling up, I/O operations slow down and eventually stop, resulting in a storage outage incident. To prevent such storage outage, this monitor tracks storage capacity's Time To Full (TTF), a metric that predicts when the storage pool is likely to run out of capacity. Once this metric crosses a critical threshold, the monitor preemptively alerts customers with the predicted number of days until the storage pool exhausts its capacity. This preemptive alert allows customers enough time to take proactive actions to ensure sufficient storage capacity and avoid a potential storage outage.…A warning alert indicates that a planned action should be taken soon to restore minimum free space.…A critical alert indicates that service disruption is imminent and emergency measures should be taken to free up space to ensure service continuity.|If the critical threshold is breached, immediately consider the following actions to minimize service disruption:
+1. Delete Snapshots on non-critical volumes.
+2. Delete Volumes or LUNs that are non-essential workloads and that may be restored from off-storage copies.……If the warning threshold is breached, plan the following immediate actions:
+1. Move one or more volumes to a different storage location.
+2. Add more storage capacity.
+3. Change storage efficiency settings or tier inactive data to cloud storage.|
+|ONTAP Volume Capacity Time To Full|CRITICAL|When a volume is filling up, I/O operations slow down and eventually stop, resulting in a capacity outage incident. To prevent such capacity outage, this monitor tracks volume capacity's Time To Full (TTF), a metric that predicts when the volume is likely to run out of capacity. Once this metric crosses a critical threshold, the monitor preemptively alerts customers the predicted number of days until the volume exhausts its capacity. This preemptive alert allows customers enough time to take proactive actions to ensure sufficient volume capacity and avoid a potential capacity outage.…A warning alert indicates that a planned action should be taken soon to restore minimum based free space.…A critical alert indicates that service disruption is imminent and emergency measures should be taken to free up space to ensure service continuity.…|If critical threshold is breached, consider following immediate actions to minimize service disruption:
+1. Increase the space of the volume to accommodate growth.
+2. Delete unwanted data to free up space.
+3. If snapshot copies occupy more space than the snapshot reserve, delete old Snapshots or enable Volume Snapshot Autodelete.…If warning threshold is breached, plan to take the following immediate actions:
+1. Increase the space of the volume in order to accommodate growth
+2. If snapshot copies occupy more space than the snapshot reserve, delete old Snapshots or enabling Volume Snapshot Auto-delete.|
+|ONTAP Volume Snapshot Capacity Time To Full|CRITICAL|Snapshot reserved space in an ONTAP volume is a portion of its storage capacity that is used to store snapshots, which allow data to be protected locally. The more new and updated data is stored in the volume, the more snapshot capacity is used, and less snapshot capacity is available for the data. If the Snapshot copies exceed the reserve space, they spill into the active file system, thus exhausting the volume's storage capacity and potentially causing a storage outage.…To prevent such data storage outage, this monitor tracks snapshot capacity's Time To Full (TTF), a metric that predicts when a volume is likely to run out of reserve space for snapshots. Once this metric crosses a critical threshold, the monitor preemptively alerts customers the predicted number of days until the volume exhausts its snapshot capacity. This preemptive alert allows customers enough time to take proactive actions to ensure sufficient data protection in the volume.|If the critical threshold is breached, consider immediate actions to minimize service disruption:
+1. Increase the snapshot reserve space within the volume to accommodate the growth.
+2. Delete some older, unwanted snapshots to free up space.…
+If the warning threshold is breached, plan to take the following immediate actions:
+1. Increase the snapshot reserve space within the volume to accommodate the growth. 
+2. Configure snapshots to use data space in the volume when the snapshot reserve is full.
+
+|===
+
+
+<<top,Back to Top>>
+
+
+
+
 == More Information
 
 //* link:concept_notifications_email.html[Email Alerting] for Monitors
