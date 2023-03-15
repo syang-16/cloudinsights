@@ -836,7 +836,7 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 
 
 
-== Synthetic Metric Monitors
+=== Synthetic Metric Monitors
 
 |===
 |Monitor Name|Severity|Monitor Description|Corrective Action|
