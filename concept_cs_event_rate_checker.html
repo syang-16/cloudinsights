@@ -3037,7 +3037,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-22 15:42:56 +0000">02/22/2023</time>
+    <time datetime="2023-03-16 17:14:03 +0000">03/16/2023</time>
     
   
 
@@ -3294,38 +3294,37 @@ Overall svm audit_svm is generating 300 events/sec</pre>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Question: If I run this script on an SVM that is already configured for Workload Security, does it just use the existing fpolicy config on the SVM or does it setup a temporary one and run the process?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Question</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Answer</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Answer: The Event Rate Checker can run fine even for an SVM already configured for Workload Security. There should be no impact.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If I run this script on an SVM that is already configured for Workload Security, does it just use the existing fpolicy config on the SVM or does it setup a temporary one and run the process?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Event Rate Checker can run fine even for an SVM already configured for Workload Security. There should be no impact.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Question: Can I increase the number of SVMs on which the script can be run?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can I increase the number of SVMs on which the script can be run?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes. Simply edit the script and change the max number of SVMs from 5 to any desirable number.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Answer: Yes. Simply edit the script and change the max number of SVMs from 5 to any desirable number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If I increase the number of SVMs, will it increase the time of running of the script?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No. The script will run for a max of 5 minutes, even if the number of SVMs is increased.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Question: If I increase the number of SVMs, will it increase the time of running of the script?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can I increase the number of SVMs on which the script can be run?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes. You need to edit the script and change the max number of SVMs from 5 to any desirable number.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Answer: No. The script will run for a max of 5 minutes, even if the number of SVMs is increased.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If I increase the number of SVMs, will it increase the time of running of the script?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No. The script will run for a max of 5mins, even if the number of SVMs are increased.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Question: Can I increase the number of SVMs on which the script can be run?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Answer: Yes. You need to edit the script and change the max number of SVMs from 5 to any desirable number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Question: If I increase the number of SVMs, will it increase the time of running of the script?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Answer: No. The script will run for a max of 5mins, even if the number of SVMs are increased.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What happens if I run the Event Rate Checker with an existing agent?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Running the Event Rate Checker against an already-existing agent may cause an increase in latency on the SVM. This increase will be temporary in nature while the Event rate Checker is running.</p></td>
 </tr>
 </tbody>
 </table>
