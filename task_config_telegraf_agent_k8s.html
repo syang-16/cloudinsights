@@ -3037,7 +3037,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-13 16:54:15 +0000">03/13/2023</time>
+    <time datetime="2023-03-21 13:19:55 +0000">03/21/2023</time>
     
   
 
@@ -3066,6 +3066,15 @@
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/kubernetes_tile.png" alt="Kubernetes Data Collector Tile"></span></p>
+</div>
+<div class="paragraph">
+<p>Below is a high-level illustration showing where the Operator resides in your environment. Depending on your environment, <em>Proxy Server</em> may or may not be required.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/CI_Diagram_with_NKMO.png" alt="A high-level map showing NKMO residing in the Kubernetes Cluster" width="with arrows showing how data travels to the cluster from the Hosts" height="proxy server"></span></p>
+</div>
+<div class="paragraph">
+<p>The Operator (NKMO) and the data collectors are downloaded from the Cloud Insights Docker Registry. Once installed, NKMO then manages any Operator-compatible collectors deployed in the Kubernetes cluster nodes to acquire data, including managing the life cycle of those collectors. Following this chain, data is acquired from the collectors and sent through to Cloud Insights.</p>
 </div>
 </div>
 </div>
