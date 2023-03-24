@@ -582,7 +582,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloudinsights//search.html</loc>
       
-      <lastmod>2023-03-23T14:32:03+00:00</lastmod>
+      <lastmod>2023-03-24T15:05:06+00:00</lastmod>
       
     </url>
   
@@ -1430,6 +1430,13 @@
       <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_redhat_virtualization.html</loc>
       
       <lastmod>2019-03-27T20:32:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloudinsights/task_dc_rubrik_cdm.html</loc>
+      
+      <lastmod>2023-03-24T15:03:43+00:00</lastmod>
       
     </url>
   
